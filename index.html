@@ -2,6 +2,12 @@
 <html>
     <html lang="es-ES">
         <head>
+            <!-- Bootstrap -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
             <!-- Css -->
             <link rel="stylesheet" type="text/css" media="all" href="CSS/styles.css">
 
@@ -15,16 +21,39 @@
         </head>
 
         <body>
-            <div class="contenedor">
-                <nav class="nav">
-                    <a href="index.html"> <img src= "Img/logo_250px.png" width="100" class="logo"></a>
-                    <ul class="menu">
-                        <li class="menu-item"><a class="menu-link" href="index.html"> Inicio </a></li>
-                        <li class="menu-item"><a class="menu-link" href="#"> Nosotros </a></li>
-                    </ul>
-                </nav>
-            </div>
-            <section class="banner">
+            
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+              <a href="index.html"> <img src= "Img/logo_250px.png" width="100" class="logo"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html"> Home <span class="sr-only">Inicio</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"> Nosotros </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"> Sedes </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"> Actividades </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"> Sumate YA</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"> Contacto </a>
+                  </li>
+                </ul>
+                <button class="btn btn-primary boton1" type="submit">Button</button>
+              </div>
+            </nav>
+          </div>
+
+            <section class="grid-container banner">
                 <video autoplay muted loop><source src="Img/video_index.mp4"></video>
                 <div class="overlay"></div>
                 <div class="cuerpo">
@@ -37,19 +66,113 @@
                 </div> 
             </section>
 
+  
+              <div class="grid-container seccion">
+                <h4 class="titulo"> Sedes </h4>
+                <div class="card" style="width: 20rem;">
+                  <img src="Img/sede1-g1.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Sede 1</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 20rem;">
+                  <img src="Img/sede1-g2.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Sede 2</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 20rem;">
+                  <img src="Img/sede1-g3.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Sede 3</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+           
+              <div class="grid-container seccion1">
+                <div class="card">
+                  <div class="card-body">
+                    <h2 class="texto1"> Título de la sección </h2>
+                    <p class="texto2"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet expedita mollitia accusantium, est numquam ex quisquam ipsam nisi error illo facilis dolores beatae temporibus consequuntur nam voluptatibus veniam maxime? In?</p>
+                    <button class="btn btn-primary boton3" type="submit">Button</button>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="grid-container seccion">
+                <h4 class="titulo"> Actividades </h4>
+                <div class="card" style="width: 18rem;">
+                  <img src="Img/boxing-icon.svg" class="card-img-top img-act" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Actividad 1</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <img src="Img/musculacion-icon.svg" class="card-img-top img-act" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Actividad 2</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <img src="Img/natacion-icon.svg" class="card-img-top img-act" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Actividad 3</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="grid-container seccion1">
+                <div class="card">
+                  <div class="card-body">
+                    <h2 class="texto1"> Título de la sección </h2>
+                    <p class="texto2"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet expedita mollitia accusantium, est numquam ex quisquam ipsam nisi error illo facilis dolores beatae temporibus consequuntur nam voluptatibus veniam maxime? In?</p>
+                    <button class="btn btn-primary boton3" type="submit">Button</button>
+                  </div>
+                </div>
+              </div>
+
+
             <footer>
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <p> Recta Martinolli 7913 - Ciudad de Córdoba </p>
-                        <p> Ricardo Rojas 7438 - Edificio de servicio 1 - Ciudad de Córdoba </p>
-                        <p> Rio de Janeiro 869 Barrio Lomas de Villa Allende, Córdoba </p> 
-                    </div>
-                    <div class="grid-item">
-                        <p> 0351 618-2377 </p>
-                        <p> 0351 349-0016 </p>
-                        <p> 0351 754-8110 </p>
-                    </div>
-                </div>  
+              <div class="grid-container">
+                <div class="grid-item">
+                  <h4> FitnessSClub</h4>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sapiente, quasi velit eos explicabo natus dolor quo nisi soluta, voluptatum, repellendus ullam repudiandae quae rerum quas optio! Fugiat, quibusdam aliquid.</p>
+                    <img src="Img/facebook-logo-w.svg" class="card-img-top redes" alt="...">
+                    <img src="Img/instagram-logo-w.svg" class="card-img-top redes" alt="...">
+                    <img src="Img/youtube-logo-w.svg" class="card-img-top redes" alt="...">
+                </div>
+                <div class="grid-item">
+                  <h4> Sedes </h4>
+                    <p> sede 1 </p>
+                    <p> sede 2 </p>
+                    <p> sede 3 </p>
+                </div>
+                <div class="grid-item">
+                  <h4> Recursos </h4>
+                    <p> Blogs </p>
+                    <p> Videos </p>
+                    <p> FAQs </p>
+                </div>
+                <div class="grid-item">
+                  <h4> Contacto </h4>
+                    <p> Dirección </p>
+                    <p> Email </p>
+                    <p> Teléfono </p>
+                </div>
+            </div>  
                 <p> &copy; 2021 - Hecho con &#128156 </p>
             </footer>
         </body>
