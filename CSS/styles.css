@@ -82,6 +82,24 @@ section video {
     mix-blend-mode: overlay;
 }
 
+/*------Container-------*/
+div.container2 {
+    position: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 1px;
+}
+
+.grid-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
 /*------Cuerpo-------*/
 
 .cuerpo {
@@ -109,11 +127,6 @@ video {
 }
 
 /*------Button-------*/
-
-.contenedor-button {
-    padding: 20px;
-    margin: 30px;
-}
 
 .button1, .button2 {
     padding: 10px;
@@ -196,19 +209,13 @@ video {
 /*------Seccion--------*/
 .seccion {
     height: 100vp;  
-    padding: 10%;
+    padding: 5%;
 }
 
 .seccion1 {
     height: 100vp; 
     padding: 10%;
     background: linear-gradient(to left, #731943, #73245E, #361973, #1E1B8C, #F2F2F2);
-}
-
-.titulo {
-    /*position:absolute;*/
-    transform: translateX(-50%) translateY(-50%);
-    text-decoration: underline;
 }
 
 .img-act {
@@ -247,13 +254,6 @@ footer p {
     text-align: center;
 }
 
-.grid-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
 .grid-item {
     margin: 2%;
 }
@@ -270,3 +270,5 @@ footer p {
 .pie {
     margin-top: 3%;
 }
+
+/*------Responsive-------*/
