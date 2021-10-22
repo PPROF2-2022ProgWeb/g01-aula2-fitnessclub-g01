@@ -5,21 +5,21 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins, sans-serif; 
-    outline: solid 1px tomato !important;
+    /*outline: solid 1px tomato !important;*/
 }
 
 
 /*------Navbar-------*/
 
-.container {
+/*.container {
     position: relative;
     z-index: -10;
     display: flex;
     justify-content: space-between;
     align-items: center; 
     float:left;
-    /*box-sizing: border-box;*/
-}
+    box-sizing: border-box;
+}*/
 
 a {
     color: white;
@@ -32,6 +32,11 @@ a {
 .navbar {
     background-color: transparent !important;
     width: 100%;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 10;
 }
 
 .nav-link {
@@ -81,7 +86,6 @@ section video {
 
 .cuerpo {
     position: relative;
-    z-index: 10;
 }
 
 .cuerpo h1 {
@@ -147,14 +151,16 @@ video {
     color: white;
     border-radius: 20px;
     text-align: center;
-    margin-left: 25%;
+    margin:auto;
+	display:block;
 }
 
 .boton3 {
     border-radius: 20px;
     padding: 10px;
-    margin-left: 45%; /* ver no es responsive para centrar*/
-    width: 10%;
+    margin:auto;
+	display:block;
+    width: 20%;
     background-color: transparent;
     color: white;
     border-color: white;
@@ -164,13 +170,19 @@ video {
 /*------Cards--------*/
 
 .card-body {
-    background: transparent;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 1);
+    background: transparent; 
+    margin: 5%;
 }
 
 .card {
     background: transparent;
-    margin: 1%;
+    margin: 1%;  
+    border: none;
+}
+
+.cajas {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 1);
+    border-radius: 5px;
 }
 
 .card-title {
@@ -188,7 +200,7 @@ video {
 }
 
 .seccion1 {
-    height: 100vp;  
+    height: 100vp; 
     padding: 10%;
     background: linear-gradient(to left, #731943, #73245E, #361973, #1E1B8C, #F2F2F2);
 }
@@ -196,10 +208,14 @@ video {
 .titulo {
     /*position:absolute;*/
     transform: translateX(-50%) translateY(-50%);
+    text-decoration: underline;
 }
 
 .img-act {
     width: 40%;
+    margin:auto;
+	display:block;
+    margin-top: 3%;
 }
 
 .texto1 {
@@ -220,6 +236,7 @@ video {
 footer {
     background-color: black;
     color: white;
+    padding: 2%;
 }
 
 footer p {
@@ -243,4 +260,13 @@ footer p {
 
 .redes {
     width: 5%;
+    margin: 1%;
+}
+
+.texto {
+    margin: 1%
+}
+
+.pie {
+    margin-top: 3%;
 }
