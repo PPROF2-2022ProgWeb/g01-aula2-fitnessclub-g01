@@ -1,64 +1,95 @@
 <!DOCTYPE html>
 <html>
-    <html lang="es-ES">
-        <head>
-            <!-- Css -->
-            <link rel="stylesheet" type="text/css" media="all" href="CSS/login.css">
+<head>
+	<title>Reserva</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styleproyect.css">
+	<link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+	<script src="bootstrap5/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
 
-            <title>GYM</title>
-            <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-            <meta name="md:locale" content="es_es"/>
-            <meta name="description" content="pagina de ejemplo">
-            <meta name="keywords" content="ejemplo">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- For responsive pages -->
-        </head>
-
-        <body>
-            
-            <header>
-                <div class="navbar">
-                  <nav class="nav">
-                    <a href="index.html"> <img src= "img/logo_250px.png" width="100" class="logo"></a>
-                    <ul class="menu">
-                        <li class="menu-item"><a class="menu-link" href="index.html"> Inicio </a></li>
-                        <li class="menu-item"><a class="menu-link" href="#"> Nosotros </a></li>
-                    </ul>
-                  </nav>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-white">
+				  <a href="index.html"> <img src= "Img/logo_250px.png" width="100" class="logo"></a>
+				  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ml-auto">
+					  <li class="nav-item active">
+						<a class="nav-link" href="index.html"> Home <span class="sr-only">Inicio</span></a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#"> Nosotros </a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#"> Sedes </a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#"> Actividades </a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#"> Sumate YA</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#"> Contacto </a>
+					  </li>
+					</ul>
+					<button class="btn btn-primary boton1" type="submit">Login</button>
+				  </div>
+				</nav>
+			  </div>
+     </header>
+	
+	<div class="contenedor1">
+		<h1>BIENVENIDOS</h1>
+		<p> Te invitamos a formar parte de Fitness Club, el Mejor Gym de Cordoba Capital, donde te brindaremos los mejores planes a los precios mas accesibles. </p>
+	</div>
+	<div class="container">
+		<br>
+		<form action="" class="">
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" class="form-control" id="email" placeholder="" name="email">
+			</div>
+			
+			<div class="form-group">
+				<label for="pwd">Password:</label>
+				<input type="password" class="form-control" id="pwd" placeholder="" name="pswd">
+			</div>
+			
+			<div class="form-group">
+				<label class="form-check-label">
+				<input class="form-check-input" type="checkbox" name="remember"> Remember me
+				</label>
+			</div>
+			
+			<div>
+				<button type="button" class="btn btn-primary">Login</button>
+			</div>
+			<div>
+				<button type="button" class="btn btn-primary">Registrarse</button>
+			</div>
+		</form>
+	</div>
+	<footer>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <p> Recta Martinolli 7913 - Ciudad de Córdoba </p>
+                    <p> Ricardo Rojas 7438 - Edificio de servicio 1 - Ciudad de Córdoba </p>
+                    <p> Rio de Janeiro 869 Barrio Lomas de Villa Allende, Córdoba </p> 
                 </div>
-
-                <div class="cuerpo">
-                    <h1> BIENVENIDOS </h1>
-                    <p> Te invitamos a formar parte de Fitness Club, el Mejor Gym de Cordoba Capital, donde te brindaremos los mejores planes a los precios mas accesibles. </p>
+                <div class="grid-item">
+                    <p> 0351 618-2377 </p>
+                    <p> 0351 349-0016 </p>
+                    <p> 0351 754-8110 </p>
                 </div>
-                         <form class="form">  
-                             <label for="fname">Email:</label><br>
-                             <input type="text" id="fname" name="fname" value=" " class="interior"><br>
-                             <label for="lname">Password:</label><br>
-                             <input type="text" id="lname" name="lname" class="interior">
-                         </form>
-                    <div class="contenedor1">
-                        <a href="#"><button class="button1"> Ingresar </button></a>
-                        <a href="registro.html"><button class="button2"> Registrarse </button></a>  
-                    </div>
-                
-              </header>
-        
-                <footer>
-                    <div class="grid-container">
-                        <div class="grid-item">
-                            <p> Recta Martinolli 7913 - Ciudad de Córdoba </p>
-                            <p> Ricardo Rojas 7438 - Edificio de servicio 1 - Ciudad de Córdoba </p>
-                            <p> Rio de Janeiro 869 Barrio Lomas de Villa Allende, Córdoba </p> 
-                        </div>
-                        <div class="grid-item">
-                            <p> 0351 618-2377 </p>
-                            <p> 0351 349-0016 </p>
-                            <p> 0351 754-8110 </p>
-                        </div>
-                    </div>  
-                    <p> &copy; 2021 - Hecho con &#128156 </p>
-                </footer>
-        </body>
-    </html>               
+            </div>  
+            <p> &copy; 2021 - Hecho con &#128156 </p>
+        </footer>
+
+	
+</body>
 </html>

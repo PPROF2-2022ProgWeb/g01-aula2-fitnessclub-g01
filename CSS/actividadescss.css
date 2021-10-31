@@ -13,8 +13,6 @@ body {
 header {
     align-items: center;
 }
-
-
 /*------Navbar-------*/
 
 .navbar {
@@ -51,8 +49,6 @@ li {
     font-size: 15px;
     text-decoration: none;
 }
-
-
 /* cuerpo*/
 
 h1 {
@@ -75,73 +71,11 @@ p {
     border-radius: 20px;
 }
 
-
-/*Form*/
-
-form {
-    width: 100%;
-    max-width: 400px;
-    margin-left: 50px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
+/*carousel*/
+ {
+	weight:50%;
+	align-items:center;
 }
-
-label {
-    color: grey;
-    font-size: 20px;
-    padding: 4px;
-    margin-top: 12px;
-    margin-bottom: 8px;
-    margin-left: 70px;
-}
-
-.interior {
-    background-color: transparent;
-    padding: 4px;
-    padding-top: 4px;
-    margin-bottom: 8px;
-    font-size: 20px;
-    margin-left: 70px;
-}
-
-.contenedor1 {
-    align-items: center;
-}
-
-button {
-    width: 10%;
-    justify-content: left;
-    cursor: pointer;
-    padding: 14px;
-    color: white;
-    margin-left: 170px;
-    margin-top: 20px;
-    top: 8px;
-    padding: 8px;
-    border-radius: 20px;
-    align-items: left;
-}
-
-.div .button1 {
-    padding-left: 40px;
-}
-
-.button1 {
-    background-color: #73245E;
-    border-color: #73245E;
-    color: white;
-    font-size: 15px;
-}
-
-.button2 {
-    border-color: #73245E;
-    color: black;
-    font-size: 15px;
-    background-color: transparent;
-    margin-bottom: 30px;
-}
-
 
 /*Footer*/
 
