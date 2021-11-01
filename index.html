@@ -22,9 +22,9 @@
 
         <body>
             
-            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
               <a href="index.html"> <img src= "Img/logo_250px.png" width="100" class="logo"></a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
@@ -66,10 +66,16 @@
                 </div> 
             </section>
 
-  
+            <div class="container2">
+              <div class="row">
+                <div class="col">
+                  <h3> SEDES </h3>
+                </div>
+              </div>
+            </div>
+
               <div class="grid-container seccion">
-                <h4 class="titulo"> Sedes </h4>
-                <div class="card" style="width: 20rem;">
+                <div class="card cajas" style="width: 20rem;">
                   <img src="Img/sede1-g1.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Sede 1</h5>
@@ -77,7 +83,7 @@
                     <a href="#" class="btn btn-primary boton2">Go somewhere</a>
                   </div>
                 </div>
-                <div class="card" style="width: 20rem;">
+                <div class="card cajas" style="width: 20rem;">
                   <img src="Img/sede1-g2.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Sede 2</h5>
@@ -85,7 +91,7 @@
                     <a href="#" class="btn btn-primary boton2">Go somewhere</a>
                   </div>
                 </div>
-                <div class="card" style="width: 20rem;">
+                <div class="card cajas" style="width: 20rem;">
                   <img src="Img/sede1-g3.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Sede 3</h5>
@@ -104,10 +110,17 @@
                   </div>
                 </div>
               </div>
+
+              <div class="container2">
+                <div class="row">
+                  <div class="col">
+                    <h3> ACTIVIDADES </h3>
+                  </div>
+                </div>
+              </div>
     
               <div class="grid-container seccion">
-                <h4 class="titulo"> Actividades </h4>
-                <div class="card" style="width: 18rem;">
+                <div class="card cajas" style="width: 18rem;">
                   <img src="Img/boxing-icon.svg" class="card-img-top img-act" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Actividad 1</h5>
@@ -115,7 +128,7 @@
                     <a href="#" class="btn btn-primary boton2">Go somewhere</a>
                   </div>
                 </div>
-                <div class="card" style="width: 18rem;">
+                <div class="card cajas" style="width: 18rem;">
                   <img src="Img/musculacion-icon.svg" class="card-img-top img-act" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Actividad 2</h5>
@@ -123,7 +136,7 @@
                     <a href="#" class="btn btn-primary boton2">Go somewhere</a>
                   </div>
                 </div>
-                <div class="card" style="width: 18rem;">
+                <div class="card cajas" style="width: 18rem;">
                   <img src="Img/natacion-icon.svg" class="card-img-top img-act" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Actividad 3</h5>
@@ -146,34 +159,37 @@
 
 
             <footer>
-              <div class="grid-container">
+              <div class="grid-container footer">
                 <div class="grid-item">
                   <h4> FitnessSClub</h4>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sapiente, quasi velit eos explicabo natus dolor quo nisi soluta, voluptatum, repellendus ullam repudiandae quae rerum quas optio! Fugiat, quibusdam aliquid.</p>
-                    <img src="Img/facebook-logo-w.svg" class="card-img-top redes" alt="...">
-                    <img src="Img/instagram-logo-w.svg" class="card-img-top redes" alt="...">
-                    <img src="Img/youtube-logo-w.svg" class="card-img-top redes" alt="...">
+                    <p class="texto"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sapiente, quasi velit eos explicabo natus dolor quo nisi soluta, voluptatum, repellendus ullam repudiandae quae rerum quas optio! Fugiat, quibusdam aliquid.</p>
+                    <div class="grid-container redes-sociales">
+                      <p> Seguinos en: </p>
+                      <a class="redes-sociales" href="https://www.facebook.com" target="_blank"><img src="Img/facebook-logo-w.svg" class="card-img-top redes" alt="..."></a>
+                      <a class="redes-sociales" href="https://www.instagram.com/" target="_blank"><img src="Img/instagram-logo-w.svg" class="card-img-top redes" alt="..."></a>
+                      <a class="redes-sociales" href="https://www.youtube.com/" target="_blank"><img src="Img/youtube-logo-w.svg" class="card-img-top redes" alt="..."></a>
+                    </div>
                 </div>
                 <div class="grid-item">
                   <h4> Sedes </h4>
-                    <p> sede 1 </p>
-                    <p> sede 2 </p>
-                    <p> sede 3 </p>
+                    <p class="texto"> sede 1 </p>
+                    <p class="texto"> sede 2 </p>
+                    <p class="texto"> sede 3 </p>
                 </div>
                 <div class="grid-item">
                   <h4> Recursos </h4>
-                    <p> Blogs </p>
-                    <p> Videos </p>
-                    <p> FAQs </p>
+                    <p class="texto"> Blogs </p>
+                    <p class="texto"> Videos </p>
+                    <p class="texto"> FAQs </p>
                 </div>
                 <div class="grid-item">
                   <h4> Contacto </h4>
-                    <p> Dirección </p>
-                    <p> Email </p>
-                    <p> Teléfono </p>
+                    <p class="texto"> Dirección </p>
+                    <p class="texto"> Email </p>
+                    <p class="texto"> Teléfono </p>
                 </div>
             </div>  
-                <p> &copy; 2021 - Hecho con &#128156 </p>
+                <p class="pie"> &copy; 2021 - Hecho con &#128156 </p>
             </footer>
         </body>
     </html>               
