@@ -11,7 +11,10 @@
             <!-- Css -->
             <link rel="stylesheet" type="text/css" media="all" href="CSS/styles.css">
 
-            <title>GYM</title>
+            <!--Javascript-->
+            <script type="text/javascript" src="JS/funcionesGrupo3.js"></script>
+
+            <title>Fitness Club</title>
             <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
             <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
             <meta name="md:locale" content="es_es"/>
@@ -24,7 +27,7 @@
             
             <nav class="navbar navbar-expand-lg navbar-light bg-white">
               <a href="index.html"> <img src= "Img/logo_250px.png" width="100" class="logo"></a>
-              <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
@@ -33,22 +36,22 @@
                     <a class="nav-link" href="index.html"> Home <span class="sr-only">Inicio</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"> Nosotros </a>
+                    <a class="nav-link" href="nosotros.html"> Nosotros </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"> Sedes </a>
+                    <a class="nav-link" href="sedes.html"> Sedes </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"> Actividades </a>
+                    <a class="nav-link" href="actividades.html"> Actividades </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"> Sumate YA</a>
+                    <a class="nav-link" href="registro.html"> Sumate YA</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"> Contacto </a>
+                    <a class="nav-link" href="contacto.html"> Contacto </a>
                   </li>
                 </ul>
-                <button class="btn btn-primary boton1" type="submit">Button</button>
+                <button class="btn btn-primary boton1" type="button" onclick="ingresa()">Ingresá</button>
               </div>
             </nav>
           </div>
@@ -76,27 +79,36 @@
 
               <div class="grid-container seccion">
                 <div class="card cajas" style="width: 20rem;">
-                  <img src="Img/sede1-g1.jpg" class="card-img-top" alt="...">
+                  <img src="Img/sede1-g1.jpg" class="card-img-top" alt="imagen de edifico del gimnasio">
                   <div class="card-body">
-                    <h5 class="card-title">Sede 1</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                    <h5 class="card-title">Sede Recta Martinolli</h5>
+                    <p class="card-text">Lunes a Viernes de 7 hs. 23 hs.
+                      Sábados de 9 hs. a 20 hs.
+                      Llamanos al 0810-220-6634
+                      sede1@fitnessclub.com.ar</p>
+                    <a href="sede1.html" class="btn btn-primary boton2">Conocé más</a>
                   </div>
                 </div>
                 <div class="card cajas" style="width: 20rem;">
-                  <img src="Img/sede1-g2.jpg" class="card-img-top" alt="...">
+                  <img src="Img/sede1-g2.jpg" class="card-img-top" alt="imagen de edifico del gimnasio">
                   <div class="card-body">
-                    <h5 class="card-title">Sede 2</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                    <h5 class="card-title">Sede Ricardo Rojas</h5>
+                    <p class="card-text">Lunes a Viernes de 7 hs. 23 hs.
+                      Sábados de 9 hs. a 20 hs.
+                      Llamanos al 0810-220-6635
+                      sede2@fitnessclub.com.ar</p>
+                    <a href="sede2.html" class="btn btn-primary boton2">Conocé más</a>
                   </div>
                 </div>
                 <div class="card cajas" style="width: 20rem;">
-                  <img src="Img/sede1-g3.jpg" class="card-img-top" alt="...">
+                  <img src="Img/sede1-g3.jpg" class="card-img-top" alt="imagen de edifico del gimnasio">
                   <div class="card-body">
-                    <h5 class="card-title">Sede 3</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                    <h5 class="card-title">Sede Rio de Janeiro</h5>
+                    <p class="card-text">Lunes a Viernes de 9 hs. 21 hs.
+                      Sábados de 10 hs. a 20 hs.
+                      Llamanos al 0810-220-6636
+                      sede3@fitnessclub.com.ar</p>
+                    <a href="sede3.html" class="btn btn-primary boton2">Conocé más</a>
                   </div>
                 </div>
               </div>
@@ -104,9 +116,15 @@
               <div class="grid-container seccion1">
                 <div class="card">
                   <div class="card-body">
-                    <h2 class="texto1"> Título de la sección </h2>
-                    <p class="texto2"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet expedita mollitia accusantium, est numquam ex quisquam ipsam nisi error illo facilis dolores beatae temporibus consequuntur nam voluptatibus veniam maxime? In?</p>
-                    <button class="btn btn-primary boton3" type="submit">Button</button>
+                    <h2 class="texto1"> Nuestra Filosofía </h2>
+                    <p class="texto2"> En este gimnasio no juzgamos.
+                      Somos una sociedad diversa y tenemos una cultura de diversión.
+                      Nada es mucho ni muy poco.
+                      Buscamos animarte, entusiasmarte y entretenerte.
+                      No hay un solo tipo. Ni una sola razón. Ni un solo camino.
+                      No existen miradas que desaprueben.
+                      Hay lugar para todos.</p>
+                    <a href="registro.html"><button class="btn btn-primary boton3" type="submit">Sumate Ya</button></a>
                   </div>
                 </div>
               </div>
@@ -123,31 +141,31 @@
                 <div class="card cajas" style="width: 18rem;">
                   <img src="Img/boxing-icon.svg" class="card-img-top img-act" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Actividad 1</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                    <h5 class="card-title">Aerobox</h5>
+                    <p class="card-text">El aerobox es una opción diferente para ejercitarse de manera divertida y no sólo quemar calorías.</p>
+                    <a href="registro.html" class="btn btn-primary boton2">Reserva tu turno</a>
                   </div>
                 </div>
                 <div class="card cajas" style="width: 18rem;">
                   <img src="Img/musculacion-icon.svg" class="card-img-top img-act" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Actividad 2</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                    <h5 class="card-title">Spinning</h5>
+                    <p class="card-text">El spinning es un deporte que fomenta el esfuerzo individual por superarse a sí mismo.</p>
+                    <a href="registro.html" class="btn btn-primary boton2">Reserva tu turno</a>
                   </div>
                 </div>
                 <div class="card cajas" style="width: 18rem;">
                   <img src="Img/natacion-icon.svg" class="card-img-top img-act" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Actividad 3</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary boton2">Go somewhere</a>
+                    <h5 class="card-title">Funcional</h5>
+                    <p class="card-text">En estos ejercicios se reclutan tanto los músculos movilizadores como los estabilizadores.</p>
+                    <a href="registro.html" class="btn btn-primary boton2">Reserva tu turno</a>
                   </div>
                 </div>
               </div>
 
 
-              <div class="grid-container seccion1">
+             <div class="grid-container seccion1">
                 <div class="card">
                   <div class="card-body">
                     <h2 class="texto1"> Título de la sección </h2>
@@ -159,15 +177,15 @@
 
 
             <footer>
-              <div class="grid-container footer">
+              <div class="grid-container">
                 <div class="grid-item">
                   <h4> FitnessSClub</h4>
                     <p class="texto"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sapiente, quasi velit eos explicabo natus dolor quo nisi soluta, voluptatum, repellendus ullam repudiandae quae rerum quas optio! Fugiat, quibusdam aliquid.</p>
                     <div class="grid-container redes-sociales">
                       <p> Seguinos en: </p>
-                      <a class="redes-sociales" href="https://www.facebook.com" target="_blank"><img src="Img/facebook-logo-w.svg" class="card-img-top redes" alt="..."></a>
-                      <a class="redes-sociales" href="https://www.instagram.com/" target="_blank"><img src="Img/instagram-logo-w.svg" class="card-img-top redes" alt="..."></a>
-                      <a class="redes-sociales" href="https://www.youtube.com/" target="_blank"><img src="Img/youtube-logo-w.svg" class="card-img-top redes" alt="..."></a>
+                      <img src="Img/facebook-logo-w.svg" class="card-img-top redes" alt="...">
+                      <img src="Img/instagram-logo-w.svg" class="card-img-top redes" alt="...">
+                      <img src="Img/youtube-logo-w.svg" class="card-img-top redes" alt="...">
                     </div>
                 </div>
                 <div class="grid-item">
