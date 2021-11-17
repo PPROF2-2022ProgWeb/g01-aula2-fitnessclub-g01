@@ -1,124 +1,174 @@
 <!DOCTYPE html>
-<html lang="es-ES">
-       
-  <head>
-    <!-- Css -->
-    <link rel="stylesheet" type="text/css" media="all" href="css/registro.css">
-    <title>GYM</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="md:locale" content="es_es"/>
-    <meta name="description" content="pagina de ejemplo">
-    <meta name="keywords" content="ejemplo">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- For responsive pages -->
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  </head>
+<html>
+    <html lang="es-ES">
+        <head>
+            <!-- Bootstrap -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script> 
+            <!-- FONTAVESOME-->
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+            <!-- Css -->
+            <link rel="stylesheet" type="text/css" media="all" href="CSS/registro.css">
+            <!--Javascript-->
+            <script type="text/javascript" src="JS/funcionesGrupo3.js"></script>
+			
 
-  <body>
-         
-    <div class="contenedor">
-      <nav class="nav">
-        <a href="index.html"> <img src= "Img/logo_250px.png" width="100" class="logo"></a>
-        <ul class="menu">
-          <li class="menu-item"><a class="menu-link" href="index.html"> Inicio </a></li>
-          <li class="menu-item"><a class="menu-link" href="#"> Nosotros </a></li>
-          <li class="menu-item"><a class="menu-link" href="#"> Sedes </a></li>
-          <li class="menu-item"><a class="menu-link" href="#"> Actividades </a></li>
-          <li class="menu-item"><a class="menu-link" href="#"> Sumate Ya </a></li>
-          <li class="menu-item"><a class="menu-link" href="#"> Contacto </a></li>
-        </ul>
-      </nav>
-      <button class="btn btn-primary boton1" type="submit">Login</button>
-    </div>
+            
+            
 
-    <div class="container">
-      <div class="row">
-      
-        <div class="col primero">
-          <!--<div class="formulario">-->
-            <form class="row formulario">
-              <div class="intro">
-                <h2>Crea una cuenta nueva</h2>
-                <p>¿Ya tienes una cuenta?<a href="#">Login</a></p>
+            <title>CONTACTO</title>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="md:locale" content="es_es"/>
+            <meta name="description" content="pagina de ejemplo">
+            <meta name="keywords" content="ejemplo">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- For responsive pages -->
+        </head>
+
+        <body>
+          <div class="contenedor">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a href="index.html"> <img src= "Img/logo_250px.png" width="100" class="logo"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html"> Home <span class="sr-only">Inicio</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="nosotros.html"> Nosotros </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="sedes.html"> Sedes </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="actividades.html"> Actividades </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="registro.html"> Sumate YA</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contacto.html"> Contacto </a>
+                  </li>
+                </ul>
+                <button class="btn btn-primary boton1" type="button" onclick="ingresa()">Ingresá</button>
               </div>
-              <div class="col-md-6">
-                <label type="text" id="name" for="user_name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Nombre">
-              </div>
-              <div class="col-md-6">
-                <label for="inputapellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="inputapellido" placeholder="Apellido">
-              </div>
-              <div class="col-12">
-                <label type="date" for="inputDate" class="form-label">Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="inputDate">
-              </div>
-              <div class="col-12">
-                <label for="inputEmail4" class="form-label" placeholder="Email">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
-              </div>
-              <div class="col-12">
-                <label for="inputBarrio" class="form-label barrio">Barrio</label>
-                <select class="form-contol">
-                  <option>Cerro de las Rosas</option>
-                  <option>Jardin</option>
-                  <option>San Vicente</option>
-                  <option>Ameguino</option>
-                  <option>Otro</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <label for="inputAddress2" class="form-label">Actividad de tu interes</label>
-                <select class="form-contol">
-                  <option>Crossfit</option>
-                  <option>Spinnin</option>
-                  <option>Arebox</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <label for="inputAddress2" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="pwd" name="password" placeholder="contraseña">
-              </div>
-              <div class="col-12">
-                <label for="inputAddress2" class="form-label" placeholder=" repetir contraseña">Repetir Contraseña</label>
-                <input type="password" class="form-control" id="pwd" name="password">
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary">Registrate</button>
-              </div>
-              
-              <div class="row">
-                <p class="itemb"> O ingresa con </p>
-                <div> 
-                  <a href="#"><i class="fab fa-facebook"></i></a> 
-                  <a href="#"><i class="fab fa-twitter"></i></a> 
-                  <a href="#"><i class="fab fa-linkedin"></i></a> 
+            </nav>
+          </div> 
+ 
+            <div class="container2">
+             
+                <div class="col">
+                  <h3> Registro </h3>
+                    <h5>Ingresá tus datos y comenzá a disfrutar de nuestros planes <h5>
+               </div>
+            </div>
+
+<!--  Registro -->
+               <div class="grid-container seccion">
+                <div class="card cajas" style="width: 30rem;">
+                    <div class="card-body">
+                    <h4 class="card-title"> Formulario de Registro</h4>
+                    <form id="form1" action="envio-contacto.php" method="POST"   class="row g-3 needs-validation" novalidate>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <i class="far fa-user input-group-text"></i>
+                            </div>
+                            <label for="nombre" class="form-label"></label>
+                            <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                            <div class="valid-feedback">
+                              Se ve bien!
+                            </div>
+                          </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <i class="far fa-user input-group-text"></i>
+                            </div>
+                            <label for="apellido" class="form-label"></label>
+                            <input name="apellido" type="text" class="form-control"  id="apellido" placeholder="Apellido" required>
+                            <div class="valid-feedback">
+                              Se ve bien!
+                            </div>
+                          </div>
+                          <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                           <i class="far fa-id-card input-group-text"></i>
+                            </div>
+                            <label for="tipodocumento" class="form-label"></label>
+                            <input name="tipodocumento" type="text" class="form-control" placeholder="Tipo de documento" id="tipodocumento" value="tipodocumento" required>
+                          </div>
+                          <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                            <i class="far fa-id-card input-group-text"></i>
+                            </div>
+                            <label for="dni" class="form-label"></label>
+                            <input name="dni" type="number" class="form-control" placeholder="dni" id="dni" value="dni" required></input>
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                                          <i class="far fa-calendar-alt input-group-text"></i>
+                          </div>
+                          <label for="fechanacimiento" class="form-label"></label>
+                          <input name="fechanacimiento" type="date" class="form-control" placeholder="FechaNacimiento" id="fechanacimiento" value="Fecha de Nacimiento" required></input>
+                                    </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <i class="far fa-envelope input-group-text"></i>
+                            </div>
+                            <label for="email" class="form-label"></label>
+                            <input name="email" type="email" class="form-control" placeholder="email" id="email" value="Email" required></input>
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                              <i class="fas fa-key input-group-text"></i>
+                          </div>
+                          <label for="direccion" class="form-label"></label>
+                          <input name="direccion" type="text" class="form-control" placeholder="direccion" id="direccion" value="direccion" required></input>
+                      </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <i class="fas fa-key input-group-text"></i>
+                            </div>
+                            <label for="password" class="form-label"></label>
+                            <input name="password" type="password" class="form-control" placeholder="password" id="password" value="password" required></input>
+                        </div>
+                          <div class="input-group mb-3">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                              <label class="form-check-label" for="invalidCheck">
+                              Acepto los términos y condiciones.
+                              </label>
+                              <div class="invalid-feedback">
+                              Debes estar de acuerdo antes de enviar
+                              </div>
+                            </div>
+                          </div>
+                        <button class="button1" type="submit" onclick="exito();">Enviar</button>
+                        <div id="mensaje"></div>
+                      </form>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </form>  
-          
-          <!--</div>-->
-        </div>
-        <div class="col ipsum">
-          <h1>Sumate YA </h1>
-          <p class="subtitulo2">
-            Disfruta de amplios espacios para tu entrenamiento al mejor precio de Córdoba.
-            ¡Aprovechá y no te quedes sin entrenar!
-          </p>
-      </div>  
-    </div>
+            <!-- FIN  CONTACTO -->    
 
-    <footer>
-              <div class="grid-container footer">
+       <footer>
+              <div class="grid-container">
                 <div class="grid-item">
                   <h4> FitnessSClub</h4>
                     <p class="texto"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sapiente, quasi velit eos explicabo natus dolor quo nisi soluta, voluptatum, repellendus ullam repudiandae quae rerum quas optio! Fugiat, quibusdam aliquid.</p>
                     <div class="grid-container redes-sociales">
                       <p> Seguinos en: </p>
-                      <a class="redes-sociales" href="https://www.facebook.com" target="_blank"><img src="Img/facebook-logo-w.svg" class="card-img-top redes" alt="..."></a>
-                      <a class="redes-sociales" href="https://www.instagram.com/" target="_blank"><img src="Img/instagram-logo-w.svg" class="card-img-top redes" alt="..."></a>
-                      <a class="redes-sociales" href="https://www.youtube.com/" target="_blank"><img src="Img/youtube-logo-w.svg" class="card-img-top redes" alt="..."></a>
+                      <img src="Img/facebook-logo-w.svg" class="card-img-top redes" alt="...">
+                      <img src="Img/instagram-logo-w.svg" class="card-img-top redes" alt="...">
+                      <img src="Img/youtube-logo-w.svg" class="card-img-top redes" alt="...">
                     </div>
                 </div>
                 <div class="grid-item">
@@ -142,5 +192,7 @@
             </div>  
                 <p class="pie"> &copy; 2021 - Hecho con &#128156 </p>
             </footer>
-</body>
+            <script type="text/javascript" src="JS/funcionesGrupo3.js"></script>
+        </body>
+    </html>               
 </html>
