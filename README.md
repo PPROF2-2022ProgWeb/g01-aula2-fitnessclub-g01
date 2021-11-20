@@ -4,7 +4,7 @@
 
 Sistema para reserva de turnos del Gimnasio CHECK IN, siendo utilizado tanto por el Administrador como por el deportista
 
-* Link Netlify: https://fitnessclubcba.netlify.app/
+* Link Netlify: https://lucid-jang-23b1b2.netlify.app
 
 ### Rama Documentación
 
