@@ -4,7 +4,7 @@
 
 Sistema para reserva de turnos del Gimnasio CHECK IN, siendo utilizado tanto por el Administrador como por el deportista
 
-* Link Netlify: fitneesclubgym.netlify.app
+* Link Netlify: fitnessclubgym.netlify.app
 
 ### Rama Documentación
 
