@@ -1,133 +1,158 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Reserva</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/actividadescss.css">
-	<link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
-	<script src="bootstrap5/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
+    <html lang="es-ES">
+        <head>
+            <!-- Bootstrap -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script> 
+            <!-- FONTAVESOME-->
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+            <!-- Css -->
+            <link rel="stylesheet" type="text/css" media="all" href="CSS/sedes.css">
+            <!--Javascript-->
+            <script type="text/javascript" src="JS/funcionesGrupo3.js"></script>
 
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-white">
-				  <a href="index.html"> <img src= "Img/logo_250px.png" width="100" class="logo"></a>
-				  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				  </button>
-				  <div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ml-auto">
-					  <li class="nav-item active">
-						<a class="nav-link" href="index.html"> Home <span class="sr-only">Inicio</span></a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="#"> Nosotros </a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="#"> Sedes </a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="#"> Actividades </a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="#"> Sumate YA</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="#"> Contacto </a>
-					  </li>
-					</ul>
-					<button class="btn btn-primary boton1" type="submit">Login</button>
-				  </div>
-				</nav>
-			  </div>
+            <title>Actividades</title>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="md:locale" content="es_es"/>
+            <meta name="description" content="pagina de ejemplo">
+            <meta name="keywords" content="ejemplo">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- For responsive pages -->
+        </head>
 
-		<!-- Carrusel -->
-<div>	
-	<div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <body>
+          <div class="contenedor">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a href="index.html"> <img src= "Img/logo_250px.png" width="100" class="logo"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html"> Home <span class="sr-only">Inicio</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="nosotros.html"> Nosotros </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="sedes.html"> Sedes </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="actividades.html"> Actividades </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="registro.html"> Sumate YA</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contacto.html"> Contacto </a>
+                  </li>
+                </ul>
+                <button class="btn btn-primary boton1" type="button" onclick="ingresa()">Ingresá</button>
+              </div>
+            </nav>
+          </div> 
+ 
+         <div class="container2"></div>
+         
+              <!-- TODAS LAS SEDES-->  
+      <section class="actividades text-center">
+         <div class="container p-5">
+           <h1> Actividades</h1>
+          
+           <!-- CAROUSEL FOTOS-->  
+              <!-- Carousel -->
+           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/funcional-img.jpg" class="d-block w-70" alt="funcional">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/aerobox-img.jpg" class="d-block w-70" alt="aerobox">
+                  </div>
+                  <div class="carousel-item">
+                  <img src="img/imagen-1.jpg" class="d-block w-70" alt="spinning">
+                  </div>
 
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-  </div>
-  
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="img/imagen1.jpg" alt="aerobox" class="d-block" style="width:100%">
-    </div>
-    <div class="carousel-item">
-      <img src="img/funcional.jpg" alt="funcional" class="d-block" style="width:100%">
-    </div>
-    <div class="carousel-item">
-      <img src="img/spinning4.jpg" alt="spinning" class="d-block" style="width:100%">
-    </div>
-  </div>
-  
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-	</div>
-</div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+          </section>
+            <!-- FIN  CAROUSEL -->  
+            <!-- Iconos -->
+              <div class="grid-container seccion">
+                <div class="card cajas" style="width: 18rem;">
+                  <img src="Img/boxing-icon.svg" class="card-img-top img-act" alt="aerobox-icon">
+                  <div class="card-body">
+                    <h5 class="card-title">Aerobox</h5>
+                    <p class="card-text">Da siempre lo mejor de Ti...</p>
+                    <a href="login.html" class="btn btn-primary boton2">Sumate Ya</a>
+                  </div>
+                </div>
+                <div class="card cajas" style="width: 18rem;">
+                  <img src="Img/funcional-icon.svg" class="card-img-top img-act" alt="funcional-icon">
+                  <div class="card-body">
+                    <h5 class="card-title">Funcional</h5>
+                    <p class="card-text">Da siempre lo mejor de Ti...</p>
+                    <a href="login.html" class="btn btn-primary boton2">Sumate Ya</a>
+                  </div>
+                </div>
+                <div class="card cajas" style="width: 18rem;">
+                  <img src="Img/spinning-icon.svg" class="card-img-top img-act" alt="spinning-icon">
+                  <div class="card-body">
+                    <h5 class="card-title">Spinning</h5>
+                    <p class="card-text">Da siempre lo mejor de Ti...</p>
+                    <a href="login.html" class="btn btn-primary boton2">Sumate Ya</a>
+                  </div>
+                </div>
+              </div>
 
- <!-- Iconos -->
-<div class="container-fluid mt-3">
-<div class="row">
-	<div class="col p-3">
-  <div class="card" style="width:300px">
-    <img class="card-img-top" src="iconos/boxing-icon.svg" alt="aerobox" style="width:75%">
-    <div class="card-body">
-      <h2 class="card-title">Aerobox</h2>
-      <p class="card-text">Da siempre lo mejor de ti...</p>
-      <a href="#" class="btn btn-primary">Sumate YA</a>
-    </div>
-  </div>
-  </div>
-  <div class="col p-3">
-  <div class="card" style="width:300px">
-    <img class="card-img-top" src="iconos/funcional-icon.svg" alt="funcional" style="width:75%">
-    <div class="card-body">
-      <h2 class="card-title">Funcional</h2>
-      <p class="card-text">Da siempre lo mejor de ti...</p>
-      <a href="#" class="btn btn-primary">Sumate YA</a>
-    </div>
-  </div>
-  </div>
- <div class="col p-3">
-  <div class="card" style="width:300px">
-    <img class="card-img-top" src="iconos/spinning-icon.svg" alt="spinning" style="width:75%">
-    <div class="card-body">
-      <h2 class="card-title">Spinning</h2>
-      <p class="card-text">Da siempre lo mejor de ti...</p>
-      <a href="#" class="btn btn-primary  btn-block">Sumate YA</a>
-    </div>
-  </div>
-  </div>
-</div>
-</div>
-	
-	 <footer>
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <p> Recta Martinolli 7913 - Ciudad de Córdoba </p>
-                        <p> Ricardo Rojas 7438 - Edificio de servicio 1 - Ciudad de Córdoba </p>
-                        <p> Rio de Janeiro 869 Barrio Lomas de Villa Allende, Córdoba </p> 
+          <footer>
+              <div class="grid-container">
+                <div class="grid-item">
+                  <h4> FitnessSClub</h4>
+                    <p class="texto"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sapiente, quasi velit eos explicabo natus dolor quo nisi soluta, voluptatum, repellendus ullam repudiandae quae rerum quas optio! Fugiat, quibusdam aliquid.</p>
+                    <div class="grid-container redes-sociales">
+                      <p> Seguinos en: </p>
+                      <img src="Img/facebook-logo-w.svg" class="card-img-top redes" alt="...">
+                      <img src="Img/instagram-logo-w.svg" class="card-img-top redes" alt="...">
+                      <img src="Img/youtube-logo-w.svg" class="card-img-top redes" alt="...">
                     </div>
-                    <div class="grid-item">
-                        <p> 0351 618-2377 </p>
-                        <p> 0351 349-0016 </p>
-                        <p> 0351 754-8110 </p>
-                    </div>
-                </div>  
-                <p> &copy; 2021 - Hecho con &#128156 </p>
+                </div>
+                <div class="grid-item">
+                  <h4> Sedes </h4>
+                    <p class="texto"> sede 1 </p>
+                    <p class="texto"> sede 2 </p>
+                    <p class="texto"> sede 3 </p>
+                </div>
+                <div class="grid-item">
+                  <h4> Recursos </h4>
+                    <p class="texto"> Blogs </p>
+                    <p class="texto"> Videos </p>
+                    <p class="texto"> FAQs </p>
+                </div>
+                <div class="grid-item">
+                  <h4> Contacto </h4>
+                    <p class="texto"> Dirección </p>
+                    <p class="texto"> Email </p>
+                    <p class="texto"> Teléfono </p>
+                </div>
+            </div>  
+                <p class="pie"> &copy; 2021 - Hecho con &#128156 </p>
             </footer>
-
-	
-</body>
+        </body>
+    </html>               
 </html>
