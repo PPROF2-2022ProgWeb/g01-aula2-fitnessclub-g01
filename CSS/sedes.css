@@ -316,8 +316,7 @@ footer p {
 }
 
 .redes {
-    width: 5%;
-    margin: 1%;
+    width: 3em;
 }
 
 .texto {
@@ -327,6 +326,7 @@ footer p {
 .pie {
     margin-top: 3%;
 }
+
 
 
 /*------Responsive-------*/
