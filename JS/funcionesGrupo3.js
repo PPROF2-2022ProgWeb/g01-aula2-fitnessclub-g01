@@ -1,6 +1,6 @@
 function exito(){
-    alert("Su registro ha sido exitoso");
-    }
+  alert("Su registro ha sido enviado con Exito");
+  }
 
 function ingresa(){
         var delay = 1000;
@@ -22,6 +22,7 @@ function paginaRedirect(){
     },delay);
 
     }
+<<<<<<< HEAD
 /*largo de carateres
     var fields = [
         "checkout_billing_address_first_name",
@@ -35,3 +36,27 @@ function paginaRedirect(){
       for (i = 0; i < fields.length; i++) {
          document.getElementById(fields[i]).maxLength = 35;
       }*/
+=======
+
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})();
+>>>>>>> 6387be89eeb0606196ada4585e54a692104608e5
