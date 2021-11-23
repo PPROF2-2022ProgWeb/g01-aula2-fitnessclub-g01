@@ -21,9 +21,7 @@
     <title> FORMULARIO </title>
 </head>
 <body>
-     <h4> <a href="registro.html"> Regresar </a> </h4>
-     <input type="button" value="volver" onclick="pVolver();"><br>
-     <input type="button" value="Submit" onclick="paginaRedirct();"></br>            
+    <button type="button" class="btn btn-primary" onclick="registroRedirect()"> Volver </button>     
 
       <div id="mensaje"> </div>
         <?php
@@ -39,6 +37,7 @@
         $Provincia = $_POST["Provincia"];        
         $Pais = $_POST["Pais"];          
         $Contraseña = $_POST["Contraseña"]; 
+
 
         print "<h1> Nombre: $Nombre </h1>";
         print "\n";
@@ -69,8 +68,6 @@
         if(!$con){
             die("Conexion fallida: ". mysql_connect_error());
         }
-
-
 
 
         $sql = "SELECT * FROM `persona`;";

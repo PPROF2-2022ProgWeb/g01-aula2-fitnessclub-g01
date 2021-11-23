@@ -3,10 +3,17 @@ function exito(){
   }
 
 
-function homeRedirect(){
+function loginRedirect(){
         window.location.href= "login.html";
     }
-    
+
+function registroRedirect(){
+      window.location.href= "registro.html";
+  }
+
+function dashboardRedirect(){
+      window.location.href= "dashboard_usuario.html";
+  }
 
 
   

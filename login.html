@@ -17,13 +17,26 @@
             <!--Javascript-->
             <script type="text/javascript" src="JS/funcionesGrupo3.js"></script>
 
-            <title>Login</title>
+            <!-- Title -->
+	          <title>Login</title>
+            
+            <!-- Description -->
+             <meta name="description" content="Gimnasio FitnessClub en CÓRDOBA. Tenemos el mejor equipo. FitnessClub en Recta Martinolli Ricardo Rojas Villa Allende. Clases de  spinning, boxing, funcional">
+
+            <!-- Keywords -->
             <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
             <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
             <meta name="md:locale" content="es_es"/>
-            <meta name="description" content="pagina de ejemplo">
-            <meta name="keywords" content="ejemplo">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- For responsive pages -->
+            <meta name="keywords" content="gimnasio, gimnasios, club, gym, red, clubes, gimnasia, fitness, cordoba, Recta Martinolli, Ricardo Rojas, Villa Allende, actividad fisica, deporte, deportes, wellness, historia, equipo, profe, profes">
+            <meta name="origen" content="FitnessClub" />
+            <meta name="author" content="Grupo 3: CheckIN" />
+            <meta name="copyright" content="&copy; 2021 FitnessClub" />
+            <meta name="locality" content="CÓRDOBA, Argentina" />
+            <meta name="language" content="es" />
+            <meta name="revisit-after" content="1 days" />
+            <meta name="robots" content="index, follow" />
+            <meta name="googlebot" content="index, follow" />
         </head>
 
         <body>
@@ -54,7 +67,7 @@
                     <a class="nav-link" href="contacto.html"> Contacto </a>
                   </li>
                 </ul>
-                <button class="btn btn-primary boton1" type="button" onclick="homeRedirect()">Ingresá</button>
+                <button class="btn btn-primary boton1" type="button" onclick="loginRedirect()">Ingresá</button>
               </div>
             </nav>
           </div> 
@@ -68,9 +81,9 @@
                 </div>
                          <form class="form" action="envio-login.php" method="post">  
                              <label for="fname">Email:</label><br>
-                             <input type="text" name="Email" id="Email" value="Email" class="Email" required><br>
+                             <input type="text" name="Email" id="Email" placeholder="Email" class="Email" required><br>
                              <label for="lname">Password:</label><br>
-                             <input type="password" name="Contraseña" id="Contraseña" value="Contraseña" class="Contraseña" required><br>
+                             <input type="password" name="Contraseña" id="Contraseña" placeholder="Contraseña" class="Contraseña" required minlength="8" maxlength="12"><br>
                          </form>
                 <div class="contenedor1">
                         <a href="dashboard_usuario.html"><button class="button1"> Ingreso de Usuario</button></a>
