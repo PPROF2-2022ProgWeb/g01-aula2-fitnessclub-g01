@@ -31,7 +31,7 @@
                     </div>
                     <div class="menu">
                         <a href="#" class="d-block p-3 text-ligth"> Usuarios </a>
-                        <a href="turnos.html" class="d-block p-3 text-ligth"> Turnos </a>
+                        <a href="#" class="d-block p-3 text-ligth"> Turnos </a>
                         <a href="#" class="d-block p-3 text-ligth"> Mis clases </a>
                         <a href="#" class="d-block p-3 text-ligth"> Mis pagos </a>
                         <a href="index.html" class="d-block p-3 text-ligth"> Salir </a>
@@ -61,7 +61,7 @@
                                         <a class="dropdown-item" href="#"> Mi perfil </a>
                                         <a class="dropdown-item" href="#"> Suscripcion </a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#"> Cerrar sesión</a>
+                                        <a class="dropdown-item" href="index.html"> Cerrar sesión</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -85,7 +85,42 @@
                             <div class="container">
                                 <div class="card">
                                     <h5> Reserva de Turnos</h5>
-                                    <iframe src="https://calendar.google.com/calendar/embed?src=rncl0ukkdt4kkivoqb56581u0g%40group.calendar.google.com&ctz=America%2FArgentina%2FCordoba" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                                    <form class="form" action="turnos.php" method="post">
+                                        <div class="input-group mb-3">
+                                            <p> Ingrese la Sede: 1- Sede1, 2- Sede2, 3- Sede3</p>
+                                            <label for="Sedes" class="form-label"></label>
+                                            <input type="text" name="Sedes" class="form-control" id="Sedes" placeholder="Sede" required minlength="2">
+                                            <div class="valid-feedback">
+                                              Se ve bien!
+                                            </div>
+                                          </div>
+                                          <div class="input-group mb-3">
+                                            <p> Ingrese Profesor: 1- Juan Pérez, 2- Ana Gonzalez, 3- Pablo López</p>
+                                            <label for="Profesor" class="form-label"></label>
+                                            <input type="text" name="Profesor" class="form-control" id="Profesor" placeholder="Profesor" required minlength="2">
+                                            <div class="valid-feedback">
+                                              Se ve bien!
+                                            </div>
+                                          </div>
+                                          <div class="input-group mb-3">
+                                            <p> Ingrese Actividad: 1- Aerobox, 2- Spinning, 3- Funcional</p>
+                                            <label for="Actividad" class="form-label"></label>
+                                            <input type="text" name="Actividad" class="form-control" id="Actividad" placeholder="Actividad" required minlength="2">
+                                            <div class="valid-feedback">
+                                              Se ve bien!
+                                            </div>
+                                          </div>
+                                          <div class="input-group mb-3">
+                                            <p> Ingrese Horario:</p>
+                                            <label for="Horario" class="form-label"></label>
+                                            <input type="text" name="Horario" class="form-control" id="Horario" placeholder="Horario" required minlength="2">
+                                            <div class="valid-feedback">
+                                              Se ve bien!
+                                            </div>
+                                          </div>
+                                            <button class="btn btn-secondary my-2 my-sm-0" type="submit"> Reservar turno </button>
+                                          </div>
+                                      </form>
                                 </div>
                             </div>
                         </section>
@@ -93,4 +128,4 @@
                 </div>
             </div>
         </body>
-            
+    </html>

@@ -17,7 +17,7 @@
             <!--Javascript-->
             <script type="text/javascript" src="JS/funcionesGrupo3.js"></script>
 
-            <title>Sedes</title>
+            <title>Login</title>
             <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
             <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
             <meta name="md:locale" content="es_es"/>
@@ -66,15 +66,14 @@
                 <h1> BIENVENIDOS </h1>
                 <p> Te invitamos a formar parte de Fitness Club, el Mejor Gym de Cordoba Capital, donde te brindaremos los mejores planes a los precios mas accesibles. </p>
                 </div>
-                         <form class="form">  
+                         <form class="form" action="envio-login.php" method="post">  
                              <label for="fname">Email:</label><br>
-                             <input type="text" id="fname" name="fname" value=" " class="interior"><br>
+                             <input type="text" name="Email" id="Email" value="Email" class="Email" required><br>
                              <label for="lname">Password:</label><br>
-                             <input type="text" id="lname" name="lname" class="interior">
+                             <input type="password" name="Contraseña" id="Contraseña" value="Contraseña" class="Contraseña" required><br>
                          </form>
                 <div class="contenedor1">
-                        <a href="dashboard_usuario.html"><button class="button1"> Ingresar como deportista</button></a>
-                        <a href="dashboard_admin.html"><button class="button1"> Ingresar como administrador</button></a>
+                        <a href="dashboard_usuario.html"><button class="button1"> Ingreso de Usuario</button></a>
                         <a href="registro.html"><button class="button2"> Registrarse </button></a>  
                 </div>
                     

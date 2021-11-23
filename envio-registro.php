@@ -27,39 +27,66 @@
 
       <div id="mensaje"> </div>
         <?php
-        $nombre= $_POST["nombre"];
-        $apellido= $_POST["apellido"];
-        $tipodocumento= $_POST["tipodocumento"];
-        $dni=$_POST["dni"];
-        $fechanacimiento=$_POST["fechanacimiento"];
-        $email=$_POST["email"];
-        $direccion=$_POST["direccion"];
-        $password=$_POST["password"];
+        //Recibo todos los datos del formulario ////
+        $Nombre = $_POST["Nombre"];
+        $Apellido = $_POST["Apellido"];
+        $TipoDocumento = $_POST["TipoDocumento"];
+        $Documento = $_POST["Documento"];
+        $FechaNacimiento = $_POST["FechaNacimiento"];
+        $Email = $_POST["Email"];
+        $Direccion = $_POST["Direccion"];
+        $Localidad = $_POST["Localidad"];
+        $Provincia = $_POST["Provincia"];        
+        $Pais = $_POST["Pais"];          
+        $Contraseña = $_POST["Contraseña"]; 
 
-
-        print "<h1> Nombre: $nombre </p>";
-        print "\n"
-        print "<h1> Apellido: $apellido </p>";
-        print "\n"
-        print "<h1> Tipo de Documento: $tipodocumento </p>";
-        print "\n"
-        print "<h1> DNI: $dni  </p>";
-        print "\n"
-        print "<h1> Fecha de Nacimiento: $fechanacimiento </p>";
-        print "\n"
-        print "<h1> Email: $email </p>";
-        print "\n"
-        print "<h1> Direccion: $direccion </p>";
-        print "\n"
-        print "<h1> Password: $password </p>";
-        print "\n"
+        print "<h1> Nombre: $Nombre </h1>";
+        print "\n";
+        print "<h1> Apellido: $Apellido </h1>";
+        print "\n";
+        print "<h1> Tipo de Documento: $TipoDocumento </h1>";
+        print "\n";
+        print "<h1> N° Documento: $Documento  </h1>";
+        print "\n";
+        print "<h1> Fecha de Nacimiento: $FechaNacimiento </h1>";
+        print "\n";
+        print "<h1> Email: $Email </h1>";
+        print "\n";
+        print "<h1> Direccion: $Direccion </h1>";
+        print "\n";
+        print "<h1> Localidad: $Localidad </h1>";
+        print "\n";
+        print "<h1> Provincia: $Provincia </h1>";
+        print "\n";
+        print "<h1> Pais: $Pais </h1>";
+        print "\n";
+        print "<h1> Password: $Contraseña </h1>";
+        print "\n";
 
 
         include("datosDB.php");
-        $con = mysqli_connect($host, $usuario, $clave, $schema) or die ("No se ha podido conectar al ser de Base de Datos");
+        $con = mysqli_connect($servername, $username, $password, $database) or die ("No se ha podido conectar al ser de Base de Datos");
         if(!$con){
             die("Conexion fallida: ". mysql_connect_error());
         }
+
+
+
+
+        $sql = "SELECT * FROM `persona`;";
+
+        $db = mysqli_select_db($con, $database) or die ( "Upps! no se ha podido conectar a la base de datos" );
+        $consulta = "INSERT INTO persona (Nombre, Apellido, TipoDocumento, Documento, FechaNacimiento, Email, Direccion, Localidad, Provincia, Pais, Contraseña) VALUES ('$Nombre', '$Apellido', '$TipoDocumento', '$Documento', '$FechaNacimiento', '$Email', '$Direccion', '$Localidad', '$Provincia', '$Pais', '$Contraseña')";
+        // Usamos esas variables:
+        if (mysqli_query ($con, $consulta)){
+            echo "<h3>Registro agregado.</h3>";
+            } else {
+            echo "<h3>No se agregó nuevo registro</h3>";
+            echo "Error: " . $consulta . "<br>" . mysqli_error($con);
+        }
+        mysqli_close($con);
+
+
         ?>
 
        

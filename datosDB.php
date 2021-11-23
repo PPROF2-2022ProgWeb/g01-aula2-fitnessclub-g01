@@ -1,12 +1,14 @@
 <?php
-$host="localhost:3307";
-$usuario="root";
-$clave="checkin2021";
-$schema="checkin";
+$servername = "localhost";
+$database = "checkin2021";
+$username = "admin";
+$password = "checkin2021";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+    mysqli_query($conn, "SET character_set_result=utf8");
+// Check connection
+if ($conn->connect_error) {
+    die("Database error : ". $conn->connect_error);
+}
 
-$conn = new mysql($host, $usuario, $clave, $schema);
-     mysqli_query($conn , "SET character_set_result=utf8");
-     if($conn->connect_error){
-         die("Database Error : " . $conn->connect_error);
-     }
 ?>
