@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <html lang="es-ES">
+        <head>
+            <!-- Bootstrap -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script> 
+           <!-- FONTAVESOME-->
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+            <!-- Css -->
+            <link rel="stylesheet" type="text/css" media="all" href="CSS/registro.css">
+            <!--Javascript-->
+            <script type="text/javascript" src="JS/funcionesGrupo3.js"></script>
+
+            
+            <!-- Title -->
+	          <title>Registro</title>
+            
+            <!-- Description -->
+             <meta name="description" content="Gimnasio FitnessClub en CÓRDOBA. Tenemos el mejor equipo. FitnessClub en Recta Martinolli Ricardo Rojas Villa Allende. Clases de  spinning, boxing, funcional">
+
+            <!-- Keywords -->
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="md:locale" content="es_es"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- For responsive pages -->
+            <meta name="keywords" content="gimnasio, gimnasios, club, gym, red, clubes, gimnasia, fitness, cordoba, Recta Martinolli, Ricardo Rojas, Villa Allende, actividad fisica, deporte, deportes, wellness, historia, equipo, profe, profes">
+            <meta name="origen" content="FitnessClub" />
+            <meta name="author" content="Grupo 3: CheckIN" />
+            <meta name="copyright" content="&copy; 2021 FitnessClub" />
+            <meta name="locality" content="CÓRDOBA, Argentina" />
+            <meta name="language" content="es" />
+            <meta name="revisit-after" content="1 days" />
+            <meta name="robots" content="index, follow" />
+            <meta name="googlebot" content="index, follow" />
+        </head>
+
+        <body>
+          <div class="contenedor">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a href="index.html"> <img src= "Img/logo_250px.png" width="100" class="logo"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html"> Home <span class="sr-only">Inicio</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="nosotros.html"> Nosotros </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="sedes.html"> Sedes </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="actividades.html"> Actividades </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="registro.html"> Sumate YA</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contacto.html"> Contacto </a>
+                  </li>
+                </ul>
+                <button class="btn btn-primary boton1" type="button" onclick="loginRedirect()">Ingresá</button>
+              </div>
+            </nav>
+          </div> 
+ 
+            <div class="container2">
+             
+                <div class="col">
+                  <h3> Registro </h3>
+                    <h5>Ingresá tus datos y comenzá a disfrutar de nuestros planes <h5>
+               </div>
+            </div>
+
+<!--  Registro -->
+               <div class="grid-container seccion">
+                <div class="card cajas" style="width: 30rem;">
+                    <div class="card-body">
+                    <h4 class="card-title"> Formulario de Registro</h4>
+                    <form name="form" action="envio-registro.php" method="post"  class="row g-3 needs-validation" novalidate>
+                      <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                              <i class="far fa-user input-group-text"></i>
+                          </div>
+                          <label for="Nombre" class="form-label"></label>
+                          <input type="text" name="Nombre" class="form-control" id="Nombre" placeholder="Nombre" required minlength="2">
+                          <div class="valid-feedback">
+                            Se ve bien!
+                          </div>
+                          <div class="invalid-feedback">
+                            El nombre debe tener un mínimo de dos caracteres
+                          </div>
+                        </div>
+                      <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                              <i class="far fa-user input-group-text"></i>
+                          </div>
+                          <label for="Apellido" class="form-label"></label>
+                          <input type="text" name="Apellido" class="form-control"  id="Apellido" placeholder="Apellido" required minlength="2">
+                          <div class="valid-feedback">
+                            Se ve bien!
+                          </div>
+                          <div class="invalid-feedback">
+                            El nombre debe tener un mínimo de dos caracteres
+                          </div>
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                         <i class="far fa-id-card input-group-text"></i>
+                          </div>
+                          <label for="TipoDocumento" class="form-label"></label>
+                          <input  type="text" name="TipoDocumento" class="form-control" placeholder="TipoDocumento" id="TipoDocumento" value="DNI" required>
+                          <div class="valid-feedback">
+                            Se ve bien!
+                          </div>
+                          <div class="invalid-feedback">
+                            Complete el campo
+                          </div>
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                          <i class="far fa-id-card input-group-text"></i>
+                          </div>
+                          <label for="Documento" class="form-label"></label>
+                          <input  type="text" name="Documento" class="form-control" placeholder="Documento" id="Documento" required></input>
+                          <div class="valid-feedback">
+                            Se ve bien!
+                          </div>
+                          <div class="invalid-feedback">
+                            Complete el campo
+                          </div>
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <i class="far fa-calendar-alt input-group-text"></i>
+                        </div>
+                        <label for="FechaNacimiento" class="form-label"></label>
+                        <input type="text" name="FechaNacimiento" class="form-control" placeholder="dd/mm/aaaa" id="FechaNacimiento" required></input>
+                        <div class="valid-feedback">
+                          Se ve bien!
+                        </div>
+                        <div class="invalid-feedback">
+                          Complete el campo
+                        </div>
+                      </div>
+                      <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                              <i class="far fa-envelope input-group-text"></i>
+                          </div>
+                          <label for="Email" class="form-label"></label>
+                          <input type="Email" name="Email" class="form-control" placeholder="Email" id="Email"  required></input>
+                          <div class="valid-feedback">
+                            Se ve bien!
+                          </div>
+                          <div class="invalid-feedback">
+                            Complete el campo
+                          </div>
+                        </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <i class="fas fa-map-marker-alt input-group-text"></i>
+                        </div>
+                        <label for="Direccion" class="form-label"></label>
+                        <input  type="text" name="Direccion" class="form-control" placeholder="Direccion" id="Direccion"  required></input>
+                        <div class="valid-feedback">
+                          Se ve bien!
+                        </div>
+                        <div class="invalid-feedback">
+                          Complete el campo
+                        </div>
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <i class="fas fa-map-marker-alt input-group-text"></i>
+                        </div>
+                        <label for="Localidad" class="form-label"></label>
+                        <input type="text" name="Localidad" class="form-control" placeholder="Localidad" id="Localidad"  required></input>
+                        <div class="valid-feedback">
+                          Se ve bien!
+                        </div>
+                        <div class="invalid-feedback">
+                          Complete el campo
+                        </div>
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <i class="fas fa-map-marker-alt input-group-text"></i>
+                        </div>
+                        <label for="Provincia" class="form-label"></label>
+                        <input type="text" name="Provincia" class="form-control" placeholder="Provincia" id="Provincia"  required></input>
+                        <div class="valid-feedback">
+                          Se ve bien!
+                        </div>
+                        <div class="invalid-feedback">
+                          Complete el campo
+                        </div>
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <i class="fas fa-map-marker-alt input-group-text"></i>
+                        </div>
+                        <label for="Pais" class="form-label"></label>
+                        <input type="text" name="Pais" class="form-control" placeholder="Pais" id="Pais" required></input>
+                        <div class="valid-feedback">
+                          Se ve bien!
+                        </div>
+                        <div class="invalid-feedback">
+                          Complete el campo
+                        </div>
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <i class="fas fa-key input-group-text"></i>
+                        </div>
+                        <label for="Contraseña" class="form-label"></label>
+                        <input type="password" name="Contraseña" class="form-control" placeholder="Contraseña" id="Contraseña"  required minlength="8" maxlength="12"></input>
+                        <div class="valid-feedback">
+                          Se ve bien!
+                        </div>
+                        <div class="invalid-feedback">
+                          La contraseña debe contener entre 8 y 12 caracteres
+                        </div>
+                      </div>
+
+                        <div class="input-group mb-3">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                            Acepto los términos y condiciones.
+                            </label>
+                            <div class="invalid-feedback">
+                            Debes estar de acuerdo antes de enviar
+                            </div>
+                          </div>
+                        </div>
+                      <button class="button1" type="submit" value="Registrar" onclick="exito();">Enviar</button>
+                      <div id="mensaje"></div>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- FIN  CONTACTO -->    
+
+            <footer>
+              <div class="grid-container footer">
+                <div class="grid-item">
+                  <h4> FitnessSClub</h4>
+                    <p class="texto"> ¡Tu mejor versión te espera!</p>
+                    <div class="grid-container redes-sociales">
+                      <p> Seguinos en: </p>
+                      <a class="redes-sociales" href="https://www.facebook.com" target="_blank"><img src="Img/facebook-logo-w.svg" class="card-img-top redes" alt="..."></a>
+                      <a class="redes-sociales" href="https://www.instagram.com/" target="_blank"><img src="Img/instagram-logo-w.svg" class="card-img-top redes" alt="..."></a>
+                      <a class="redes-sociales" href="https://www.youtube.com/" target="_blank"><img src="Img/youtube-logo-w.svg" class="card-img-top redes" alt="..."></a>
+                    </div>
+                </div>
+                <div class="grid-item">
+                  <h4> Sedes </h4>
+                    <p class="texto"> sede 1 </p>
+                    <p class="texto"> sede 2 </p>
+                    <p class="texto"> sede 3 </p>
+                </div>
+                <div class="grid-item">
+                  <h4> Recursos </h4>
+                    <p class="texto"> Blogs </p>
+                    <p class="texto"> Videos </p>
+                    <p class="texto"> FAQs </p>
+                </div>
+                <div class="grid-item">
+                  <h4> Contacto </h4>
+                    <p class="texto"> Dirección </p>
+                    <p class="texto"> Email </p>
+                    <p class="texto"> Teléfono </p>
+                </div>
+            </div>  
+                <p class="pie"> &copy; 2021 - Hecho con &#128156 </p>
+            </footer>
+            <script type="text/javascript" src="JS/funcionesGrupo3.js"></script>
+        </body>
+    </html>               
