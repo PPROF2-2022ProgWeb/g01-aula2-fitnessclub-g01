@@ -30,7 +30,7 @@
         $Apellido = $_POST["Apellido"];
         $TipoDocumento = $_POST["TipoDocumento"];
         $Documento = $_POST["Documento"];
-        $FechaNacimiento = $_POST["FechaNacimiento"];
+        $FechaNacimiento = $_POST["fechaNacimiento"];
         $Email = $_POST["Email"];
         $Direccion = $_POST["Direccion"];
         $Localidad = $_POST["Localidad"];
