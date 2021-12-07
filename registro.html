@@ -14,10 +14,7 @@
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
             <!-- Css -->
             <link rel="stylesheet" type="text/css" media="all" href="CSS/registro.css">
-            <!--Javascript-->
-            <script type="text/javascript" src="JS/funcionesGrupo3.js"></script>
-
-            
+                      
             <!-- Title -->
 	          <title>Registro</title>
             
@@ -143,8 +140,8 @@
                         <div class="input-group-prepend">
                         <i class="far fa-calendar-alt input-group-text"></i>
                         </div>
-                        <label for="FechaNacimiento" class="form-label"></label>
-                        <input type="text" name="FechaNacimiento" class="form-control" placeholder="dd/mm/aaaa" id="FechaNacimiento" required></input>
+                        <input type="date" id="fechaNacimiento" class="form-control" min="1930-01-01" max="2021-12-31" required>
+                        <h6 class="edad" id="edad"></h6>
                         <div class="valid-feedback">
                           Se ve bien!
                         </div>
@@ -284,5 +281,6 @@
                 <p class="pie"> &copy; 2021 - Hecho con &#128156 </p>
             </footer>
             <script type="text/javascript" src="JS/funcionesGrupo3.js"></script>
+            <script type="text/javascript" src="JS/calculoedad.js"></script>
         </body>
     </html>               

@@ -92,6 +92,13 @@ h3 {
     padding-bottom: 16px;
 }
 
+.edad {
+    color: #731943;
+    font-family: Poppins, sans-serif;
+    padding-bottom: 16px;
+    margin: 10px;
+}
+
 .row {
     padding-left: 0%;
 }
