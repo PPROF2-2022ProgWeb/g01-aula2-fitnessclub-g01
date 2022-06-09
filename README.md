@@ -15,4 +15,4 @@ En esta rama encontrarás:
 * SiteMAP de sitio web 
 * Especificación de requisitos de software
 
-Puede ver lo mismo en la carpeta Documentación en la rama main
+Puede ver lo mismo en la carpeta Documentación en la rama main.
