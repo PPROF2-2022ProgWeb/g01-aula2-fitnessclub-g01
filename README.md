@@ -13,6 +13,6 @@ Sistema para reserva de turnos del Gimnasio CHECK IN, siendo utilizado tanto por
 En esta rama encontrarás:
 
 * SiteMAP de sitio web 
-* Especificación de requisitos de software
+* Especificación de requisitos de software.
 
 Puede ver lo mismo en la carpeta Documentación en la rama main.
