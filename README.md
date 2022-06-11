@@ -7,11 +7,7 @@ Versión con HTML, CSS, Bootstrap, Javascript, conexión a la base de datos MySQ
 ## V2 - 2022
 Versión con Angular, Bootstrap
 
-✨ Diseñado por: Marcelo Leiva
-✏️ Documentado por: Laura Mercado
-💻 Desarollado por: 
-- María Gimena Binaghi
-- Jorge Bordarampé
-- Diego Moyano
-- Gastón Martino
+- ✨ Diseñado por: Marcelo Leiva
+- ✏️ Documentado por: Laura Mercado
+- 💻 Desarollado por: María Gimena Binaghi, Jorge Bordarampé, Diego Moyano, Gastón Martino
 
