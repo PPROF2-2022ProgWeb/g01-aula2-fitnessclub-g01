@@ -2,7 +2,7 @@
 
 * Repositorio: a2-g3-aula-2-grupo-3 created by GitHub Classroom
 
-Sistema para reserva de turnos del Gimnasio CHECK IN, siendo utilizado tanto por el Administrador como por el deportista
+Sistema para reserva de turnos del mejor Gimnasio CHECK IN, siendo utilizado tanto por el Administrador como por el deportista
 
 * Link Netlify: https://fitnessclub-finaliefi.netlify.app/
 
@@ -10,9 +10,10 @@ Sistema para reserva de turnos del Gimnasio CHECK IN, siendo utilizado tanto por
 
 ### Rama Documentación
 
-En esta rama encontrarás:
+En esta rama encontrarás:asdfasdfasdfasdfasdf
 
 * SiteMAP de sitio web 
-* Especificación de requisitos de software
+* Especificación de requisitos de software.
 
-Puede ver lo mismo en la carpeta Documentación en la rama main
+Puede ver lo mismo en la carpeta Documentación en la rama main. 
+Quiero existir loco
