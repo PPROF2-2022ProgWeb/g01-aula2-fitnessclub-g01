@@ -1,0 +1,38 @@
+.col-md-4 {
+    flex: 0 0 auto;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.col-md-8 {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-left: 15%;
+    align-content: center;
+}
+
+.animatedfadeIn {
+    align-content: center;
+}
+
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    margin-left: 45%;
+}
+
+.btn-outline-primary {
+    color: #0d6efd;
+    border-color: #0d6efd;
+    margin-left: 45%;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+    margin-left: 42%;
+}
+
+.img {
+    padding-left: 25%;
+}

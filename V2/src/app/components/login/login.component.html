@@ -1,93 +1,93 @@
 <main>
 
-  <div class="contenedor__todo">
+    <div class="contenedor__todo">
 
-      <div class="caja__trasera">
+        <div class="caja__trasera">
 
-          <div class="caja__trasera-login">
+            <div class="caja__trasera-login">
 
-              <h3>¿Ya tenés una cuenta?</h3>
+                <h3>¿Ya tenés una cuenta?</h3>
 
-              <p>Inicia sesión para entrar en la página</p>
+                <p>Inicia sesión para entrar en la página</p>
 
-              <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                <a class="btn btn-outline-danger btn-block" [routerLinkActive]="['']">Iniciar Sesión</a>
 
-          </div>
+            </div>
 
-          <div class="caja__trasera-register">
+            <div class="caja__trasera-register">
 
-              <h3>¿Todavía no tenés cuenta?</h3>
+                <h3>¿Todavía no tenés cuenta?</h3>
 
-              <p>Regístrate para que puedas iniciar sesión</p>
+                <p>Regístrate para que puedas iniciar sesión</p>
 
-              <button id="btn__registrarse">Registrarse</button>
+                <a class="btn btn-outline-danger btn-block" [routerLinkActive]="['']"> Registrarse</a>
 
-          </div>
+            </div>
 
-      </div>
-
-
-
-      <!-- ============================== -->
-
-      <!-- Formulario de Login y Registro -->
-
-      <!-- ============================== -->
+        </div>
 
 
 
-      <div class="contenedor__login-register">
+        <!-- ============================== -->
 
-          <!-- Login -->
+        <!-- Formulario de Login y Registro -->
 
-          <form action="" class="formulario__login">
+        <!-- ============================== -->
 
-              <h2>Iniciar Sesión</h2>
 
-              <label for="email"></label>
 
-              <input type="text" placeholder="Correo Electrónico" id="email">
+        <div class="contenedor__login-register">
 
-              <label for="pass"></label>
+            <!-- Login -->
 
-              <input type="password" name="" id="pass" placeholder="Contraseña">
+            <form action="" class="formulario__login">
 
-              <label for="entrar"></label>
+                <h2>Iniciar Sesión</h2>
 
-              <button id="entrar" onclick="iniciar()">Entrar</button>
+                <label for="email"></label>
 
-          </form>
+                <input type="text" placeholder="Correo Electrónico" id="email">
 
-          <!-- Registro -->
+                <label for="pass"></label>
 
-          <form action="" class="formulario__register">
+                <input type="password" name="" id="pass" placeholder="Contraseña">
 
-              <h2>Registrarse</h2>
+                <label for="entrar"></label>
 
-              <label for="nombre"></label>
+                <button id="entrar" onclick="iniciar()">Entrar</button>
 
-              <input type="text" placeholder="Nombre Completo" id="nombre">
+            </form>
 
-              <label for="correo"></label>
+            <!-- Registro -->
 
-              <input type="text" placeholder="Correo Electrónico" id="correo">
+            <form action="" class="formulario__register">
 
-              <label for="usuario"></label>
+                <h2>Registrarse</h2>
 
-              <input type="text" placeholder="Usuario" id="usuario">
+                <label for="nombre"></label>
 
-              <label for="password"></label>
+                <input type="text" placeholder="Nombre Completo" id="nombre">
 
-              <input type="password" placeholder="Contraseña" id="password">
+                <label for="correo"></label>
 
-              <label for="registrarse"></label>
+                <input type="text" placeholder="Correo Electrónico" id="correo">
 
-              <button id="registrarse" onclick="registrar()">Registrarse</button>
+                <label for="usuario"></label>
 
-          </form>
+                <input type="text" placeholder="Usuario" id="usuario">
 
-      </div>
+                <label for="password"></label>
 
-  </div>
+                <input type="password" placeholder="Contraseña" id="password">
+
+                <label for="registrarse"></label>
+
+                <button id="registrarse" onclick="registrar()">Registrarse</button>
+
+            </form>
+
+        </div>
+
+    </div>
 
 </main>
