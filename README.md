@@ -9,5 +9,5 @@ Versión con Angular, Bootstrap
 
 - ✨ Diseñado por: Marcelo Leiva
 - ✏️ Documentado por: Laura Mercado
-- 💻 Desarollado por: María Gimena Binaghi, Jorge Bordarampé, Diego Moyano, Gastón Martino
+- 💻 Desarrollado por: María Gimena Binaghi, Jorge Bordarampé, Diego Moyano, Gastón Martino
 
