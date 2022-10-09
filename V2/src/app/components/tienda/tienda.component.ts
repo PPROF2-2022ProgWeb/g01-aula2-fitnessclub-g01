@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-tienda',
   templateUrl: './tienda.component.html',
+  styleUrls: ['./tienda.component.css'],
 })
 
 export class TiendaComponent implements OnInit {
@@ -22,7 +23,7 @@ export class TiendaComponent implements OnInit {
     this.productos = this._productosService.getProductos();
 
   }
-   verHeroe( idx:number){
+   verProducto( idx:number){
      this.router.navigate ( ['/producto', idx] );
    }
 }
