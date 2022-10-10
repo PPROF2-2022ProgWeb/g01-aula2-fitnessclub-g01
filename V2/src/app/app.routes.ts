@@ -13,6 +13,7 @@ const APP_ROUTES: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'tienda', component: TiendaComponent},  
   { path: 'producto/:id', component: ProductoComponent},
+  {path: '**', pathMatch:'full', redirectTo:'principal'}
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: true});
