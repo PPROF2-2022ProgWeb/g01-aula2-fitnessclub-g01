@@ -1,15 +1,18 @@
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormComponent } from './components/form/form.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { ProductoComponent } from './components/producto/producto.component';
 
+
 const APP_ROUTES: Routes = [
   { path: 'principal', component: PrincipalComponent},
   { path: 'login', component: LoginComponent},
   { path: 'contacto', component: FormComponent},
+  { path: 'nosotros', component: NosotrosComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'tienda', component: TiendaComponent},  
   { path: 'producto/:id', component: ProductoComponent},
