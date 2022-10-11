@@ -8,15 +8,11 @@
         <br>
         <img class="card-img-top im-fluid" [src]="producto.img" [alt]="producto.nombre">
         <div class="card-block">
-            <h4 class="card-title" id="titulo">{{producto.nombre}}</h4>
-            <p class="card-text">{{ producto.marca}}</p>
-            <p class="card-text">{{ producto.color}}</p>
-            <p class="card-text">{{ producto.descripcion}}</p>
+            <h4 class="card-title" id="titulo">{{producto.nombre | uppercase}} <small>{{producto.marca}}</small></h4>
             <p class="card-text">{{ producto.precio}}</p>
-            <p class="card-text">{{ producto.talles}}</p>
-            <p class="card-text"><small class="text-muted">{{producto.codigo}}</small> </p>
             <!--<button type="button" class="btn btn-outline-primary btn block"> Ver mas...</button>-->
-            <a [routerLink]="['/producto', i]" class="btn btn-outline-primary" id="boton-ver-mas"> Ver mas...</a>
+            <a [routerLink]="['/producto', i]" class="btn btn-outline-primary" id="boton-comprar"> Comprar </a>
+            <button class="btn btn-outline-secondary btn-block" id="carrito"> Agregar al Carrito</button>
         </div>
     </div>
 </div>
