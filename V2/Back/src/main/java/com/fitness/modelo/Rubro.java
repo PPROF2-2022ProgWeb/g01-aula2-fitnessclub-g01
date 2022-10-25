@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 public class Rubro {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdRubro")
 	private int IdRubro;	
 	

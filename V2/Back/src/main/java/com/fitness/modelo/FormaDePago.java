@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 public class FormaDePago {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdFormadepago")
 	private int IdFormaDePago;	
 	

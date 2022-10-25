@@ -17,7 +17,7 @@ import lombok.Data;
 @Data
 public class Provincia {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdProvincia")
 	private int IdProvincia;
 	@Column(name="Descripcion" , length = 45, nullable = false)

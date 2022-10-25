@@ -33,7 +33,7 @@ public class RubroController {
 		return rubroService.listaRubros();
 	}
 
-	@GetMapping("/rubros/{id}")
+	@GetMapping("/rubros/{idRubro}")
 	public ResponseEntity<?> encontrarRubro(@PathVariable Integer idRubro) {
 		Rubro rubro = null;
 		Map<String, Object> response = new HashMap<>();
@@ -70,7 +70,7 @@ public class RubroController {
 	}
 
 	// Delete
-	@DeleteMapping("/rubros/{id}")
+	@DeleteMapping("/rubros/{idRubro}")
 	public ResponseEntity<?> eliminar(@PathVariable Integer idRubros) {
 		Map<String, Object> response = new HashMap<>();
 		try {
@@ -85,7 +85,7 @@ public class RubroController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 
-	@PutMapping("/rubros/{id}")
+	@PutMapping("/rubros/{idRubro}")
 	public ResponseEntity<?> actualizar(@RequestBody Rubro rubro, @PathVariable Integer idRubro) {
 		Rubro rubroActual = rubroService.encontrarRubro(idRubro);
 		Rubro rubroUpdated = null;

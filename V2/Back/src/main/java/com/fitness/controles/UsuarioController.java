@@ -33,7 +33,7 @@ public class UsuarioController {
 		return usuarioService.listarUsuarios();
 	}
 
-	@GetMapping("/usuarios/{id}")
+	@GetMapping("/usuarios/{idUsuario}")
 	public ResponseEntity<?> encontrarUsuario(@PathVariable Integer idUsuario) {
 		Usuario usuario = null;
 		Map<String, Object> response = new HashMap<>();
@@ -70,7 +70,7 @@ public class UsuarioController {
 	}
 
 	// Delete
-	@DeleteMapping("/usuarios/{id}")
+	@DeleteMapping("/usuarios/{idUsuario}")
 	public ResponseEntity<?> eliminar(@PathVariable Integer idUsuario) {
 		Map<String, Object> response = new HashMap<>();
 		try {
@@ -85,7 +85,7 @@ public class UsuarioController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 
-	@PutMapping("/usuarios/{id}")
+	@PutMapping("/usuarios/{idUsuario}")
 	public ResponseEntity<?> actualizar(@RequestBody Usuario usuario, @PathVariable Integer idUsuario) {
 		Usuario usuarioActual = usuarioService.encontrarUsuario(idUsuario);
 		Usuario usuarioUpdated = null;
@@ -100,7 +100,7 @@ public class UsuarioController {
 		try {
 			usuarioActual.setNombre(usuario.getNombre());
 			usuarioActual.setApellido(usuario.getApellido());
-			usuarioActual.setMail(usuario.getMail());
+			usuarioActual.setEmail(usuario.getEmail());
 			usuarioActual.setDireccion(usuario.getDireccion());
 			usuarioActual.setLocalidad(usuario.getLocalidad());
 			usuarioActual.setDNI(usuario.getDNI());

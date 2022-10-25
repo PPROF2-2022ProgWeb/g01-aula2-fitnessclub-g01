@@ -32,7 +32,7 @@ public class ComprobanteController {
 		return comprobanteService.listaComprobantes();
 	}
 
-	@GetMapping("/comprobantes/{id}")
+	@GetMapping("/comprobantes/{idComprobante}")
 	public ResponseEntity<?> encontrarComprobante(@PathVariable Integer idComprobante) {
 		Comprobante comprobante = null;
 		Map<String, Object> response = new HashMap<>();
@@ -72,7 +72,7 @@ public class ComprobanteController {
 	}
 
 	// Delete
-	@DeleteMapping("/comprobantes/{id}")
+	@DeleteMapping("/comprobantes/{idComprobante}")
 	public ResponseEntity<?> eliminar(@PathVariable Integer idComprobante) {
 		Map<String, Object> response = new HashMap<>();
 		try {

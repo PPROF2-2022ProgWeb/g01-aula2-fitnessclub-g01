@@ -33,7 +33,7 @@ public class LocalidadController {
 		return localidadService.listarLocalidades();
 	}
 
-	@GetMapping("/localidades/{id}")
+	@GetMapping("/localidades/{idLocalidad}")
 	public ResponseEntity<?> encontrarLocalidad(@PathVariable Integer idLocalidad) {
 		Localidad localidad = null;
 		Map<String, Object> response = new HashMap<>();
@@ -73,7 +73,7 @@ public class LocalidadController {
 	}
 
 	// Delete
-	@DeleteMapping("/localidades/{id}")
+	@DeleteMapping("/localidades/{idLocalidad}")
 	public ResponseEntity<?> eliminar(@PathVariable Integer idLocalidad) {
 		Map<String, Object> response = new HashMap<>();
 		try {
@@ -88,7 +88,7 @@ public class LocalidadController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 
-	@PutMapping("/localidades/{id}")
+	@PutMapping("/localidades/{idLocalidad}")
 	public ResponseEntity<?> actualizar(@RequestBody Localidad localidad, @PathVariable Integer idLocalidad) {
 		Localidad localidadActual = localidadService.encontrarLocalidad(idLocalidad);
 		Localidad localidadUpdated = null;

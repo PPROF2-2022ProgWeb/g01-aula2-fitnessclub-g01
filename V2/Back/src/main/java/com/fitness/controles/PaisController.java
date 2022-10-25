@@ -33,7 +33,7 @@ public class PaisController {
 		return paisService.listaPaises();
 	}
 
-	@GetMapping("/paises/{id}")
+	@GetMapping("/paises/{idPais}")
 	public ResponseEntity<?> encontrarPais(@PathVariable Integer idPais) {
 		Pais pais = null;
 		Map<String, Object> response = new HashMap<>();
@@ -69,7 +69,7 @@ public class PaisController {
 	}
 
 	// Delete
-	@DeleteMapping("/paises/{id}")
+	@DeleteMapping("/paises/{idPais}")
 	public ResponseEntity<?> eliminar(@PathVariable Integer idPais) {
 		Map<String, Object> response = new HashMap<>();
 		try {
@@ -84,7 +84,7 @@ public class PaisController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 
-	@PutMapping("/clientes/{id}")
+	@PutMapping("/clientes/{idPais}")
 	public ResponseEntity<?> actualizar(@RequestBody Pais pais, @PathVariable Integer idPais) {
 		Pais paisActual = paisService.encontrarPais(idPais);
 		Pais paisUpdated = null;

@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,7 +26,7 @@ import lombok.Data;
 @Data
 public class Comprobante implements Serializable{
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdComprobante")
 	private int IdComprobante;	
 	
@@ -36,7 +37,7 @@ public class Comprobante implements Serializable{
 	@ManyToOne(optional=false,cascade=CascadeType.ALL)
 	@JoinColumn(name = "IdFormadepago")
 	private FormaDePago FormaDePago;
-	@ManyToOne(optional=false,cascade=CascadeType.ALL)
+	@ManyToOne(optional=false,cascade=CascadeType.ALL,fetch = FetchType.LAZY )
 	@JoinColumn(name = "IdUsuario")
 	private Usuario Usuario;
 	@Column(name = "Total")

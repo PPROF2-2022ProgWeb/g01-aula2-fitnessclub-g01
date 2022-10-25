@@ -33,7 +33,7 @@ public class FormaDePagoController {
 		return formadePagoService.listaFormasDePago();
 	}
 
-	@GetMapping("/formasdepago/{id}")
+	@GetMapping("/formasdepago/{idFormaDePago}")
 	public ResponseEntity<?> encontrarFormaDePago(@PathVariable Integer idFormaDePago) {
 		FormaDePago formaDePago = null;
 		Map<String, Object> response = new HashMap<>();
@@ -73,7 +73,7 @@ public class FormaDePagoController {
 	}
 
 	// Delete
-	@DeleteMapping("/formasdepago/{id}")
+	@DeleteMapping("/formasdepago/{idFormaDePago}")
 	public ResponseEntity<?> eliminar(@PathVariable Integer idFormaDePago) {
 		Map<String, Object> response = new HashMap<>();
 		try {
@@ -88,7 +88,7 @@ public class FormaDePagoController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 
-	@PutMapping("/formasdepago/{id}")
+	@PutMapping("/formasdepago/{idFormaDePago}")
 	public ResponseEntity<?> actualizar(@RequestBody FormaDePago formaDePago, @PathVariable Integer idFormaDePago) {
 		FormaDePago formaDePagoActual = formadePagoService.encontrarFormaDePago(idFormaDePago);
 		FormaDePago formaDePagoUpdated = null;

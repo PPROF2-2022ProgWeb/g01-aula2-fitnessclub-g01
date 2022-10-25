@@ -33,7 +33,7 @@ public class RolController {
 		return rolService.listaRoles();
 	}
 
-	@GetMapping("/roles/{id}")
+	@GetMapping("/roles/{idRol}")
 	public ResponseEntity<?> encontrarRol(@PathVariable Integer idRol) {
 		Rol rol = null;
 		Map<String, Object> response = new HashMap<>();
@@ -70,7 +70,7 @@ public class RolController {
 	}
 
 	// Delete
-	@DeleteMapping("/roles/{id}")
+	@DeleteMapping("/roles/{idRol}")
 	public ResponseEntity<?> eliminar(@PathVariable Integer idRol) {
 		Map<String, Object> response = new HashMap<>();
 		try {
@@ -85,7 +85,7 @@ public class RolController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 
-	@PutMapping("/roles/{id}")
+	@PutMapping("/roles/{idRol}")
 	public ResponseEntity<?> actualizar(@RequestBody Rol rol, @PathVariable Integer idRol) {
 		Rol rolActual = rolService.encontrarRol(idRol);
 		Rol rolUpdated = null;

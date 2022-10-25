@@ -17,12 +17,9 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "localidades")
-@Data
-@Setter
-@Getter
 public class Localidad {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdLocalidad")
 	private int IdLocalidad;
 	@Column(name="Descripcion" , length = 45, nullable = false)
