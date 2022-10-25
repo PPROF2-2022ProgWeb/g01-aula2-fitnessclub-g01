@@ -14,7 +14,7 @@ public class ResourceServerConfigurerAdapter extends org.springframework.securit
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		//Indicamos que esta pagina tiene acceso cualquier usuario
-		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/**").permitAll()
+		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/paises").permitAll()
 		/*.antMatchers(HttpMethod.GET,"/api/clientes/{id}").hasAnyRole("USER","ADMIN")
 		.antMatchers(HttpMethod.POST,"/api/clientes/upload").hasAnyRole("USER","ADMIN")
 		.antMatchers(HttpMethod.POST,"/api/clientes").hasRole("ADMIN")

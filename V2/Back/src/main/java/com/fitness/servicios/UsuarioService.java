@@ -11,6 +11,10 @@ public interface UsuarioService {
 	public Usuario guardar(Usuario usuario);
 	
 	public void eliminar(Integer idUsuario);
+	
 	public Usuario encontrarUsuario(Integer idUsuario);
+	
+	public Usuario findByEmail(String email);
+
 }
 

@@ -35,15 +35,15 @@ public class UsuarioServiceImpl implements UserDetailsService,UsuarioService {
 		Usuario usuario=usuarioRepository.findByEmail(email);
 		
 		if(usuario==null) {
-			logger.error("Error en el login; no existe el usuario con el email'" + email + "' en el sistema!");
-			throw new UsernameNotFoundException("Error en el login; no existe el usuario con el mail'" + email + "' en el sistema!");
+			logger.error("Error en el login; no existe el usuario con el email' " + email + "' en el sistema!");
+			throw new UsernameNotFoundException("Error en el login; no existe el usuario con el mail '" + email + "' en el sistema!");
 		}
 		List<Rol> roles=new ArrayList<>();
 		roles.add(usuario.getRol());
 		List<GrantedAuthority> autorizaciones=roles
 				.stream()
 				.map(rol->new SimpleGrantedAuthority(rol.getDescripcion()))
-				.peek(authority->logger.info("Rol :" + authority.getAuthority()))
+				//.peek(authority->logger.info("Rol :" + authority.getAuthority()))
 				.collect(Collectors.toList());
 		
 		return new User(usuario.getEmail(), usuario.getPassword(),usuario.getEstado(),true,true,true,autorizaciones);
@@ -72,6 +72,8 @@ public class UsuarioServiceImpl implements UserDetailsService,UsuarioService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 	
 	/*
 	@Override
@@ -98,4 +100,9 @@ public class UsuarioServiceImpl implements UserDetailsService,UsuarioService {
 		// TODO Auto-generated method stub
 		return usuarioRepository.findById(idUsuario).orElse(null);
 	}*/
+	
+    @Override
+    public Usuario findByEmail(String email) {
+        return usuarioRepository.findByEmail(email);
+    }
 }

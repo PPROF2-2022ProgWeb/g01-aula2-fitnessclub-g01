@@ -13,8 +13,10 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+
 
 
 @Configuration
@@ -27,6 +29,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Autowired
 	@Qualifier("authenticationManager")
 	private AuthenticationManager authenticationManager;
+	
+	   @Autowired
+	    private InfoAdicionalToken infoAdicionalToken;
 	
 	//Aca configuramos los permisos de nuestros endpoint(rutas de acceso)
 	@Override
@@ -59,23 +64,27 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 //En este metodo configuramos el Endpoint del AuthorizationServer
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-	//	TokenEnhancerChain tokenEnhancerChain=new TokenEnhancerChain();
-	//	tokenEnhancerChain.setTokenEnhancers(Arrays.asList(infoAdicionalToken,accessTokenConverter()));
+	    
+		TokenEnhancerChain tokenEnhancerChain=new TokenEnhancerChain();
+		tokenEnhancerChain.setTokenEnhancers(Arrays.asList(infoAdicionalToken,accessTokenConverter()));
 		
 		//configuramos el authenticationManager mediante el endpoint
 		endpoints.authenticationManager(authenticationManager)
 		// Este es opcional
 		.tokenStore(tokenStore())
 		//registramos el accessTokenConverter q se encarga de administrar el token, almacena la informacionq queremos agregar
-		.accessTokenConverter(accessTokenConverter()); 
-	//	.tokenEnhancer(tokenEnhancerChain);
+		.accessTokenConverter(accessTokenConverter())
+		//Asignamos la cadena
+		.tokenEnhancer(tokenEnhancerChain);
 	}
 	
 	@Bean //Crea componente de Spring con Bean
 	public JwtAccessTokenConverter accessTokenConverter() {
 		JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
-	//	jwtAccessTokenConverter.setSigningKey(JwtConfig.RSA_PRIVADA);
-	//	jwtAccessTokenConverter.setVerifierKey(JwtConfig.RSA_PUBLICA);
+		//Firmamos
+		jwtAccessTokenConverter.setSigningKey(JwtConfig.RSA_PRIVADA);
+		//Valida que token sea autentico
+		jwtAccessTokenConverter.setVerifierKey(JwtConfig.RSA_PUBLICA);
 		return jwtAccessTokenConverter;
 	}
 	
