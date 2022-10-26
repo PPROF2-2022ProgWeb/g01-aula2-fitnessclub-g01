@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { ProductoComponent } from './components/producto/producto.component';
+import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 
 
 const APP_ROUTES: Routes = [
@@ -14,9 +15,10 @@ const APP_ROUTES: Routes = [
   { path: 'contacto', component: FormComponent},
   { path: 'nosotros', component: NosotrosComponent},
   { path: 'dashboard', component: DashboardComponent},
-  { path: 'tienda', component: TiendaComponent},  
+  { path: 'tienda', component: TiendaComponent}, 
+  { path: 'registro', component: RegistrarseComponent},  
   { path: 'producto/:id', component: ProductoComponent},
-  {path: '**', pathMatch:'full', redirectTo:'principal'}
+  { path: '**', pathMatch:'full', redirectTo:'principal'}
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: true});
