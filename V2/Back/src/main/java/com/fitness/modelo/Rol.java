@@ -1,5 +1,7 @@
 package com.fitness.modelo;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,12 +16,15 @@ import lombok.Data;
 @Entity
 @Table(name = "roles")
 @Data
-public class Rol {
+public class Rol implements Serializable{
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdRol")
 	private int IdRol;
-	@Column(name="nombre" , length = 45, nullable = false)
+	
+	//Siempre debe comenzar con ROLE_
+	@Column(name="nombre" , length = 20 , nullable = false, unique=true)
 	private String Descripcion;
 	public int getIdRol() {
 		return IdRol;
@@ -34,5 +39,5 @@ public class Rol {
 		Descripcion = descripcion;
 	}
 	
-	
+	private static final long serialVersionUID = 1L;
 }

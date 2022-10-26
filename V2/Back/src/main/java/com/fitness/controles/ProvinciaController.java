@@ -33,7 +33,7 @@ public class ProvinciaController {
 		return provinciaService.listaProvincias();
 	}
 
-	@GetMapping("/provincias/{id}")
+	@GetMapping("/provincias/{idProvincia}")
 	public ResponseEntity<?> encontrarProvincia(@PathVariable Integer idProvincia) {
 		Provincia provincia = null;
 		Map<String, Object> response = new HashMap<>();
@@ -71,7 +71,7 @@ public class ProvinciaController {
 	}
 
 	// Delete
-	@DeleteMapping("/provincias/{id}")
+	@DeleteMapping("/provincias/{idProvincia}")
 	public ResponseEntity<?> eliminar(@PathVariable Integer idProvincia) {
 		Map<String, Object> response = new HashMap<>();
 		try {
@@ -86,7 +86,7 @@ public class ProvinciaController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 
-	@PutMapping("/provincias/{id}")
+	@PutMapping("/provincias/{idProvincia}")
 	public ResponseEntity<?> actualizar(@RequestBody Provincia provincia, @PathVariable Integer idProvincia) {
 		Provincia provinciaActual = provinciaService.encontrarProvincia(idProvincia);
 		Provincia provinciaUpdated = null;

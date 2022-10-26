@@ -33,7 +33,7 @@ public class DisciplinaController {
 		return disciplinaService.listaDisciplinas();
 	}
 
-	@GetMapping("/disciplinas/{id}")
+	@GetMapping("/disciplinas/{idDisciplina}")
 	public ResponseEntity<?> encontrarDisciplina(@PathVariable Integer idDisciplina) {
 		Disciplina disciplina = null;
 		Map<String, Object> response = new HashMap<>();
@@ -73,7 +73,7 @@ public class DisciplinaController {
 	}
 
 	// Delete
-	@DeleteMapping("/disciplinas/{id}")
+	@DeleteMapping("/disciplinas/{idDisciplina}")
 	public ResponseEntity<?> eliminar(@PathVariable Integer idDisciplina) {
 		Map<String, Object> response = new HashMap<>();
 		try {
@@ -88,7 +88,7 @@ public class DisciplinaController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 
-	@PutMapping("/disciplinas/{id}")
+	@PutMapping("/disciplinas/{idDisciplina}")
 	public ResponseEntity<?> actualizar(@RequestBody Disciplina disciplina, @PathVariable Integer idDisciplina) {
 		Disciplina disciplinaActual = disciplinaService.encontrarDisciplina(idDisciplina);
 		Disciplina disciplinaUpdated = null;

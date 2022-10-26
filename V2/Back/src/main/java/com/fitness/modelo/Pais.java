@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 public class Pais {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdPais")
 	private int IdPais;	
 	

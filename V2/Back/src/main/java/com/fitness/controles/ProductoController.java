@@ -33,7 +33,7 @@ public class ProductoController {
 		return productoService.listaProductos();
 	}
 
-	@GetMapping("/productos/{id}")
+	@GetMapping("/productos/{idProducto}")
 	public ResponseEntity<?> encontrarProducto(@PathVariable Integer idProducto) {
 		Producto producto = null;
 		Map<String, Object> response = new HashMap<>();
@@ -69,7 +69,7 @@ public class ProductoController {
 	}
 
 	// Delete
-	@DeleteMapping("/productos/{id}")
+	@DeleteMapping("/productos/{idProducto}")
 	public ResponseEntity<?> eliminar(@PathVariable Integer idProducto) {
 		Map<String, Object> response = new HashMap<>();
 		try {
@@ -84,7 +84,7 @@ public class ProductoController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 
-	@PutMapping("/productos/{id}")
+	@PutMapping("/productos/{idProducto}")
 	public ResponseEntity<?> actualizar(@RequestBody Producto producto, @PathVariable Integer idProducto) {
 		Producto productoActual = productoService.encontrarProducto(idProducto);
 		Producto productoUpdated = null;
