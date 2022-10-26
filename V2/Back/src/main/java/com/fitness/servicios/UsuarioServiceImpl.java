@@ -102,6 +102,7 @@ public class UsuarioServiceImpl implements UserDetailsService,UsuarioService {
 	}*/
 	
     @Override
+    @Transactional(readOnly = true)
     public Usuario findByEmail(String email) {
         return usuarioRepository.findByEmail(email);
     }
