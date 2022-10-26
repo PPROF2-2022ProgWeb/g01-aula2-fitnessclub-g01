@@ -1,93 +1,31 @@
-<main>
-
-    <div class="contenedor__todo">
-
-        <div class="caja__trasera">
-
-            <div class="caja__trasera-login">
-
-                <h3>¿Ya tenés una cuenta?</h3>
-
-                <p>Inicia sesión para entrar en la página</p>
-
-                <a class="btn btn-outline-danger btn-block" [routerLinkActive]="['']">Iniciar Sesión</a>
+<h2> Login </h2>
+<hr>
+<form autocomplete="off" [formGroup]="forma" (ngSubmit)="enviar()">
+    <div>
+        <div class="form-group row" id="correo-electronico">
+            <label class="col-form-label"> Correo Electronico </label>
+            <div class="col-8">
+                <input class="form-control" type="email" placeholder="Correo Electronico" formControlName="correo" [class.is-invalid]="correoNoValido">
+                <small *ngIf="correoNoValido" class="text-danger"> Ingrese el Correo Electronico correctamente </small>
+                <div class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
 
             </div>
-
-            <div class="caja__trasera-register">
-
-                <h3>¿Todavía no tenés cuenta?</h3>
-
-                <p>Regístrate para que puedas iniciar sesión</p>
-
-                <a class="btn btn-outline-danger btn-block" [routerLinkActive]="['']"> Registrarse</a>
-
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label"> Ingrese el Password </label>
+            <div class="col-8">
+                <input class="form-control" type="password" placeholder="Password" formControlName="password" [class.is-invalid]="passwordNoValido">
+                <small *ngIf="passwordNoValido" class="text-danger"> Ingrese el Passwor correctamente </small>
             </div>
-
         </div>
-
-
-
-        <!-- ============================== -->
-
-        <!-- Formulario de Login y Registro -->
-
-        <!-- ============================== -->
-
-
-
-        <div class="contenedor__login-register">
-
-            <!-- Login -->
-
-            <form action="" class="formulario__login">
-
-                <h2>Iniciar Sesión</h2>
-
-                <label for="email"></label>
-
-                <input type="text" placeholder="Correo Electrónico" id="email">
-
-                <label for="pass"></label>
-
-                <input type="password" name="" id="pass" placeholder="Contraseña">
-
-                <label for="entrar"></label>
-
-                <button id="entrar" onclick="iniciar()">Entrar</button>
-
-            </form>
-
-            <!-- Registro -->
-
-            <form action="" class="formulario__register">
-
-                <h2>Registrarse</h2>
-
-                <label for="nombre"></label>
-
-                <input type="text" placeholder="Nombre Completo" id="nombre">
-
-                <label for="correo"></label>
-
-                <input type="text" placeholder="Correo Electrónico" id="correo">
-
-                <label for="usuario"></label>
-
-                <input type="text" placeholder="Usuario" id="usuario">
-
-                <label for="password"></label>
-
-                <input type="password" placeholder="Contraseña" id="password">
-
-                <label for="registrarse"></label>
-
-                <button id="registrarse" onclick="registrar()">Registrarse</button>
-
-            </form>
-
+        <div class="form-group row">
+            <div class="input-group col-8">
+                <button type="submit" class="btn btn-outline-primary btn-block" id="boton-login">
+                    Ingresar
+                </button>
+            </div>
         </div>
-
     </div>
+</form>
 
-</main>
+<p> ¿Todavia no tenes cuenta? <small class="btn btn-light" [routerLink]="['/registro']"> Registrarse </small></p>

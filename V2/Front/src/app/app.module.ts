@@ -1,7 +1,7 @@
 import { SlicePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { CommonModule} from  '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -16,13 +16,16 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { ProductoComponent } from './components/producto/producto.component';
+import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 
 //Service
 import { ProductosService } from './service/productos.service';
-
+import { ValidadoresService } from './service/validadores.service';
 
 //Rutas
 import { APP_ROUTING,  } from './app.routes';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -38,15 +41,23 @@ import { APP_ROUTING,  } from './app.routes';
     PrincipalComponent,
     TiendaComponent,
     ProductoComponent,
+    RegistrarseComponent,
+  
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
     APP_ROUTING
   ],
   providers: [
-    ProductosService
+    ProductosService, 
+    ValidadoresService
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
