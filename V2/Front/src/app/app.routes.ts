@@ -7,6 +7,7 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
+import { DashUserComponent } from './components/dash-user/dash-user.component';
 
 
 const APP_ROUTES: Routes = [
@@ -18,6 +19,7 @@ const APP_ROUTES: Routes = [
   { path: 'tienda', component: TiendaComponent}, 
   { path: 'registro', component: RegistrarseComponent},  
   { path: 'producto/:id', component: ProductoComponent},
+  { path: 'dashboardUser', component: DashUserComponent},
   { path: '**', pathMatch:'full', redirectTo:'principal'}
 ];
 
