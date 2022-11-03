@@ -8,6 +8,7 @@ import { TiendaComponent } from './components/tienda/tienda.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { DashUserComponent } from './components/dash-user/dash-user.component';
+import { UpdateDataUserComponent } from './components/update-data-user/update-data-user.component';
 
 
 const APP_ROUTES: Routes = [
@@ -20,6 +21,7 @@ const APP_ROUTES: Routes = [
   { path: 'registro', component: RegistrarseComponent},  
   { path: 'producto/:id', component: ProductoComponent},
   { path: 'dashboardUser', component: DashUserComponent},
+  { path: 'updateUser', component: UpdateDataUserComponent},
   { path: '**', pathMatch:'full', redirectTo:'principal'}
 ];
 

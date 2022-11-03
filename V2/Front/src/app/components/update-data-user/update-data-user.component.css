@@ -1,5 +1,4 @@
 .contenedora {
-    padding: 5vh;
     margin-left: 50vh;
     margin-top: 5vh;
     margin-right: 50vh;
@@ -10,37 +9,6 @@
 h1 {
     text-align: center;
     color: rgb(24, 153, 155);
-  
-}
-
-#boton-login {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: 20%;
-    margin-left: 40%;
-}
-
-p {
-    text-align: center;
-}
-
-small {
-    color: rgb(24, 153, 155);
-}
-
-.form-group {
-    margin-top: 4%;
-    margin-bottom: 4%;
-}
-
-.form-control {
-    margin-bottom: 2%;
-    width: 100%;
-}
-
-.form-text {
-    align-items: center;
-    margin-top: 2%;
 }
 
 .linea {
@@ -48,7 +16,7 @@ small {
     max-width: 100%;
   }
 
-  .formulario {
+.formulario {
     margin-top: 5vh;
     box-shadow: 5px 5px 5px 5px rgb(182, 182, 182);
     padding: 5vh;

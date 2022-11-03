@@ -26,7 +26,7 @@ import { ValidadoresService } from './service/validadores.service';
 import { APP_ROUTING,  } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { DashUserComponent } from './components/dash-user/dash-user.component';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { UpdateDataUserComponent } from './components/update-data-user/update-data-user.component';
 
 
 @NgModule({
@@ -45,7 +45,7 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
     ProductoComponent,
     RegistrarseComponent,
     DashUserComponent,
-    DropdownComponent,
+    UpdateDataUserComponent,
   
   ],
   imports: [

@@ -1,21 +1,22 @@
-<h2> Login </h2>
-<hr>
-<form autocomplete="off" [formGroup]="forma" (ngSubmit)="enviar()">
+<div class="contenedora">
+    <h1> Login </h1>
+    <div class="linea"></div>
+<form class="formulario" autocomplete="off" [formGroup]="forma" (ngSubmit)="enviar()">
     <div>
         <div class="form-group row" id="correo-electronico">
             <label class="col-form-label"> Correo Electronico </label>
-            <div class="col-8">
+            <div>
                 <input class="form-control" type="email" placeholder="Correo Electronico" formControlName="correo" [class.is-invalid]="correoNoValido">
-                <small *ngIf="correoNoValido" class="text-danger"> Ingrese el Correo Electronico correctamente </small>
+                <small *ngIf="correoNoValido" class="text-danger"> Ingrese el correo electrónico correctamente </small>
                 <div class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
 
             </div>
         </div>
         <div class="form-group row">
             <label class="col-form-label"> Ingrese el Password </label>
-            <div class="col-8">
+            <div>
                 <input class="form-control" type="password" placeholder="Password" formControlName="password" [class.is-invalid]="passwordNoValido">
-                <small *ngIf="passwordNoValido" class="text-danger"> Ingrese el Passwor correctamente </small>
+                <small *ngIf="passwordNoValido" class="text-danger"> Ingrese el password correctamente </small>
             </div>
         </div>
         <div class="form-group row">
@@ -26,6 +27,7 @@
             </div>
         </div>
     </div>
-</form>
 
-<p> ¿Todavia no tenes cuenta? <small class="btn btn-light" [routerLink]="['/registro']"> Registrarse </small></p>
+    <p> ¿Todavia no tenes cuenta? <small class="btn btn-light" [routerLink]="['/registro']"> Registrarse </small></p>
+</form>
+</div>
