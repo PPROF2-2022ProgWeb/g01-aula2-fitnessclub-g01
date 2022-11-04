@@ -17,6 +17,10 @@ import { SliderComponent } from './components/slider/slider.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
+import { UpdateDataUserComponent } from './components/update-data-user/update-data-user.component';
+import { GrillaProductosComponent } from './components/grilla-productos/grilla-productos.component';
+
+
 
 //Service
 import { ProductosService } from './service/productos.service';
@@ -26,9 +30,6 @@ import { ValidadoresService } from './service/validadores.service';
 import { APP_ROUTING,  } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { DashUserComponent } from './components/dash-user/dash-user.component';
-import { UpdateDataUserComponent } from './components/update-data-user/update-data-user.component';
-import { GrillaProductosComponent } from './components/grilla-productos/grilla-productos.component';
-
 
 @NgModule({
   declarations: [

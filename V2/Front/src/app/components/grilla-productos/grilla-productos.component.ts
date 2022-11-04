@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-grilla-productos',
   templateUrl: './grilla-productos.component.html',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GrillaProductosComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {
-  }
+  } 
 
 }

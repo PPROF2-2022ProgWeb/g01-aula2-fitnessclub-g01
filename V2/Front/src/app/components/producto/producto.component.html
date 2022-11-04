@@ -1,35 +1,39 @@
-<h1 class="animated fadeIn"> {{producto.nombre | uppercase}} <small>{{producto.marca}}</small></h1>
-<hr>
+<div class="tarjeta">
+    <h1 class="animated fadeIn"> {{producto.nombre | uppercase}} <small>{{producto.marca}}</small></h1>
+    <hr>
 
-<div class="row animated fadeIn fast">
-    <div class="col-md-4">
-        <div>
-            <img [src]="producto.img" class="img-fluid" [alt]="producto.nombre">
-            <br><br>
-            <a [routerLink]="['/tienda']" class="btn btn-outline-danger btn-block" id="boton-regresar"> Regresar</a>
-        </div>
-        <div class="col-md-8">
-            <h3> CODIGO: {{producto.codigo}}</h3>
-            <hr>
-            <h3> DESCRIPCION: {{producto.descripcion}}</h3>
-            <hr>
-            <h3> MARCA: {{producto.marca}}</h3>
-            <hr>
-            <h3>
-                COLOR: {{producto.color}}
-            </h3>
-            <hr>
-            <h3>
-                PRECIO: {{producto.precio}}
-            </h3>
-            <hr>
-            <h3>
-                TALLES: {{producto.talles}}
-            </h3>
-            <a [routerLink]="['/tienda']" class="btn btn-outline-primary btn-block" id="boton-comprar" [routerLink]="['/grillaProductos']"> Comprar</a>
-            <hr>
+    <div class="row animated fadeIn fast">
+        <div class="col-md-4">
+            <div>
+                <img [src]="producto.img" class="img-fluid" [alt]="producto.nombre">
+                <br><br>
+                <a [routerLink]="['/tienda']" class="btn btn-outline-danger btn-block" id="boton-regresar"> Regresar</a>
+            </div>
+            <div class="col-md-8">
+                <h3> CODIGO: {{producto.codigo}}</h3>
+                <hr>
+                <h3> DESCRIPCION: {{producto.descripcion}}</h3>
+                <hr>
+                <h3> MARCA: {{producto.marca}}</h3>
+                <hr>
+                <h3>
+                    COLOR: {{producto.color}}
+                </h3>
+                <hr>
+                <h3>
+                    PRECIO: {{producto.precio}}
+                </h3>
+                <hr>
+                <h3>
+                    TALLES: {{producto.talles}}
+                </h3>
+                <a [routerLink]="['/tienda']" class="btn btn-outline-primary btn-block" id="boton-comprar" [routerLink]="['/grillaProductos']"> Comprar</a>
+                <hr>
+                <button class="btn btn-outline-secondary btn-block" id="carrito"> Agregar al Carrito</button>
 
 
 
+            </div>
         </div>
     </div>
+</div>
