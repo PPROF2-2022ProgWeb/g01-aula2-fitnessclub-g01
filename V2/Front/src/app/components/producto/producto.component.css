@@ -9,8 +9,16 @@
     }
     
     h1 {
+        color: rgb(24, 153, 155);
         text-align-last: center;
-        font-size: 50px;
+        font-size: 5vh;
+        margin-left: 5%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+
+    p {
+        font-size: 2.5vh;
         margin-left: 5%;
         padding-top: 1%;
         padding-bottom: 1%;

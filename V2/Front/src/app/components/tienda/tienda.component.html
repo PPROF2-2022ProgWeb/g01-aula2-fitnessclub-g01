@@ -7,7 +7,7 @@
         <div class="card animated fadeIn fast " *ngFor="let producto of productos; let i=index" id="encuadrado">
             <br>
             <br>
-            <img class="card-img-top im-fluid" [src]="producto.img" [alt]="producto.nombre">
+            <img class="card-img-top img-fluid" [src]="producto.img" [alt]="producto.nombre">
             <div class="card-block">
                 <h4 class="card-title" id="titulo">{{producto.nombre | uppercase}} <small>{{producto.marca}}</small></h4>
                 <p class="card-text">{{ producto.precio}}</p>
