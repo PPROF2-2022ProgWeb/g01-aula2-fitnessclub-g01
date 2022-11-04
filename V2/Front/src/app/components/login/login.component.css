@@ -10,14 +10,13 @@
 h1 {
     text-align: center;
     color: rgb(24, 153, 155);
-  
 }
 
 #boton-login {
     margin-top: 2%;
     margin-bottom: 2%;
-    width: 20%;
-    margin-left: 40%;
+    width: 30%;
+    margin-left: 32%;
 }
 
 p {
@@ -29,27 +28,44 @@ small {
 }
 
 .form-group {
-    margin-top: 4%;
-    margin-bottom: 4%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .form-control {
     margin-bottom: 2%;
-    width: 100%;
+    margin-left: 12%;
+    width: 70%;
 }
 
 .form-text {
     align-items: center;
     margin-top: 2%;
+    margin-left: 25%;
 }
 
 .linea {
     border-top: 2px solid rgb(24, 153, 155);
     max-width: 100%;
-  }
+}
 
-  .formulario {
+.formulario {
     margin-top: 5vh;
     box-shadow: 5px 5px 5px 5px rgb(182, 182, 182);
     padding: 5vh;
+    width: 80%;
+    height: 60%;
+    margin-left: 10%;
+}
+
+label {
+    margin-left: 30%;
+    margin-bottom: 2%;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#comentario {
+    margin-left: 17%;
+    padding-top: 12px;
 }

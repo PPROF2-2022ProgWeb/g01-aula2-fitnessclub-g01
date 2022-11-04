@@ -27,6 +27,7 @@ import { APP_ROUTING,  } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { DashUserComponent } from './components/dash-user/dash-user.component';
 import { UpdateDataUserComponent } from './components/update-data-user/update-data-user.component';
+import { GrillaProductosComponent } from './components/grilla-productos/grilla-productos.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { UpdateDataUserComponent } from './components/update-data-user/update-da
     RegistrarseComponent,
     DashUserComponent,
     UpdateDataUserComponent,
+    GrillaProductosComponent,
   
   ],
   imports: [
