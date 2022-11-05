@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -38,7 +39,7 @@ public class UsuarioController {
 		Usuario usuario = null;
 		Map<String, Object> response = new HashMap<>();
 		try {
-			usuario = usuarioService.encontrarUsuario(idUsuario);
+			usuario = usuarioService.buscarPorId(idUsuario);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar la consulta en la base de datos!");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
@@ -87,7 +88,7 @@ public class UsuarioController {
 
 	@PutMapping("/usuarios/{idUsuario}")
 	public ResponseEntity<?> actualizar(@RequestBody Usuario usuario, @PathVariable Integer idUsuario) {
-		Usuario usuarioActual = usuarioService.encontrarUsuario(idUsuario);
+		Usuario usuarioActual = usuarioService.buscarPorId(idUsuario);
 		Usuario usuarioUpdated = null;
 		Map<String, Object> response = new HashMap<>();
 

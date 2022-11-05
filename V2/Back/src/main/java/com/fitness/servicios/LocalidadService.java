@@ -13,6 +13,8 @@ public interface LocalidadService {
 	public void eliminar(Integer idLocalidad);
 	
 	public Localidad encontrarLocalidad(Integer idLocalidad);
+	
+	public List<Localidad> buscarLocalidadesPorProvincia(int idProvincia);
 }
 
 

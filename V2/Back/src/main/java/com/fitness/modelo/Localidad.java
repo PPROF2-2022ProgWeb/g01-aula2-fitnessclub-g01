@@ -1,5 +1,7 @@
 package com.fitness.modelo;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,19 +19,23 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "localidades")
-public class Localidad {
+public class Localidad implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdLocalidad")
 	private int IdLocalidad;
 	@Column(name="Descripcion" , length = 45, nullable = false)
 	private String Descripcion;
+	
+	//@ManyToOne(optional=false,cascade=CascadeType.ALL)
 	@ManyToOne(optional=false,cascade=CascadeType.ALL)
 	@JoinColumn(name = "IdProvincia")
 	private Provincia Provincia;
+	
 	public int getIdLocalidad() {
 		return IdLocalidad;
 	}
+	
 	public void setIdLocalidad(int idLocalidad) {
 		IdLocalidad = idLocalidad;
 	}
@@ -39,6 +45,7 @@ public class Localidad {
 	public void setDescripcion(String descripcion) {
 		Descripcion = descripcion;
 	}
+	
 	public Provincia getProvincia() {
 		return Provincia;
 	}

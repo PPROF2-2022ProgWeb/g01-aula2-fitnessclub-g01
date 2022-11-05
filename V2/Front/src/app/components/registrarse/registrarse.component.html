@@ -1,83 +1,223 @@
-<h2>Formulario de Registro</h2>
-<hr>
-<form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()">
-    <div>
-        <div class="form-group row">
-            <label class="col-2 col-form-label"> Nombre </label>
-            <div class="col-8">
-                <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre" [class.is-invalid]="nombreNoValido">
-                <small *ngIf="nombreNoValido" class="text-danger"> El Nombre no ha sido ingresado </small>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-2 col-form-label"> Apellido </label>
-            <div class="col-8">
-                <input class="form-control" type="text" placeholder="Apellido" formControlName="apellido" [class.is-invalid]="apellidoNoValido">
-                <small *ngIf="nombreNoValido" class="text-danger"> El Apellido no ha sido ingresado</small>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-2 col-form-label"> Correo Electronico </label>
-            <div class="col-8">
-                <input class="form-control" type="email" placeholder="Correo Electronico" formControlName="correo" [class.is-invalid]="correoNoValido">
-                <small *ngIf="correoNoValido" class="text-danger"> El Correo Electronico no ha sido ingresado o es incorrecto </small>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-2 col-form-label"> Direccion </label>
-            <div class="col-8">
-                <input class="form-control" type="text" placeholder="Direccion" formControlName="direccion" [class.is-invalid]="direccionNoValido">
-                <small *ngIf="direccionNoValido" class="text-danger"> La Direccion no ha sido ingresada o es incorrecta</small>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-2 col-form-label"> Localidad </label>
-            <div class="col-8">
-                <input class="form-control" type="text" placeholder="Localidad" formControlName="localidad" [class.is-invalid]="localidadNoValido">
-                <small *ngIf="localidadNoValido" class="text-danger"> La Localidad no ha sido ingresada o es incorrecta</small>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-2 col-form-label"> Provincia </label>
-            <div class="col-8">
-                <input class="form-control" type="text" placeholder="Provincia" formControlName="provincia" [class.is-invalid]="provinciaNoValido">
-                <small *ngIf="provinciaNoValido" class="text-danger">  La Provincia no ha sido ingresado o es incorrecta</small>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-2 col-form-label"> Pais </label>
-            <div class="col-8">
-                <input class="form-control" type="text" placeholder="Pais" formControlName="pais" [class.is-invalid]="paisNoValido">
-                <small *ngIf="paisNoValido" class="text-danger"> El Pais no ha sido ingresado o es incorrecto</small>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-2 col-form-label"> DNI </label>
-            <div class="col-8">
-                <input class="form-control" type="text" placeholder="DNI" formControlName="dni" [class.is-invalid]="dniNoValido">
-                <small *ngIf="dniNoValido" class="text-danger"> El DNI no ha sido ingresado o es incorrecto</small>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-2 col-form-label"> Ingrese el Password </label>
-            <div class="col-8">
-                <input class="form-control" type="password" placeholder="Ingrese Contraseña" formControlName="pass1" [class.is-invalid]="pass1NoValido">
-                <small *ngIf="pass1NoValido" class="text-danger"> Ingrese el Password </small>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-2 col-form-label"> Repita Password </label>
-            <div class="col-8">
-                <input class="form-control" type="password" placeholder="Repita Contraseña" formControlName="pass2" [class.is-invalid]="pass2NoValido">
-                <small *ngIf="pass2NoValido" class="text-danger"> El Password debe coincidir </small>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="input-group col-8">
-                <button type="submit" class="btn btn-outline-primary btn-block" id="boton-registrar">
-                    Registrar
-                </button>
-            </div>
-        </div>
+<div class=titulo>
+<h2>{{titulo}}</h2>
+</div>
+<hr />
+<div class="row row-cols-2 row-cols-md-3 g-4 h-100">
+<form autocomplete="off" [formGroup]="formRegistro">
+  <div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label"> Nombre </label>
+      <div class="col-8">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Nombre"
+          formControlName="nombre"
+          [(ngModel)]="usuario.nombre"    
+          [class.is-invalid]="nombreNoValido"
+        />
+          <small *ngIf="nombreNoValido" class="text-danger">
+            El Nombre es requerido
+          </small>
+
+      </div>
     </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label"> Apellido </label>
+      <div class="col-8">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Apellido"
+          formControlName="apellido"
+          [(ngModel)]="usuario.apellido"
+          [class.is-invalid]="apellidoNoValido"
+        />
+        <small *ngIf="apellidoNoValido" class="text-danger">
+          El Apellido es requerido
+          </small
+        >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label"> Correo Electronico </label>
+      <div class="col-8">
+        <input
+          class="form-control"
+          type="email"
+          placeholder="Correo Electronico"
+          formControlName="email"
+          [(ngModel)]="usuario.email"
+          [class.is-invalid]="correoNoValido"
+        />
+        <div *ngIf="correoNoValido">
+          <small class="text-danger" *ngIf="f['email'].errors && f['email'].errors['required']">El Email es requerido</small>
+          <small class="text-danger" *ngIf="f['email'].errors && f['email'].errors['email']">El Email no es valido</small>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label"> Direccion </label>
+      <div class="col-8">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Direccion"
+          formControlName="direccion"
+          [(ngModel)]="usuario.direccion"
+          [class.is-invalid]="direccionNoValido"
+        />
+        <small *ngIf="direccionNoValido" class="text-danger">
+          La Direccion es requerida
+          </small>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="pais" class="col-2 col-form-label">Pais</label>
+      <div class="col-8">
+        <select
+          [compareWith]="compararPais"
+          class="form-control"
+          name="pais"
+          formControlName="pais"
+          [(ngModel)]="usuario.pais"
+          (change)="obtenerProvincias()"
+          [class.is-invalid]="paisNoValido"
+        >
+          <option [ngValue]="undefined">--- Seleccionar Pais ---</option>
+          <option *ngFor="let pais of paises" [ngValue]="pais">
+            {{ pais.descripcion }}
+          </option>
+        </select>
+        <small *ngIf="paisNoValido" class="text-danger">
+          Debe seleccionar un Pais valido</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="provincia" class="col-2 col-form-label">Provincia</label>
+      <div class="col-8">
+        <select
+          [compareWith]="compararProvincia"
+          class="form-control"
+          name="provincia"
+          formControlName="provincia"
+          (change)="obtenerLocalidades()"
+          [(ngModel)]="usuario.provincia"
+          [class.is-invalid]="provinciaNoValido"
+        >
+          <option [ngValue]="undefined">--- Seleccionar Provincia ---</option>
+          <option *ngFor="let provincia of provincias" [ngValue]="provincia">
+            {{ provincia.descripcion }}
+          </option>
+        </select>
+        <div>
+          <div *ngIf="">
+
+          </div>
+        </div>
+        <small *ngIf="provinciaNoValido" class="text-danger">
+          Debe seleccionar una Provincia valida</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="localidad" class="col-2 col-form-label">Localidad</label>
+      <div class="col-8">
+        <select
+          [compareWith]="compararLocalidad"
+          class="form-control"
+          name="localidad"
+          formControlName="localidad"
+          [(ngModel)]="usuario.localidad"
+          [class.is-invalid]="localidadNoValido"
+        >
+          <option [ngValue]="undefined">--- Seleccionar Localidad ---</option>
+          <option *ngFor="let localidad of localidades" [ngValue]="localidad">
+            {{ localidad.descripcion }}
+          </option>
+        </select>
+        <small *ngIf="provinciaNoValido" class="text-danger">
+          Debe seleccionar una Localidad valida</small
+        >
+      </div>
+    </div>
+ 
+    <div class="form-group row">
+      <label class="col-2 col-form-label"> DNI </label>
+      <div class="col-8">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="DNI"
+          formControlName="dni"
+          [(ngModel)]="usuario.dni"
+          [class.is-invalid]="dniNoValido"
+        />
+        <small *ngIf="dniNoValido" class="text-danger">
+          El DNI es requerido</small
+        >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label"> Ingrese el Password </label>
+      <div class="col-8">
+        <input
+          class="form-control"
+          type="password"
+          placeholder="Ingrese Contraseña"
+          formControlName="password"
+          [(ngModel)]="usuario.password"
+          [class.is-invalid]="pass1NoValido"
+        />
+        <small *ngIf="pass1NoValido" class="text-danger">
+          Password es requerido
+        </small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label"> Repita Password </label>
+      <div class="col-8">
+        <input
+          class="form-control"
+          type="password"
+          placeholder="Repita Contraseña"
+          formControlName="password2"
+          [class.is-invalid]="pass2NoValido"
+        />
+        <small *ngIf="pass1NoValido" class="text-danger">
+          Password es requerido
+        </small>
+        <small class="text-danger" *ngIf="f['password2'].errors && f['password2'].errors['compararPasswords']">Los password deben coincidir</small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="input-group col-8">
+        <button
+          role="button"
+          class="btn btn-outline-primary btn-block"
+          id="boton-registrar"
+          (click)="guardar()"X          
+          *ngIf="!usuario.idUsuario else elseBlock"
+        
+        >
+          Registrar
+        </button>
+        <ng-template #elseBlock>
+          <button
+          role="button"
+          class="btn btn-outline-primary btn-block"
+          id="boton-registrar"
+          (click)="update()"
+        >
+          Editar</button>
+        </ng-template>
+      </div>
+    </div>
+</div>
 </form>
+</div>

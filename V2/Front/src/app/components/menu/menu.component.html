@@ -1,4 +1,3 @@
-<!-- ::: NAV BAR ::: -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top p-3" id="menu">
     <div class="container-fluid w-50">
 
@@ -12,26 +11,31 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['tienda']">Tienda</a>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/tienda">Tienda</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link" [routerLink]="['nosotros']">
+                <li class="nav-item dropdown"routerLinkActive="active">
+                    <a class="nav-link" routerLink="/nosotros">
                   Nosotros
                   </a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item dropdown"routerLinkActive="active">
+                    <a class="nav-link" routerLink="/registro">
+                  Registrarse
+                  </a>
+                </li>
+                <li class="nav-item"routerLinkActive="active">
                     <a class="nav-link" href="#contactame">Contacto</a>
                 </li>
-
-                <li class="ms-5">
+            </ul>
+            <ul class="navbar-nav navbar-right">
+                <li>
                     <a routerLink="/login" class="d-flex">
                         <button class="text-light btn btn-info btn-info-outline-primary w-100 fs-7" type="button">Ingreso</button>
                     </a>
                 </li>
-
             </ul>
 
         </div>

@@ -7,12 +7,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fitness.modelo.Pais;
+import com.fitness.modelo.Provincia;
 import com.fitness.repositorios.PaisRepository;
+import com.fitness.repositorios.ProvinciaRepository;
 
 @Service
 public class PaisServiceImpl implements PaisService {
 	@Autowired
     private PaisRepository paisRepository;
+	
+	@Autowired
+    private ProvinciaRepository provinciaRepository;
 
 	@Override
 	@Transactional(readOnly = true)
@@ -41,4 +46,9 @@ public class PaisServiceImpl implements PaisService {
 	}
 	
 	
+	@Override
+    @Transactional(readOnly = true)
+    public List<Provincia> buscarProvinciasPorPais(int idPais) {
+        return provinciaRepository.buscarProvinciasPorPais(idPais);
+    }	
 }

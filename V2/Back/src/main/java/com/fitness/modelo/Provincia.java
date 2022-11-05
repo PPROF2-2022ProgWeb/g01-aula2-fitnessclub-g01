@@ -1,5 +1,8 @@
 package com.fitness.modelo;
 
+
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,35 +17,39 @@ import lombok.Data;
 
 @Entity
 @Table(name = "provincias")
-@Data
-public class Provincia {
+public class Provincia{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdProvincia")
 	private int IdProvincia;
+	
 	@Column(name="Descripcion" , length = 45, nullable = false)
 	private String Descripcion;
+	
 	@ManyToOne(optional=false,cascade=CascadeType.ALL)
 	@JoinColumn(name = "IdPais")
 	private Pais Pais;
+	
 	public int getIdProvincia() {
 		return IdProvincia;
 	}
 	public void setIdProvincia(int idProvincia) {
 		IdProvincia = idProvincia;
 	}
+	
 	public String getDescripcion() {
 		return Descripcion;
 	}
 	public void setDescripcion(String descripcion) {
 		Descripcion = descripcion;
 	}
+
+	
 	public Pais getPais() {
 		return Pais;
 	}
 	public void setPais(Pais pais) {
-		Pais = pais;
+		this.Pais = pais;
 	}
 	
-	
-}
+} 

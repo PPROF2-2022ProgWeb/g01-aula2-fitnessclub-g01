@@ -203,3 +203,10 @@ header {
     margin-top: 12px;
     top: 20px;
 }
+
+.footer{
+    
+    bottom: 0px;
+    height: 190px;
+    width: 100%;
+}

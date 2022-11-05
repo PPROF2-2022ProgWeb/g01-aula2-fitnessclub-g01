@@ -104,3 +104,12 @@ body {
       font-size: 6rem;
     }
   }
+
+  html{
+    position: relative;
+    min-height: 100%;
+  }
+
+  body{
+    margin-bottom: 60px;
+  }

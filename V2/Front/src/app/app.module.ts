@@ -1,4 +1,3 @@
-import { SlicePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
@@ -20,11 +19,12 @@ import { RegistrarseComponent } from './components/registrarse/registrarse.compo
 
 //Service
 import { ProductosService } from './service/productos.service';
-import { ValidadoresService } from './service/validadores.service';
 
 //Rutas
 import { APP_ROUTING,  } from './app.routes';
 import { RouterModule } from '@angular/router';
+import { PaisService } from './services/pais.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -45,6 +45,7 @@ import { RouterModule } from '@angular/router';
   
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -53,7 +54,7 @@ import { RouterModule } from '@angular/router';
   ],
   providers: [
     ProductosService, 
-    ValidadoresService
+    PaisService
   ],
   bootstrap: [AppComponent]
 })

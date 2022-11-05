@@ -12,4 +12,6 @@ public interface ProvinciaService {
 	
 	public void eliminar(Integer idProvincia);
 	public Provincia encontrarProvincia(Integer idProvincia);
+	
+	
 }

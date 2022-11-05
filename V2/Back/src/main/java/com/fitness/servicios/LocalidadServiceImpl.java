@@ -38,4 +38,11 @@ public class LocalidadServiceImpl implements LocalidadService {
 		// TODO Auto-generated method stub
 		return localidadRepository.findById(idLocalidad).orElse(null);
 	}
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Localidad> buscarLocalidadesPorProvincia(int idProvincia) {
+        return localidadRepository.buscarLocalidadesPorProvincia(idProvincia);
+    }
+    
 }

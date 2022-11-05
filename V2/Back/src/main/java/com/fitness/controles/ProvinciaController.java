@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fitness.modelo.Localidad;
 import com.fitness.modelo.Provincia;
+import com.fitness.servicios.LocalidadService;
 import com.fitness.servicios.ProvinciaService;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -27,12 +29,36 @@ import com.fitness.servicios.ProvinciaService;
 public class ProvinciaController {
 	@Autowired
 	private ProvinciaService provinciaService;
+	
+	@Autowired
+    private LocalidadService localidadService;
 
 	@GetMapping("/provincias")
 	public List<Provincia> listarProvincias() {
 		return provinciaService.listaProvincias();
 	}
 
+	
+	   @GetMapping("/paises/provincias/localidades/{idProvincia}")
+	    public ResponseEntity<?> listarLocalidades(@PathVariable Integer idProvincia) {
+	        List<Localidad> localidades = null;
+	        Map<String, Object> response = new HashMap<>();
+	        try {
+	            localidades = localidadService.buscarLocalidadesPorProvincia(idProvincia);
+	        } catch (DataAccessException e) {
+	            response.put("mensaje", "Error al realizar la consulta en la base de datos!");
+	            response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+	            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+	        }
+	        if (localidades == null) {
+	            response.put("mensaje", "La Provincia ID: ".concat(idProvincia.toString().concat(" no contiene localidades asociadas!")));
+	            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+	        }
+	        return new ResponseEntity<List<Localidad>>(localidades, HttpStatus.OK);
+	    }
+	
+	
+	
 	@GetMapping("/provincias/{idProvincia}")
 	public ResponseEntity<?> encontrarProvincia(@PathVariable Integer idProvincia) {
 		Provincia provincia = null;
@@ -100,7 +126,7 @@ public class ProvinciaController {
 
 		try {
 			provinciaActual.setDescripcion(provinciaActual.getDescripcion());
-			provinciaActual.setPais(provinciaActual.getPais());
+			//provinciaActual.setPais(provinciaActual.getPais());
 			provinciaUpdated = provinciaService.guardar(provinciaActual);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al actualizar la Provincia en la base de datos!");

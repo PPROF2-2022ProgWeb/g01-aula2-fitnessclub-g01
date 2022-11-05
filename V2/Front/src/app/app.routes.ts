@@ -17,6 +17,7 @@ const APP_ROUTES: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'tienda', component: TiendaComponent}, 
   { path: 'registro', component: RegistrarseComponent},  
+  { path: 'registro/:id', component: RegistrarseComponent},  
   { path: 'producto/:id', component: ProductoComponent},
   { path: '**', pathMatch:'full', redirectTo:'principal'}
 ];

@@ -12,9 +12,9 @@ public interface UsuarioService {
 	
 	public void eliminar(Integer idUsuario);
 	
-	public Usuario encontrarUsuario(Integer idUsuario);
+	public Usuario buscarPorId(Integer idUsuario);
 	
-	public Usuario findByEmail(String email);
+	public Usuario buscarPorEmail(String email);
 
 }
 

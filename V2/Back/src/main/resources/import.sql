@@ -4,7 +4,10 @@ INSERT INTO roles (nombre) VALUES ('ROLE_ADMIN');
 
 INSERT INTO paises (descripcion) VALUES ('Argentina');
 
+INSERT INTO paises (descripcion) VALUES ('Brasil');
+
 INSERT INTO provincias (descripcion, id_pais) VALUES ('Cordoba', 1);
+INSERT INTO provincias (descripcion, id_pais) VALUES ('Santa Fe', 1);
 
 INSERT INTO localidades (descripcion, id_provincia) VALUES ('Villa de Maria', 1);
 

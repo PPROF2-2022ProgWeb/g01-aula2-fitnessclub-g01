@@ -21,9 +21,9 @@ public class InfoAdicionalToken implements TokenEnhancer{
     
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
-        Usuario usuario=usuarioService.findByEmail(authentication.getName());
+        Usuario usuario=usuarioService.buscarPorEmail(authentication.getName());
         Map<String, Object> info=new HashMap<>();
-        info.put("info_adicional", "Hola que tal!" + authentication.getName());
+       
         info.put("nombre", usuario.getNombre());
         info.put("apellido", usuario.getApellido());
         info.put("email", usuario.getEmail());

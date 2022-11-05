@@ -24,25 +24,30 @@ public class Usuario implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdUsuario")
 	private int IdUsuario;
+	
 	@Column(name="Nombre" , length = 45, nullable = false)
 	private String Nombre;
+	
 	@Column(name="apellido" , length = 45, nullable = false)
 	private String Apellido;
 	
 	@Column(name="email" , length = 45, nullable = false, unique=true)
 	private String Email;
+	
 	@Column(name="Direccion" , length = 70, nullable = false)
 	private String Direccion;
-	@ManyToOne(optional=false,fetch = FetchType.LAZY)
-	@JoinColumn(name = "IdLocalidad")
-	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+	
+
+	@ManyToOne(optional=false)
+    @JoinColumn(name = "IdLocalidad")
 	private Localidad Localidad;
 	
 	private int DNI;
 	@Column(name="Password" , length = 60, nullable = false)
 	private String Password;
 	
-	@ManyToOne(optional=false,fetch = FetchType.LAZY)
+	
+	@ManyToOne(optional=false,fetch = FetchType.EAGER)
 	@JoinColumn(name = "IdRol")
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	private Rol Rol;
@@ -110,7 +115,6 @@ public class Usuario implements Serializable{
 	public void setDireccion(String direccion) {
 		Direccion = direccion;
 	}
-
 
 
 	public Localidad getLocalidad() {
