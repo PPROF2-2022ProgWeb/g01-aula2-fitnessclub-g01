@@ -27,15 +27,15 @@ import { ProductosService } from './service/productos.service';
 //Rutas
 import { APP_ROUTING,  } from './app.routes';
 import { RouterModule } from '@angular/router';
-<<<<<<< HEAD
+
 import { PaisService } from './services/pais.service';
 import { HttpClientModule } from '@angular/common/http';
 
-=======
+
 import { DashUserComponent } from './components/dash-user/dash-user.component';
 import { DashAdminComponent } from './components/dash-admin/dash-admin.component';
 import { GrillaAdminComponent } from './components/grilla-admin/grilla-admin.component';
->>>>>>> d6bc66b6021c3feeb18beb428a2a1845dcc2f1b5
+
 
 @NgModule({
   declarations: [
