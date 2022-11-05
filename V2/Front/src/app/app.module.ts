@@ -30,6 +30,8 @@ import { ValidadoresService } from './service/validadores.service';
 import { APP_ROUTING,  } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { DashUserComponent } from './components/dash-user/dash-user.component';
+import { DashAdminComponent } from './components/dash-admin/dash-admin.component';
+import { GrillaAdminComponent } from './components/grilla-admin/grilla-admin.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { DashUserComponent } from './components/dash-user/dash-user.component';
     DashUserComponent,
     UpdateDataUserComponent,
     GrillaProductosComponent,
+    DashAdminComponent,
+    GrillaAdminComponent,
   
   ],
   imports: [

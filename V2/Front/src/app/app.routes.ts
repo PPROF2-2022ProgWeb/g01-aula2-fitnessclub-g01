@@ -10,6 +10,8 @@ import { RegistrarseComponent } from './components/registrarse/registrarse.compo
 import { DashUserComponent } from './components/dash-user/dash-user.component';
 import { UpdateDataUserComponent } from './components/update-data-user/update-data-user.component';
 import { GrillaProductosComponent } from './components/grilla-productos/grilla-productos.component';
+import { GrillaAdminComponent } from './components/grilla-admin/grilla-admin.component';
+import { DashAdminComponent } from './components/dash-admin/dash-admin.component';
 
 const APP_ROUTES: Routes = [
   { path: 'principal', component: PrincipalComponent},
@@ -22,7 +24,9 @@ const APP_ROUTES: Routes = [
   { path: 'producto/:id', component: ProductoComponent},
   { path: 'dashboardUser', component: DashUserComponent},
   { path: 'updateUser', component: UpdateDataUserComponent},
+  { path: 'dashboardAdmin', component: DashAdminComponent},
   { path: 'grillaProductos', component: GrillaProductosComponent},
+  { path: 'grillaAdmin', component: GrillaAdminComponent},
   { path: '**', pathMatch:'full', redirectTo:'principal'}
 ];
 
