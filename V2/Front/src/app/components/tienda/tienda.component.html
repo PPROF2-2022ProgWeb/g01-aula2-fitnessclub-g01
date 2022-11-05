@@ -1,18 +1,19 @@
-<div class=titulo>
-    <h1> TIENDA DE PRODUCTOS Y SERVICIOS <small>FITNESS CLUB</small></h1>
-</div>
-<hr>
-<div class="row row-cols-2 row-cols-md-3 g-4 h-100">
-    <div class="card animated fadeIn fast " *ngFor="let producto of productos; let i=index" id="encuadrado">
-        <br>
-        <br>
-        <img class="card-img-top im-fluid" [src]="producto.img" [alt]="producto.nombre">
-        <div class="card-block">
-            <h4 class="card-title" id="titulo">{{producto.nombre | uppercase}} <small>{{producto.marca}}</small></h4>
-            <p class="card-text">{{ producto.precio}}</p>
-            <!--<button type="button" class="btn btn-outline-primary btn block"> Ver mas...</button>-->
-            <a [routerLink]="['/producto', i]" class="btn btn-outline-primary" id="boton-comprar"> Comprar </a>
-            <button class="btn btn-outline-secondary btn-block" id="carrito"> Agregar al Carrito</button>
+<div class="tienda">
+    <div>
+        <h1> TIENDA <small>FITNESS CLUB</small></h1>
+    </div>
+    <hr>
+    <div class="row row-cols-2 row-cols-md-3 g-4 h-100">
+        <div class="card animated fadeIn fast " *ngFor="let producto of productos; let i=index" id="encuadrado">
+            <br>
+            <br>
+            <img class="card-img-top img-fluid" [src]="producto.img" [alt]="producto.nombre">
+            <div class="card-block">
+                <h4 class="card-title" id="titulo">{{producto.nombre | uppercase}} <small>{{producto.marca}}</small></h4>
+                <p class="card-text">{{ producto.precio}}</p>
+                <!--<button type="button" class="btn btn-outline-primary btn block"> Ver mas...</button>-->
+                <a [routerLink]="['/producto', i]" class="btn btn-outline-primary" id="boton-comprar"> Ver Info... </a>
+            </div>
         </div>
     </div>
 </div>

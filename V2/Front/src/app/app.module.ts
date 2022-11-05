@@ -16,6 +16,10 @@ import { SliderComponent } from './components/slider/slider.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
+import { UpdateDataUserComponent } from './components/update-data-user/update-data-user.component';
+import { GrillaProductosComponent } from './components/grilla-productos/grilla-productos.component';
+
+
 
 //Service
 import { ProductosService } from './service/productos.service';
@@ -23,9 +27,15 @@ import { ProductosService } from './service/productos.service';
 //Rutas
 import { APP_ROUTING,  } from './app.routes';
 import { RouterModule } from '@angular/router';
+<<<<<<< HEAD
 import { PaisService } from './services/pais.service';
 import { HttpClientModule } from '@angular/common/http';
 
+=======
+import { DashUserComponent } from './components/dash-user/dash-user.component';
+import { DashAdminComponent } from './components/dash-admin/dash-admin.component';
+import { GrillaAdminComponent } from './components/grilla-admin/grilla-admin.component';
+>>>>>>> d6bc66b6021c3feeb18beb428a2a1845dcc2f1b5
 
 @NgModule({
   declarations: [
@@ -42,6 +52,11 @@ import { HttpClientModule } from '@angular/common/http';
     TiendaComponent,
     ProductoComponent,
     RegistrarseComponent,
+    DashUserComponent,
+    UpdateDataUserComponent,
+    GrillaProductosComponent,
+    DashAdminComponent,
+    GrillaAdminComponent,
   
   ],
   imports: [

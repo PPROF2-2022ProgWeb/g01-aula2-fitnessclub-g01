@@ -1,23 +1,33 @@
     .col-md-4 {
-        width: 70%;
+        width: 100%;
+        padding-left: 1%;
     }
     
     .col-md-8 {
         width: 100%;
+        padding-left: 20px;
     }
     
     h1 {
+        color: rgb(24, 153, 155);
         text-align-last: center;
-        font-size: 50px;
-        margin-left: 8%;
+        font-size: 5vh;
+        margin-left: 5%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+
+    p {
+        font-size: 2.5vh;
+        margin-left: 5%;
         padding-top: 1%;
         padding-bottom: 1%;
     }
     
     .row {
         width: 100%;
-        padding-left: 30%;
-        margin-bottom: 30px;
+        padding-left: 10%;
+        margin-bottom: 20px;
     }
     
     .card {
@@ -33,7 +43,7 @@
     }
     
     #boton-regresar {
-        margin-left: 1%;
+        margin-left: 3%;
         margin-bottom: 5%;
         margin-top: 3%;
     }
@@ -45,6 +55,17 @@
     }
     
     #carrito {
-        margin-left: 41%;
-        margin-top: 3%;
+        margin-left: 40%;
+        margin-top: 2%;
+    }
+    
+    .tarjeta {
+        margin-top: 5%;
+        margin-bottom: 2%;
+        box-shadow: 5px 5px 5px 5px rgb(182, 182, 182);
+        padding: 5vh;
+        width: 60%;
+        height: 10%;
+        margin-left: 20%;
+        border-radius: 20px;
     }

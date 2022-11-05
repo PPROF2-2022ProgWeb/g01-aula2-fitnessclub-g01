@@ -1,23 +1,27 @@
 h1 {
-    text-align-last: center;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    color: rgb(24, 153, 155);
+        text-align-last: center;
+        font-size: 5vh;
+        margin-left: 5%;
+        padding-top: 1%;
+        padding-bottom: 1%;
 }
 
 .row {
     height: 100%;
     width: 100%;
-    padding-left: 15%;
+    padding-left: 5%;
     margin-bottom: 50px;
 }
 
 .card {
     padding: 20px;
-    margin: 20px;
-    width: 30%;
+    margin: 30px;
+    width: 35%;
     height: 25%;
     bottom: 0%;
-    top: 0%
+    top: 0%;
+    border-radius: 20px;
 }
 
 .card-title {
@@ -45,21 +49,28 @@ h4 {
 
 #encuadrado {
     height: 90%;
+    width: 40%;
+    margin: 5%;
     bottom: 0;
 }
 
 #boton-comprar {
-    margin-left: 38%;
+    margin-left: 30%;
     margin-top: 2%;
     margin-bottom: 2%;
-}
-
-#carrito {
-    margin-left: 28%;
-    margin-top: 2%;
 }
 
 p {
     text-align: center;
     font-size: 20px;
+}
+
+.tienda {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    box-shadow: 5px 5px 5px 5px rgb(182, 182, 182);
+    padding: 5vh;
+    width: 60%;
+    height: 10%;
+    margin-left: 20%;
 }
