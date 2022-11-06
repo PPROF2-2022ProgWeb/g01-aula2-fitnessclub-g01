@@ -12,28 +12,15 @@
           </tr>
         </thead>
         <tbody >
-          <tr>
-            <th>Guantes box</th>
+          <tr *ngFor="let item of comprobanteDetalles">
+            <th>{{item.producto.descripcion}}</th>
             <td>
                 <button type="button" class="btn btn-outline-primary">-</button>
-                2
+                {{item.cantidad}}
                 <button type="button" class="btn btn-outline-primary">+</button>
             </td>
-            <td>2500</td>
-            <td>5000</td>
-            <td>
-                <button type="button" class="btn btn-outline-primary">Eliminar</button>
-            </td>
-          </tr>
-          <tr>
-            <th>Pesas 1kg</th>
-            <td>
-                <button type="button" class="btn btn-outline-primary">-</button>
-                1
-                <button type="button" class="btn btn-outline-primary">+</button>
-            </td>
-            <td>3000</td>
-            <td>3000</td>
+            <td>{{item.precioUnitario}}</td>
+            <td>{{item.precioUnitario * item.cantidad}}</td>
             <td>
                 <button type="button" class="btn btn-outline-primary">Eliminar</button>
             </td>
@@ -41,8 +28,8 @@
         </tbody>
       </table>
 
-      <div class="total">
-        <p><strong>Total: </strong>$8000</p>
+      <div class="total" >
+        <p><strong>Total: $ {{calcularTotal()}}</strong> </p>
         <button type="button" class="btn btn-outline-primary">Comprar</button>
       </div>
 </div>

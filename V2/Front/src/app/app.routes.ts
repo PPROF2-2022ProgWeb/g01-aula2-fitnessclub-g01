@@ -27,6 +27,7 @@ const APP_ROUTES: Routes = [
   { path: 'updateUser', component: UpdateDataUserComponent},
   { path: 'dashboardAdmin', component: DashAdminComponent},
   { path: 'grillaProductos', component: GrillaProductosComponent},
+  { path: 'grillaProductos/:id', component: GrillaProductosComponent},
   { path: 'grillaAdmin', component: GrillaAdminComponent},
   { path: '**', pathMatch:'full', redirectTo:'principal'}
 ];
