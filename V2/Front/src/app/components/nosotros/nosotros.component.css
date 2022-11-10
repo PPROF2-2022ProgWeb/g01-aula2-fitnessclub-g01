@@ -23,83 +23,17 @@
     -webkit-text-fill-color: transparent;
 }
 
-#subasta h2 {
-    font-size: 5rem;
-    font-weight: 800;
-    letter-spacing: -.05em;
-    text-align: center;
-    margin: 0 0 16px;
-}
-
-#subasta span {
-    color: #000;
-    display: block;
-    line-height: 1.28;
-    padding: 0 12px;
-    position: relative;
-}
-
-#subasta span::before {
-    background: linear-gradient(90deg, var(--start-color), var(--end-color));
-    content: var(--content);
-    position: absolute;
-    inset: 0;
-    -webkit-text-fill-color: transparent;
-}
-
-
-/* ==== FONDO CONTACTOS === */
-
-#bg-contacto {
-    position: relative;
-    top: -130px;
-}
-
-#seccion-contacto {
-    background-color: #0099ff;
-    min-height: 500px;
-    position: relative;
-}
-
-
-/* === CONTACTOS FORMULARIO === */
-
-#contenedor-formulario {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fbfafa;
-    border-radius: 5px;
-    max-width: 500px;
-}
-
 
 /* when screen's smaller than 512px */
 
 @media (max-width: 512px) {
-    #principles span {
-        font-size: 4rem;
-    }
     #weare h2 {
         font-size: 4rem;
-    }
-    #subasta h2 {
-        font-size: 5rem;
     }
 }
 
 
 /* when screen's smaller than 840px */
-
-@media (max-width: 840px) {
-    #principles h1 {
-        font-size: 6rem;
-    }
-    #bg-contacto {
-        top: -110px;
-    }
-}
 
 .span1 {
     --content: "Disciplina.";
