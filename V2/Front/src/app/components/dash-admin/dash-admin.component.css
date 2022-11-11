@@ -1,82 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,500&display=swap');
+/* <<<<< ADMIN HEADER >>>>> */
+/* .profile-photo {
+  width: 2rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+} */
 
-.dash {
-    margin: 5vh;
+/* <<<<< SIDEBAR >>>>> */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 90px 0 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  z-index: 99;
 }
 
-.text-ligth {
-    color: #ffffff;
+.sidebar a {
+  padding: 1.2rem;
+  display: flex;
 }
 
-.d-block {
-    text-decoration: none;
-    text-align: center;
+.sidebar li a {
+  align-items: center;
 }
 
-.d-block:hover {
-    background-color: rgba(253,187,45,1);
-    color: #efefef;
-    text-decoration: none;
+.sidebar li a:hover {
+  color: azure;
+  background: gray;
 }
 
-.bg-primary {
-    background: rgb(34,193,195);
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-    min-height: 100vh;
+.sidebar li a:active {
+  font-weight: bold;
+  color: azure;
+  background: gray;
 }
 
-.logo {
-    padding: .875rem 1.25rem;
-    text-align: center;
-}
+/* .sidebar li a:last-child {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+}  */
 
-.menu {
-    width: 18rem;
-}
-
-.nav-link {
-    margin-right: 3em;
-}
-
-.content {
-    width: 100%;
-    padding-bottom: 5rem;
-    margin-left: 1em;
-}
-
-.input{
-    padding-right: 20%;
-}
-
-p {
-    padding-left: 8px;
-    margin: 8px;
-}
-
-h1 {
-   margin-top: 2%;
-   color: rgb(24, 153, 155)
-}
-
-h4 {
-    padding:20px;
-}
-
-.card{
-    padding-right: 5%;
-    margin-right: 20%;
-    padding-bottom: 20px;
-}
-
-.linea {
-    border-top: 1px solid rgb(255, 255, 255);
-    height: 2px;
-    max-width: 200px;
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 11.5rem;
     padding: 0;
-    margin: 20px auto 0 auto;
   }
+}
 
-  .linea2 {
-    border-top: 2px solid rgb(24, 153, 155);
-    max-width: 80%;
+.navbar {
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
+}
+
+@media (min-width: 767.98px) {
+  .navbar {
+    top: 0;
+    position: sticky;
+    z-index: 999;
   }
+}
+
+.sidebar .nav-link {
+  color: #333;
+}
+
+.sidebar .nav-link.active {
+  color: #0d6efd;
+}
+

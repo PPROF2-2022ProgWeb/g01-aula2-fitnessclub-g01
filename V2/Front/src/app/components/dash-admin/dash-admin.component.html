@@ -1,19 +1,233 @@
-<div class="dash d-flex">
-  <div class="bg-primary">
-      <div class="logo">
-          <h4 class="text-ligth"> Gimena Binaghi </h4>
-          <div class="linea"></div>
+<div class="bg-warning">
+  <!-- :::::::::: ADMIN HEADER :::::::::: -->
+  <nav class="navbar navbar-collapse bg-dark p-3" id="la-barra">
+    <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+        <a class="navbar-brand text-light" href="#">
+            Admin Dashboard
+        </a>
+        <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <!-- <div class="col-12 col-md-4 col-lg-2">
+        <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">
+    </div> -->
+    <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
+      <div class="info d-flex">
+            <div class="profile-photo">
+              <img src="./src/img/profile-1.png" width="39px">
+            </div>
+            <div class="dropdown mr-3">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                  Hola, Gimena
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li>
+                        <a class="dropdown-item d-flex" href="#">
+                            <span class="material-icons-sharp mr-2">person_outline</span>
+                            <span>Perfil</span>
+                        </a>
+                  </li>
+                  <li>  <a class="dropdown-item d-flex" href="#">
+                            <span class="material-icons-sharp mr-2">mark_as_unread</span>
+                            <span class="mr-2">Mensajes</span>
+                        </a>
+                  </li>
+                  <li>  <a class="dropdown-item d-flex" [routerLink]="['/principal']">
+                            <span class="material-icons-sharp mr-2">logout</span>
+                            <span class="mr-2">Salir</span>
+                        </a>
+                  </li>
+                </ul>
+              </div>
+
       </div>
-      <div class="menu">
-          <a class="d-block p-3 text-ligth" [routerLink]="['/grillaAdmin']"> Productos </a>
-          <a class="d-block p-3 text-ligth" [routerLink]="['/grillaAdmin']"> Usuarios</a>
-          <a class="d-block p-3 text-ligth" [routerLink]="['/principal']"> Salir </a>
       </div>
+  </nav>
+
+
+  <!-- :::::::::: SIDEBAR   :::::::::: -->
+  <div class="container-fluid">
+    <div class="row">
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <!-- sidebar content goes in here -->
+            <div class="position-sticky pt-md-5">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link active d-flex" aria-current="page" href="#">
+                        <span class="material-icons-sharp">grid_view</span>
+                        <span class="">Resumen</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/grillaAdmin']">
+                            <span class="material-icons-sharp">inventory</span>
+                            <span class="ml-2">Productos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/grillaAdmin']">
+                            <span class="material-icons-sharp">people</span>
+                            <span class="ml-2">Usuarios</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="material-icons-sharp">receipt_long</span>
+                        <span class="ml-2">Órdenes</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="material-icons-sharp">report_gmailerrorred</span>
+                        <span class="ml-2">Reportes</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="#">
+                        <span class="material-icons-sharp">settings</span>
+                        <span class="ml-2">Configuración</span>
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- sidebar content ends in here -->
+        </nav>
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Overview</li>
+                </ol>
+            </nav>
+
+            <!-- sidebar content starts in here -->
+            <h1 class="h2">Resumen</h1>
+
+            <!-- showing four cards -->
+            <div class="row my-4">
+                <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <div class="card">
+                        <h5 class="card-header">Clientes</h5>
+                        <div class="card-body">
+                          <h5 class="card-title">345k</h5>
+                          <p class="card-text">Feb 1 - Abr 1, Argentina</p>
+                          <p class="card-text text-success">18.2% increase since last month</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+                    <div class="card">
+                        <h5 class="card-header">Ingresos</h5>
+                        <div class="card-body">
+                          <h5 class="card-title">$2.4k</h5>
+                          <p class="card-text">Feb 1 - Abr 1, Argentina</p>
+                          <p class="card-text text-success">4.6% increase since last month</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+                    <div class="card">
+                        <h5 class="card-header">Compras</h5>
+                        <div class="card-body">
+                          <h5 class="card-title">43</h5>
+                          <p class="card-text">Feb 1 - Abr 1, Argentina</p>
+                          <p class="card-text text-danger">2.6% decrease since last month</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+                    <div class="card">
+                        <h5 class="card-header">Tráfico</h5>
+                        <div class="card-body">
+                          <h5 class="card-title">64k</h5>
+                          <p class="card-text">Feb 1 - Abr 1, Argentina</p>
+                          <p class="card-text text-success">2.5% increase since last month</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+            <!-- latest purchases -->
+            <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+                    <div class="card">
+                        <h5 class="card-header">Últimas Transacciones</h5>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Orden</th>
+                                        <th scope="col">Producto</th>
+                                        <th scope="col">Cliente</th>
+                                        <th scope="col">Total</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col"></th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">17371705</th>
+                                        <td>Volt Premium Bootstrap 5 Dashboard</td>
+                                        <td>johndoe@gmail.com</td>
+                                        <td>€61.11</td>
+                                        <td>Aug 31 2020</td>
+                                        <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">17370540</th>
+                                        <td>Pixel Pro Premium Bootstrap UI Kit</td>
+                                        <td>jacob.monroe@company.com</td>
+                                        <td>$153.11</td>
+                                        <td>Aug 28 2020</td>
+                                        <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">17371705</th>
+                                        <td>Volt Premium Bootstrap 5 Dashboard</td>
+                                        <td>johndoe@gmail.com</td>
+                                        <td>€61.11</td>
+                                        <td>Aug 31 2020</td>
+                                        <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">17370540</th>
+                                        <td>Pixel Pro Premium Bootstrap UI Kit</td>
+                                        <td>jacob.monroe@company.com</td>
+                                        <td>$153.11</td>
+                                        <td>Aug 28 2020</td>
+                                        <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">17371705</th>
+                                        <td>Volt Premium Bootstrap 5 Dashboard</td>
+                                        <td>johndoe@gmail.com</td>
+                                        <td>€61.11</td>
+                                        <td>Aug 31 2020</td>
+                                        <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">17370540</th>
+                                        <td>Pixel Pro Premium Bootstrap UI Kit</td>
+                                        <td>jacob.monroe@company.com</td>
+                                        <td>$153.11</td>
+                                        <td>Aug 28 2020</td>
+                                        <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                              <a href="#" class="btn btn-block btn-light">View all</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-4">
+                    <!-- Another widget will go here -->
+                </div>
+              </div>
+
+        </main>
+    </div>
   </div>
-  
-      <div class="content">
-          <h1 class="font-weigth-bold"> Bienvenido al dashboard de Administrador </h1>
-          <div class="linea2"></div>       
-          
-      </div>
 </div>

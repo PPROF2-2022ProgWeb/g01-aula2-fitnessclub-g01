@@ -38,6 +38,10 @@
     }
   }
 
+  #valores {
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+  }
 
   /* when screen's smaller than 512px */
   @media (max-width: 512px) {
