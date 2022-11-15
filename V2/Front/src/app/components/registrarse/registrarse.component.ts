@@ -20,7 +20,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./registrarse.component.css'],
 })
 export class RegistrarseComponent implements OnInit {
-  titulo: string = 'Formulario de Registro';
+  titulo: string = 'Registro.';
 
   usuario: UsuarioModel = new UsuarioModel();
 
@@ -64,7 +64,7 @@ export class RegistrarseComponent implements OnInit {
     this.cargarPaises();
     this.cargarUsuario();
   }
-  
+
   CompararPasswords(controlPassword1: string, controlPassword2:string){
     return (frmGroup:FormGroup)=>{
       const control=frmGroup.controls[controlPassword1];
@@ -186,7 +186,7 @@ export class RegistrarseComponent implements OnInit {
       ? false
       : p1.idLocalidad == p2.idLocalidad;
   }
-    
+
 
 
 
