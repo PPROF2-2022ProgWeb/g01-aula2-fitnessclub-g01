@@ -3,21 +3,36 @@ package com.fitness.servicios;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fitness.modelo.Rubro;
-import com.fitness.repositorios.RubroRepository;
+import com.fitness.repositorios.IRubroRepository;
 
 @Service
-public class RubroServiceImpl implements RubroService {
+public class RubroServiceImpl implements IRubroService{
 
 	@Autowired
-    private RubroRepository rubroRepository;
+	private IRubroRepository rubroRepository;
+	
 	@Override
 	@Transactional(readOnly = true)
-	public List<Rubro> listaRubros() {
-	    return (List<Rubro>) rubroRepository.findAll();
+	public List<Rubro> listarTodos() {
+		return rubroRepository.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Page<Rubro> listarTodos(Pageable pageable) {
+		return rubroRepository.findAll(pageable);
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Rubro buscarPorId(Long id) {
+		return rubroRepository.findById(id).orElse(null);
 	}
 
 	@Override
@@ -28,14 +43,8 @@ public class RubroServiceImpl implements RubroService {
 
 	@Override
 	@Transactional
-	public void eliminar(Integer idubro) {
-		rubroRepository.deleteById(idubro);	
+	public void eliminar(Long id) {
+		rubroRepository.deleteById(id);
 	}
 
-	@Override
-	@Transactional(readOnly = true)
-	public Rubro encontrarRubro(Integer idRubro) {
-		// TODO Auto-generated method stub
-		return rubroRepository.findById(idRubro).orElse(null);
-	}
 }

@@ -1,5 +1,7 @@
 package com.fitness.modelo;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,35 +9,29 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
-
 @Entity
-@Table(name = "rubros")
-@Data
-public class Rubro {
+@Table(name="rubros")
+public class Rubro implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdRubro")
-	private int IdRubro;	
+	private Long IdRubro;
 	
-	@Column(name="Descripcion" , length = 60, nullable = false)
-	private String Descripcion;
-
-	public int getIdRubro() {
+	@Column(name = "Nombre",nullable = false, length = 45)
+	private String Nombre;
+	
+	public Long getIdRubro() {
 		return IdRubro;
 	}
-
-	public void setIdRubro(int idRubro) {
+	public void setIdRubro(Long idRubro) {
 		IdRubro = idRubro;
 	}
-
-	public String getDescripcion() {
-		return Descripcion;
+	public String getNombre() {
+		return Nombre;
 	}
-
-	public void setDescripcion(String descripcion) {
-		Descripcion = descripcion;
+	public void setNombre(String nombre) {
+		Nombre = nombre;
 	}
 	
-	
+	private static final long serialVersionUID = 1L;
 }

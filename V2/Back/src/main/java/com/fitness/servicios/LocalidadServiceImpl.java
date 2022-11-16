@@ -7,42 +7,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fitness.modelo.Localidad;
-import com.fitness.repositorios.LocalidadRepository;
+import com.fitness.repositorios.ILocalidadRepository;
+
 @Service
-public class LocalidadServiceImpl implements LocalidadService {
+public class LocalidadServiceImpl implements ILocalidadService{
+
 	@Autowired
-    private LocalidadRepository localidadRepository;
+	private ILocalidadRepository localidadRepository;
 	
 	@Override
 	@Transactional(readOnly = true)
-	public List<Localidad> listarLocalidades() {
-		return (List<Localidad>)localidadRepository.findAll();
+	public List<Localidad> listarLocalidadesPorProvincia(Long idProvincia) {
+		return localidadRepository.listarLocalidadesPorProvincia(idProvincia);
 	}
-
-	@Override
-	@Transactional
-	public Localidad guardar(Localidad localidad) {
-		// TODO Auto-generated method stub
-		return localidadRepository.save(localidad);
-	}
-
-	@Override
-	@Transactional
-	public void eliminar(Integer idPais) {
-		localidadRepository.deleteById(idPais);
-	}
-
-	@Override
-	@Transactional(readOnly = true)
-	public Localidad encontrarLocalidad(Integer idLocalidad) {
-		// TODO Auto-generated method stub
-		return localidadRepository.findById(idLocalidad).orElse(null);
-	}
-
-    @Override
-    @Transactional(readOnly = true)
-    public List<Localidad> buscarLocalidadesPorProvincia(int idProvincia) {
-        return localidadRepository.buscarLocalidadesPorProvincia(idProvincia);
-    }
-    
+	
 }

@@ -12,38 +12,32 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
-
 @Entity
-@Table(name = "localidades")
+@Table(name="localidades")
 public class Localidad implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdLocalidad")
-	private int IdLocalidad;
-	@Column(name="Descripcion" , length = 45, nullable = false)
-	private String Descripcion;
+	private Long IdLocalidad;
 	
-	//@ManyToOne(optional=false,cascade=CascadeType.ALL)
+	@Column(name = "Nombre",nullable = false, length = 45)
+	private String Nombre;
+	
 	@ManyToOne(optional=false,cascade=CascadeType.ALL)
-	@JoinColumn(name = "IdProvincia")
+	@JoinColumn(name = "IdProvincia", nullable = false)
 	private Provincia Provincia;
 	
-	public int getIdLocalidad() {
+	public Long getIdLocalidad() {
 		return IdLocalidad;
 	}
-	
-	public void setIdLocalidad(int idLocalidad) {
+	public void setIdLocalidad(Long idLocalidad) {
 		IdLocalidad = idLocalidad;
 	}
-	public String getDescripcion() {
-		return Descripcion;
+	public String getNombre() {
+		return Nombre;
 	}
-	public void setDescripcion(String descripcion) {
-		Descripcion = descripcion;
+	public void setNombre(String nombre) {
+		Nombre = nombre;
 	}
 	
 	public Provincia getProvincia() {
@@ -53,5 +47,5 @@ public class Localidad implements Serializable{
 		Provincia = provincia;
 	}
 	
-	
+	private static final long serialVersionUID = 1L;
 }

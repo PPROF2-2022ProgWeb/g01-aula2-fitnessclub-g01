@@ -1,124 +1,122 @@
 package com.fitness.modelo;
 
-import java.sql.Blob;
+import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
-@Table(name = "productos")
-@Data
-public class Producto {
+@Table(name="productos")
+public class Producto implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdProducto")
-	private int IdProducto;
-
-	@Column(name="Descripcion" , length = 45, nullable = false)
+	private Long IdProducto;
+	
+	@NotEmpty
+	@Column(name = "Descripcion",nullable = false, length = 45)
 	private String Descripcion;
 	
-	@ManyToOne(optional=false,cascade=CascadeType.ALL)
-	@JoinColumn(name = "IdRubro")
-	private Rubro rubro;
-	@ManyToOne(optional=false,cascade=CascadeType.ALL)
-	@JoinColumn(name = "IdDisciplina")
-	private Disciplina disciplina;
+	@ManyToOne(optional=false,fetch = FetchType.EAGER)
+	@JoinColumn(name = "IdRubro",nullable = false)
+	private Rubro Rubro;
 	
-	@Column(name="precioUnitario", nullable = false)
-	private float precioUnitario;
+	@ManyToOne(optional=false,fetch = FetchType.EAGER)
+	@JoinColumn(name = "IdDisciplina", nullable = false)
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+	private Disciplina Disciplina;
 	
-	@Column(name="imagen", nullable = false)
-	private String imagen;
-	
-	@Column(name="stock", nullable = false)
-	private int stock;
-	
-	@Column(name="esServicio", nullable = false)
-	private Boolean esServicio;
-	
-	@Column(name="estado", nullable = false)
-	private Boolean estado;
 
-	public int getIdProducto() {
+	@ManyToOne(optional=false,fetch = FetchType.EAGER)
+	@JoinColumn(name = "IdMarca", nullable = false)
+	private Marca Marca;
+	
+	@Column(name = "PrecioUnitario",nullable = false)
+	private float PrecioUnitario;
+	
+	@Column(name = "Imagen"/*,nullable = false*/)
+	private String Imagen;
+	
+	@Column(name = "Stock",nullable = false)
+	private int Stock;
+	
+	@Column(name = "Servicio",nullable = false)
+	private boolean Servicio;
+	
+	@Column(name = "Estado",nullable = false)
+	private boolean Estado;
+	
+	public Long getIdProducto() {
 		return IdProducto;
 	}
-
-	public void setIdProducto(int idProducto) {
+	public void setIdProducto(Long idProducto) {
 		IdProducto = idProducto;
 	}
-
 	public String getDescripcion() {
 		return Descripcion;
 	}
-
 	public void setDescripcion(String descripcion) {
 		Descripcion = descripcion;
 	}
-
 	public Rubro getRubro() {
-		return rubro;
+		return Rubro;
 	}
-
 	public void setRubro(Rubro rubro) {
-		this.rubro = rubro;
+		Rubro = rubro;
 	}
-
 	public Disciplina getDisciplina() {
-		return disciplina;
+		return Disciplina;
 	}
-
 	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
+		Disciplina = disciplina;
 	}
-
+	public Marca getMarca() {
+		return Marca;
+	}
+	public void setMarca(Marca marca) {
+		Marca = marca;
+	}
 	public float getPrecioUnitario() {
-		return precioUnitario;
+		return PrecioUnitario;
 	}
-
 	public void setPrecioUnitario(float precioUnitario) {
-		this.precioUnitario = precioUnitario;
+		PrecioUnitario = precioUnitario;
 	}
-
 	public String getImagen() {
-		return imagen;
+		return Imagen;
 	}
-
 	public void setImagen(String imagen) {
-		this.imagen = imagen;
+		this.Imagen = imagen;
 	}
-
 	public int getStock() {
-		return stock;
+		return Stock;
 	}
-
 	public void setStock(int stock) {
-		this.stock = stock;
+		Stock = stock;
 	}
-
-	public Boolean getEsServicio() {
-		return esServicio;
+	public boolean getServicio() {
+		return Servicio;
 	}
-
-	public void setEsServicio(Boolean esServicio) {
-		this.esServicio = esServicio;
+	public void setServicio(boolean servicio) {
+		Servicio = servicio;
 	}
-
-	public Boolean getEstado() {
-		return estado;
+	public boolean getEstado() {
+		return Estado;
 	}
-
-	public void setEstado(Boolean estado) {
-		this.estado = estado;
+	public void setEstado(boolean estado) {
+		Estado = estado;
 	}
 	
-	
+	private static final long serialVersionUID = 1L;
 }

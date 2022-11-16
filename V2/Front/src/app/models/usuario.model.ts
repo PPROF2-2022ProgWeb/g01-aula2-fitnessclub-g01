@@ -5,6 +5,7 @@ export class UsuarioModel {
     idUsuario:number;
     nombre:string;
     apellido:string;
+    dni:number;
     email:string;
     direccion:string;
     localidad:LocalidadModel;

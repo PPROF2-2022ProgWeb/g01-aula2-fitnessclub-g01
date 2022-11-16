@@ -9,35 +9,42 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
-
-
-
 @Entity
-@Table(name = "roles")
-@Data
+@Table(name="roles")
 public class Rol implements Serializable{
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdRol")
-	private int IdRol;
+	private Long IdRol;
 	
-	//Siempre debe comenzar con ROLE_
-	@Column(name="nombre" , length = 20 , nullable = false, unique=true)
+	@Column(name = "Nombre",nullable = false, length = 30,unique=true)
+	private String Nombre;
+	/*
+	@Column(name = "Descripcion",nullable = false, length = 30,unique=true)
 	private String Descripcion;
-	public int getIdRol() {
+	*/
+	
+	public Long getIdRol() {
 		return IdRol;
 	}
-	public void setIdRol(int idRol) {
+	public void setIdRol(Long idRol) {
 		IdRol = idRol;
 	}
+	public String getNombre() {
+		return Nombre;
+	}
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
+	
+	/*
 	public String getDescripcion() {
 		return Descripcion;
 	}
 	public void setDescripcion(String descripcion) {
 		Descripcion = descripcion;
 	}
-	
+*/
+
 	private static final long serialVersionUID = 1L;
 }
