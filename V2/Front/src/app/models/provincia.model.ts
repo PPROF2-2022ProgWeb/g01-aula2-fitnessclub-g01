@@ -1,7 +1,8 @@
+import { LocalidadModel } from "./localidad.model";
 import { PaisModel } from "./pais.model";
 
 export class ProvinciaModel {
     idProvincia:number;
-    descripcion:string;
-    pais?:PaisModel;
+    nombre:string;
+    pais:PaisModel;
 }

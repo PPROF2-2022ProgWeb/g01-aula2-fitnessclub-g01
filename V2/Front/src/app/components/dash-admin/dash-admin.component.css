@@ -1,73 +1,172 @@
-/* <<<<< ADMIN HEADER >>>>> */
-/* .profile-photo {
-  width: 2rem;
-  height: 2.8rem;
-  border-radius: 50%;
-  overflow: hidden;
-} */
 
-/* <<<<< SIDEBAR >>>>> */
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
-  padding: 90px 0 0;
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-  z-index: 99;
+
+a{
+    text-decoration: none;
+    text-align: center;
+    color: rgb(24, 153, 155);
+    font-size: 25px;
+    padding-bottom: 1%;
+  }
+
+  a:hover{
+    text-decoration: none;
+    text-align: center;
+    color: #007CF0;
+    font-size: 25px;
+    padding-bottom: 1%;
+  }
+
+
+/* ::: principios ::: */
+#principles h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -.05em;
+  text-align: center;
+  margin: 0 0 16px;
 }
 
-.sidebar a {
-  padding: 1.2rem;
-  display: flex;
+#principles span {
+  color: #18999b;
+  display: block;
+  line-height: 1.29;
+  padding:  0 12px;
+  position: relative;
 }
 
-.sidebar li a {
-  align-items: center;
-}
-
-.sidebar li a:hover {
-  color: azure;
-  background: gray;
-}
-
-.sidebar li a:active {
-  font-weight: bold;
-  color: azure;
-  background: gray;
-}
-
-/* .sidebar li a:last-child {
+#principles span::before {
+  background: linear-gradient(90deg, var(--start-color), var(--end-color));
+  content: var(--content);
   position: absolute;
-  bottom: 2rem;
-  width: 100%;
-}  */
+  inset: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animated 9s infinite;
+  animation-delay: var(--delay);
+}
 
-@media (max-width: 767.98px) {
-  .sidebar {
-    top: 11.5rem;
-    padding: 0;
+@keyframes animated {
+  0%, 16.667%, 100% {
+
+
+    opacity: 1;
+  }
+
+  33.333%, 83.333% {
+    opacity: 0
   }
 }
 
-.navbar {
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
-}
 
-@media (min-width: 767.98px) {
-  .navbar {
-    top: 0;
-    position: sticky;
-    z-index: 999;
+/* when screen's smaller than 512px */
+@media (max-width: 512px) {
+  #principles span {
+    font-size: 4rem;
   }
 }
 
-.sidebar .nav-link {
-  color: #333;
+/* when screen's smaller than 840px */
+@media (max-width: 840px) {
+  #principles h1 {
+    font-size: 6rem;
+  }
 }
 
-.sidebar .nav-link.active {
-  color: #0d6efd;
+  .span1{
+    --content: "TIENDA FITNESS CLUB"; --start-color:#007CF0; --end-color: #00DFD8; --delay: 0s;
+  }
+  .span2{
+    --content: "Constancia."; --start-color:#7928CA; --end-color: #FF0080; --delay: 3.33s;
+  }
+  .span3{
+    --content: "Resultado."; --start-color:#FF4D4D; --end-color: #F9CB28; --delay: 6.66s;
+  }
+  .span4{
+    --content: "Tienda."; --start-color: #007CF0; --end-color: #007CF0;
+  }
+  .span5{
+      --content: "Carrito de Compras."; --start-color: #007CF0; --end-color: #007CF0;
+    }
+  .span6{
+      --content: "Menú."; --start-color: #007CF0; --end-color: #007CF0;
+    }
+
+
+h1 {
+    color: rgb(24, 153, 155);
+        text-align-last: center;
+        font-size: 5vh;
+        margin-left: 5%;
+        padding-top: 1%;
+        padding-bottom: 1%;
 }
+
+.row {
+    height: 100%;
+    width: 100%;
+    padding-left: 5%;
+    margin-bottom: 50px;
+}
+
+.card {
+    padding: 20px;
+    margin: 30px;
+    width: 35%;
+    height: 25%;
+    bottom: 0%;
+    top: 0%;
+    border-radius: 20px;
+}
+
+.card-title {
+    text-align-last: center;
+    bottom: 12px;
+    top: 12px;
+}
+
+.img {
+    width: 20%;
+    height: 20%;
+    bottom: 10%;
+    top: 10%
+}
+
+h4 {
+    padding-bottom: 20px;
+    padding-top: 12px;
+    font-size: 15px;
+}
+
+.h-100 {
+    height: 65%!important;
+}
+
+#encuadrado {
+    height: 90%;
+    width: 40%;
+    margin: 5%;
+    bottom: 0;
+}
+
+#boton-comprar {
+    margin-left: 30%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.tienda {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    box-shadow: 5px 5px 5px 5px rgb(182, 182, 182);
+    padding: 5vh;
+    width: 60%;
+    height: 10%;
+    margin-left: 20%;
+}
+
 

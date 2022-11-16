@@ -1,10 +1,10 @@
-import { ComprobanteDetallesModel } from "./comprobante-detalles.model";
+import { ItemComprobanteModel } from "./itemComprobante.model";
 import { UsuarioModel } from "./usuario.model";
 
 export class ComprobanteModel {
     idComprobante:number;
-    fecha:Date;
+    fecha:string;
     usuario:UsuarioModel;
     total:number;
-    detalles:ComprobanteDetallesModel[];
+    items:ItemComprobanteModel[];
 }

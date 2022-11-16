@@ -1,5 +1,4 @@
 export class RolModel {
     idRol:number;
-    descripcion:string;
-    
+    nombre:string;
 }

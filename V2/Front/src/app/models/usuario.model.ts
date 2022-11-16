@@ -1,6 +1,4 @@
 import { LocalidadModel } from "./localidad.model";
-import { PaisModel } from "./pais.model";
-import { ProvinciaModel } from "./provincia.model";
 import { RolModel } from "./rol.model";
 
 export class UsuarioModel {
@@ -9,11 +7,9 @@ export class UsuarioModel {
     apellido:string;
     email:string;
     direccion:string;
-    localidad?:LocalidadModel;
-    provincia?:ProvinciaModel;
-    pais?:PaisModel;
-    dni:number;
+    localidad:LocalidadModel;
     password:string;
     rol:RolModel;
-    estado:boolean;
+    imagen:string='';
+    estado:boolean=true;
 }

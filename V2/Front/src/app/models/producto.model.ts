@@ -1,14 +1,16 @@
 import { DisciplinaModel } from "./disciplina.model";
+import { MarcaModel } from "./marca.model";
 import { RubroModel } from "./rubro.model";
 
 export class ProductoModel {
     idProducto:number;
     descripcion:string;
-    imagen:string;
-    precioUnitario:number;
-    stock:number;
-    es_servicio:boolean;
-    disciplina:DisciplinaModel;
     rubro:RubroModel;
-    estado:boolean;
+    disciplina:DisciplinaModel;
+    marca:MarcaModel;
+    precioUnitario:number;
+    imagen:string='';
+    stock:number;
+    servicio:boolean=false;
+    estado:boolean=true;
 }

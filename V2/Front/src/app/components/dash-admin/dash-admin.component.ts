@@ -9,7 +9,7 @@ export class DashAdminComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
