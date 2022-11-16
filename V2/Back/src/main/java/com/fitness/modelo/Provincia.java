@@ -1,6 +1,5 @@
 package com.fitness.modelo;
 
-
 import java.io.Serializable;
 
 import javax.persistence.CascadeType;
@@ -13,43 +12,56 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import lombok.Data;
+
 
 @Entity
-@Table(name = "provincias")
-public class Provincia{
+@Table(name="provincias")
+public class Provincia implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdProvincia")
-	private int IdProvincia;
+	private Long IdProvincia;
 	
-	@Column(name="Descripcion" , length = 45, nullable = false)
-	private String Descripcion;
-	
+	@Column(name = "Nombre",nullable = false, length = 45)
+	private String Nombre;
+		
 	@ManyToOne(optional=false,cascade=CascadeType.ALL)
-	@JoinColumn(name = "IdPais")
+	@JoinColumn(name = "IdPais", nullable = false)
 	private Pais Pais;
 	
-	public int getIdProvincia() {
+	/*
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "IdProvincia")
+	private List<Localidad> Localidades;
+	*/
+	public Long getIdProvincia() {
 		return IdProvincia;
 	}
-	public void setIdProvincia(int idProvincia) {
+	public void setIdProvincia(Long idProvincia) {
 		IdProvincia = idProvincia;
 	}
+	public String getNombre() {
+		return Nombre;
+	}
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
 	
-	public String getDescripcion() {
-		return Descripcion;
+	/*
+	public List<Localidad> getLocalidades() {
+		return Localidades;
 	}
-	public void setDescripcion(String descripcion) {
-		Descripcion = descripcion;
+	public void setLocalidades(List<Localidad> localidades) {
+		Localidades = localidades;
 	}
-
+*/
 	
 	public Pais getPais() {
 		return Pais;
 	}
 	public void setPais(Pais pais) {
-		this.Pais = pais;
+		Pais = pais;
 	}
 	
-} 
+	private static final long serialVersionUID = 1L;
+}

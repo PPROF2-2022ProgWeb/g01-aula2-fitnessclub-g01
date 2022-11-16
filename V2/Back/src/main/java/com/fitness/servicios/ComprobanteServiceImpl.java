@@ -3,23 +3,39 @@ package com.fitness.servicios;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fitness.modelo.Comprobante;
-import com.fitness.repositorios.ComprobanteRepository;
+import com.fitness.repositorios.IComprobanteRepository;
+
 @Service
-public class ComprobanteServiceImpl implements ComprobanteService {
+public class ComprobanteServiceImpl implements IComprobanteService{
 
 	@Autowired
-    private ComprobanteRepository comprobanteRepository;
+	private IComprobanteRepository comprobanteRepository;
 	
 	@Override
 	@Transactional(readOnly = true)
-	public List<Comprobante> listaComprobantes() {
-		return (List<Comprobante>)comprobanteRepository.findAll();
+	public List<Comprobante> listarTodos() {
+		return comprobanteRepository.findAll();
 	}
 
+	@Override
+	@Transactional(readOnly = true)
+	public Page<Comprobante> listarTodos(Pageable pageable) {
+		return comprobanteRepository.findAll(pageable);
+	}
+
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Comprobante buscarPorId(Long id) {
+		return comprobanteRepository.findById(id).orElse(null);
+	}
+	
 	@Override
 	@Transactional
 	public Comprobante guardar(Comprobante comprobante) {
@@ -27,14 +43,15 @@ public class ComprobanteServiceImpl implements ComprobanteService {
 	}
 
 	@Override
-	@Transactional
-	public void eliminar(Integer idComprobante) {
-		comprobanteRepository.deleteById(idComprobante);
+	@Transactional(readOnly = true)
+	public List<Comprobante> listarPorUsuario(Long idUsuario) {
+		return comprobanteRepository.listarPorUsuario(idUsuario);
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Comprobante encontrarComprobante(Integer idComprobante) {
-		return comprobanteRepository.findById(idComprobante).orElse(null);
+	public Page<Comprobante> listarPorUsuario(Long idUsuario, Pageable pageable) {
+		return comprobanteRepository.listarPorUsuario(idUsuario,pageable);
 	}
+
 }

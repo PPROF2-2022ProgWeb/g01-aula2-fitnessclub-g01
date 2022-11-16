@@ -14,42 +14,51 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 
 
-import lombok.Data;
 
 @Entity
-@Table(name = "comprobantes")
-@Data
+@Table(name="comprobantes")
 public class Comprobante implements Serializable{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdComprobante")
-	private int IdComprobante;	
+	private Long IdComprobante;
 	
+	@NotEmpty
+	@Column(name = "Fecha",nullable = false)
 	@Temporal(TemporalType.DATE)
-	@Column(name = "Fecha")
 	private Date Fecha;
 	
+	@PrePersist
+	public void prePersist() {
+		Fecha=new Date();
+	}
+	
+	@NotEmpty
 	@ManyToOne(optional=false,cascade=CascadeType.ALL)
-	@JoinColumn(name = "IdFormadepago")
-	private FormaDePago FormaDePago;
-	@ManyToOne(optional=false,cascade=CascadeType.ALL,fetch = FetchType.LAZY )
-	@JoinColumn(name = "IdUsuario")
+	@JoinColumn(name = "IdUsuario", nullable=false)
 	private Usuario Usuario;
-	@Column(name = "Total")
+	
+	@NotEmpty
+	@Column(name = "Total",nullable = false)
 	private float Total;
+		
+	@OneToMany(mappedBy = "Comprobante", fetch = FetchType.LAZY, orphanRemoval = false)
+	private List<ItemComprobante> items;
 	
-	@OneToMany(mappedBy="Comprobante")
-	private List<ItemComprobante> item;
+
 	
-	public int getIdComprobante() {
+	public Long getIdComprobante() {
 		return IdComprobante;
 	}
-	public void setIdComprobante(int idComprobante) {
+	public void setIdComprobante(Long idComprobante) {
 		IdComprobante = idComprobante;
 	}
 	public Date getFecha() {
@@ -57,12 +66,6 @@ public class Comprobante implements Serializable{
 	}
 	public void setFecha(Date fecha) {
 		Fecha = fecha;
-	}
-	public FormaDePago getFormaDePago() {
-		return FormaDePago;
-	}
-	public void setFormaDePago(FormaDePago formaDePago) {
-		FormaDePago = formaDePago;
 	}
 	public Usuario getUsuario() {
 		return Usuario;
@@ -76,6 +79,12 @@ public class Comprobante implements Serializable{
 	public void setTotal(float total) {
 		Total = total;
 	}
-	private static final long serialVersionUID = 1L;
+	public List<ItemComprobante> getItems() {
+		return items;
+	}
+	public void setItems(List<ItemComprobante> items) {
+		this.items = items;
+	}
 	
+	private static final long serialVersionUID = 1L;	
 }

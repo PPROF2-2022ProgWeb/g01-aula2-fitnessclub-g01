@@ -11,13 +11,13 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.stereotype.Component;
 
 import com.fitness.modelo.Usuario;
-import com.fitness.servicios.UsuarioService;
+import com.fitness.servicios.IUsuarioService;
 
 @Component
 public class InfoAdicionalToken implements TokenEnhancer{
 
     @Autowired
-    private UsuarioService usuarioService;
+    private IUsuarioService usuarioService;
     
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {

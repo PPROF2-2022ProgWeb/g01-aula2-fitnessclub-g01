@@ -7,34 +7,20 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fitness.modelo.Provincia;
-import com.fitness.repositorios.ProvinciaRepository;
+import com.fitness.repositorios.IProvinciaRepository;
+
 @Service
-public class ProvinciaServiceImpl implements ProvinciaService {
+public class ProvinciaServiceImpl implements IProvinciaService{
+
 	@Autowired
-    private ProvinciaRepository provinciaRepository;
-	@Override
-	@Transactional(readOnly = true)
-	public List<Provincia> listaProvincias() {
-	    return (List<Provincia>) provinciaRepository.findAll();
-	}
-
-	@Override
-	@Transactional
-	public Provincia guardar(Provincia provincia) {
-		return provinciaRepository.save(provincia);
-	}
-
-	@Override
-	@Transactional
-	public void eliminar(Integer idProvincia) {
-		provinciaRepository.deleteById(idProvincia);	
-	}
+	private IProvinciaRepository provinciaRepository;
 
 	@Override
 	@Transactional(readOnly = true)
-	public Provincia encontrarProvincia(Integer idProvincia) {
-		// TODO Auto-generated method stub
-		return provinciaRepository.findById(idProvincia).orElse(null);
+	public List<Provincia> listarProvinciasPorPais(Long idPais) {
+		return provinciaRepository.listarProvinciasPorPais(idPais);
 	}
+	
+	
 
 }
