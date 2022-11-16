@@ -32,6 +32,10 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { FormComponent } from './components/form/form.component';
 import { HeroTitleComponent } from './components/Hero-Title/Hero-Title.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { FormUserUpdateComponent } from './components/form-user-update/form-user-update.component';
+import { ComprobantesUserComponent } from './components/comprobantes-user/comprobantes-user.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 registerLocaleData(localeES,'es');
 
@@ -64,6 +68,11 @@ registerLocaleData(localeES,'es');
     FormComponent,
     HeroTitleComponent,
     SliderComponent,
+    LoginComponent,
+
+    FormUserUpdateComponent,
+    ComprobantesUserComponent, 
+    RegistroComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,11 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { FormComponent } from './components/form/form.component';
+import { DashUsuarioComponent } from './components/dash-usuario/dash-usuario.component';
+import { FormUserUpdateComponent } from './components/form-user-update/form-user-update.component'
+import { ComprobantesUserComponent } from './components/comprobantes-user/comprobantes-user.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 const routes: Routes = [
   //{path:'',redirectTo:'/', pathMatch:'full'},
@@ -26,9 +31,14 @@ const routes: Routes = [
   {path:'nosotros', component: NosotrosComponent},
   {path:'contacto', component: FormComponent},
   {path:'carrito',component:CarritoComponent},
+  {path:'login',component:LoginComponent},
+  {path:'registro',component:RegistroComponent},
+
+  {path:'dashboardAdmin',component:DashAdminComponent},
+  {path:'dashboardUser',component:DashUsuarioComponent},
+
   {path:'comprobantes',component:ComprobantesComponent},
   {path:'comprobantes/page/:page',component:ComprobantesComponent},
-  {path:'dashboardAdmin',component:DashAdminComponent},
   {path:'marcas',component:MarcasComponent},
   {path:'marcas/page/:page',component:MarcasComponent},
   {path:'marcas/form',component:FormMarcaComponent},
@@ -50,7 +60,10 @@ const routes: Routes = [
   {path:'disciplinas',component:DisciplinasComponent},
   {path:'disciplinas/page/:page',component:DisciplinasComponent},
   {path:'disciplinas/form',component:FormDisciplinaComponent},
-  {path:'disciplinas/form/:id',component:FormDisciplinaComponent}
+  {path:'disciplinas/form/:id',component:FormDisciplinaComponent},
+
+  {path:'usuarios/form-updated',component:FormUserUpdateComponent},
+  {path:'comprobantes-user',component:ComprobantesUserComponent},
 ];
 
 @NgModule({

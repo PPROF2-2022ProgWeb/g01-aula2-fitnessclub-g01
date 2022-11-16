@@ -1,8 +1,13 @@
-<div class="grilla">
-  <div>
-    <h1>{{ titulo }}</h1>
+<div class="grilla" id="principles">
+  <div class="my-2 text-left">
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/dashboardAdmin']">Atrás</button>
   </div>
-  <hr />
+  <div>
+      <h2>
+          <span class="span4">{{titulo}}.</span>
+        </h2>
+  </div>
+  <hr>
 
   <form #formDisc="ngForm">
     <div class="form-group row">
