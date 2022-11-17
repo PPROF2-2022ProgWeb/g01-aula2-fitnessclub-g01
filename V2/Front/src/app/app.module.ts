@@ -27,15 +27,15 @@ import { registerLocaleData } from '@angular/common';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { DetalleProductoComponent } from './components/form-detalle-producto/form-detalle-producto.component';
 import { FormDetalleUsuarioComponent } from './components/form-detalle-usuario/form-detalle-usuario.component';
+import { LoginComponent } from './components/login/login.component';
+import { MatchPasswordDirective } from './directives/MatchPasswordDirective';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { SliderComponent } from './components/slider/slider.component';
 import { FormComponent } from './components/form/form.component';
 import { HeroTitleComponent } from './components/Hero-Title/Hero-Title.component';
-import { SliderComponent } from './components/slider/slider.component';
-import { FormUserUpdateComponent } from './components/form-user-update/form-user-update.component';
 import { ComprobantesUserComponent } from './components/comprobantes-user/comprobantes-user.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegistroComponent } from './components/registro/registro.component';
+
 
 registerLocaleData(localeES,'es');
 
@@ -62,26 +62,23 @@ registerLocaleData(localeES,'es');
     PaginatorComponent,
     DetalleProductoComponent,
     FormDetalleUsuarioComponent,
-
+    LoginComponent,
+    MatchPasswordDirective,
     PrincipalComponent,
     NosotrosComponent,
-    FormComponent,
-    HeroTitleComponent,
     SliderComponent,
-    LoginComponent,
-
-    FormUserUpdateComponent,
-    ComprobantesUserComponent, 
-    RegistroComponent,
+    FormComponent,
+    HeroTitleComponent, 
+    ComprobantesUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [{provide: LOCALE_ID, useValue:"es"}],
+  providers: [{provide: LOCALE_ID, useValue:"es"} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

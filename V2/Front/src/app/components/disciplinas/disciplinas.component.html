@@ -1,17 +1,12 @@
-<div class="grilla" id="principles">
+<div class="grilla">
     <div>
-        <div class="my-2 text-left">
-            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/dashboardAdmin']">Atrás</button>
-        </div>
-        <h2>
-            <span class="span4">Gestión de Disciplinas.</span>
-          </h2>
+        <h1 > Gestion de Disciplinas</h1>
     </div>
     <hr>
     <div class="my-2 text-left">
         <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/disciplinas/form']">Crear Disciplina</button>
     </div>
-    <div *ngIf="disciplinas.length==0" class="alert alert-info">
+    <div *ngIf="disciplinas.length==0" class="alert alert-primary">
         No hay registros en la base de datos!
     </div>
         <table class="table table-bordered table-striped" *ngIf="disciplinas.length>0">

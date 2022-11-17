@@ -1,13 +1,8 @@
 <detalle-producto *ngIf="productoSeleccionado" [producto]="productoSeleccionado"></detalle-producto>
   
-  <div class="grilla" id="principles">
+  <div class="grilla">
     <div>
-        <div class="my-2 text-left">
-            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/dashboardAdmin']">Atrás</button>
-        </div>
-        <h2>
-            <span class="span4">Gestión de Productos.</span>
-          </h2>
+        <h1 >Gestion de Productos</h1>
     </div>
     <hr>
     <div class="my-2 text-left">
@@ -45,7 +40,7 @@
                 <td>{{producto.stock}}</td>
                 <td>{{esServicio(producto.servicio)}}</td>
                 <td>{{estado(producto.estado)}}</td>
-                <td>
+                <td *ngIf="authService.hasRole('ROLE_ADMIN')">
                     <button type="button" name="editar" [routerLink]="['/productos/form',producto.idProducto]" class="btn btn-primary btn-sm">editar</button>
                 </td>
                 <td>

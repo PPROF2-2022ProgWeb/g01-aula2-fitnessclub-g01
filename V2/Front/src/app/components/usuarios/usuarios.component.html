@@ -1,14 +1,8 @@
 <detalle-usuario *ngIf="usuarioSeleccionado" [usuario]="usuarioSeleccionado" ></detalle-usuario>
   
-  
-  <div class="grilla" id="principles">
+  <div class="grilla">
     <div>
-      <div class="my-2 text-left">
-        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/dashboardAdmin']">Atrás</button>
-    </div>
-    <h2>
-      <span class="span4">Gestión de Usuarios.</span>
-    </h2>
+        <h1 >Gestion de Usuarios</h1>
     </div>
     <hr>
     <div class="my-2 text-left">
@@ -37,11 +31,11 @@
             <td><img *ngIf="usuario?.imagen" src="http://localhost:8080/api/usuarios/uploads/img/{{usuario.imagen}}" alt="{{usuario.imagen}}" class="img-thumbnail rounded" (click)="abrirModal(usuario)" style="width:64px; cursor: pointer;">
               <img *ngIf="!usuario?.imagen" src="http://localhost:8080/images/no-usuario.png" alt="Sin foto" class="img-thumbnail rounded" (click)="abrirModal(usuario)" style="width:64px; cursor: pointer;"></td>
               <td>{{usuario.nombre}}</td>
-              <td>{{usuario.apellido}}</td>
+              <td >{{usuario.apellido}}</td>
               <td>{{usuario.dni}}</td>
               <td>{{usuario.email}}</td>
               <td>{{usuario.direccion}}</td>
-              <td>{{usuario.rol.nombre}}</td>
+              <td>{{rol(usuario.rol)}}</td>
               <td>{{estado(usuario.estado)}}</td>
               <td>
                 <button type="button" name="editar" [routerLink]="['/usuarios/form',usuario.idUsuario]" class="btn btn-primary btn-sm">editar</button>

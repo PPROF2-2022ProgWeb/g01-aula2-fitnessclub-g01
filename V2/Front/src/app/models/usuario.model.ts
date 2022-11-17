@@ -10,7 +10,9 @@ export class UsuarioModel {
     direccion:string;
     localidad:LocalidadModel;
     password:string;
+    passwordconfirm:string;
     rol:RolModel;
+    roles:string[];
     imagen:string='';
     estado:boolean=true;
 }

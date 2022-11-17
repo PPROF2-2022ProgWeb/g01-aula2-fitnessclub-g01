@@ -1,48 +1,60 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top p-3" id="menu">
-  <div class="container-fluid w-50">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top p-3">
+    <div class="container-fluid w-50">
+      
+      
 
-      <a class="navbar-brand" href="index.html">
-          <img src="../assets/img/logo.png" alt="FitnessClub" width="180" [routerLink]="['principal']">
+      <a class="navbar-brand">
+        <img src="../assets/img/logo.png" alt="FitnessClub" width="180" [routerLink]="['principal']">
       </a>
+
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-    </button>
-
+      </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item" routerLinkActive="active">
-                  <a class="nav-link" routerLink="/tienda">Tienda</a>
-              </li>
-              <li class="nav-item"routerLinkActive="active">
-                <a class="nav-link" href="/carrito">Carrito</a>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/tienda">Tienda</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/carrito">Carrito</a>
+          </li>
+
+          <li class="nav-item dropdown"routerLinkActive="active">
+            <a class="nav-link" routerLink="/nosotros">
+          Nosotros
+          </a>
+        </li>
+
+      <li class="nav-item"routerLinkActive="active">
+          <a class="nav-link" routerLink="/contacto">Contacto</a>
+      </li>
+
+        </ul>
+
+      
+        <ul class="navbar-nav navbar-right">
+          <li *ngIf="!authService.isAuthenticated()"class="dropdown">
+            <a [routerLink]="['/login']" class="text-light btn btn-info btn-info-outline-primary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ingresar
+            </a>
+            <div class="dropdown-menu">
+              <button [routerLink]="['/usuarios/form']" class="dropdown-item" type="submit">Registrarse</button>
+          </div>
+          </li>
+            <li *ngIf="authService.isAuthenticated()"class="dropdown">
+              <a class="btn btn-outline-primary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{authService.usuario.apellido}}, {{authService.usuario.nombre}}
+              </a>
+              <div class="dropdown-menu">
+                <button (click)="abrirModal(authService.usuario)" class="dropdown-item" type="submit">Cambiar Imagen de Usuario</button>
+                <button class="dropdown-item" type="submit"  [routerLink]="['/usuarios/form',authService.usuario.idUsuario]">Editar Datos</button>
+                <button (click)="cerrarSesion()" class="dropdown-item" type="submit">Cerrar Sesion</button>
+              </div>
             </li>
-
-              <li class="nav-item dropdown"routerLinkActive="active">
-                  <a class="nav-link" routerLink="/nosotros">
-                Nosotros
-                </a>
-              </li>
-
-              <li class="nav-item dropdown"routerLinkActive="active">
-                  <a class="nav-link" routerLink="/registro">
-                Registrarse
-                </a>
-              </li>
-              <li class="nav-item"routerLinkActive="active">
-                  <a class="nav-link" href="/contacto">Contacto</a>
-              </li>
-          </ul>
-          <ul class="navbar-nav navbar-right">
-              <li>
-                  <a routerLink="/login" class="d-flex">
-                      <button class="text-light btn btn-info btn-info-outline-primary w-100 fs-7" type="button">Ingreso</button>
-                  </a>
-              </li>
-          </ul>
+        </ul>
 
       </div>
-  </div>
-</nav>
-
-
+    </div>
+  </nav>
+  <detalle-usuario *ngIf="usuarioSeleccionado" [usuario]="usuarioSeleccionado" ></detalle-usuario>
