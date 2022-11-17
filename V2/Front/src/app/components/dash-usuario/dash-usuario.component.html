@@ -1,18 +1,4 @@
 
-   <div class="" id="principles">
-    <div>
-        <h2>
-            <span class="span6">Menú.</span>
-          </h2>
-    </div>
-  <hr>
-     <div>
-      <a class="nav-link" routerLink="/usuarios/form-updated">Configuración de Usuario</a>
-      <a class="nav-link" routerLink="/usuarios/form-updated">Foto de Peril</a>
-     <a class="nav-link" routerLink="/comprobantes-user/">Compras</a>
-  </div>
-  
- 
   <nav class="nav flex-column" id="menu" >
    <div>
      <h2>
@@ -21,8 +7,9 @@
      </div>
      <hr>
      <div>
-     <a class="nav-link" routerLink="/marcas">Configuración de Usuario</a>
+     <a class="nav-link" [routerLink]="['/usuarios/form',authService.usuario.idUsuario]">Configuración de Usuario</a>
      <a class="nav-link" (click)="abrirModal(authService.usuario)">Foto de Perfil</a>
-     <a class="nav-link" routerLink="/comprobantes-user/">Compras</a>
+     <a class="nav-link" routerLink="/comprobantes-user">Compras</a>
  </div>
 </nav>
+<detalle-usuario *ngIf="usuarioSeleccionado" [usuario]="usuarioSeleccionado" ></detalle-usuario>

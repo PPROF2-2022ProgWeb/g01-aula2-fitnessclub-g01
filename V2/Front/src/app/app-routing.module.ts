@@ -30,53 +30,61 @@ const routes: Routes = [
   {path:'principal', component: PrincipalComponent},
   {path:'nosotros', component: NosotrosComponent},
   {path:'contacto', component: FormComponent},
+  {path:'carrito',component:CarritoComponent},
+  {path:'tienda',component:TiendaComponent},
+  {path:'tienda/page/:page',component:TiendaComponent},
+  {path:'dashboardAdmin',component:DashAdminComponent},
+  {path:'dashboardUser',component:DashUsuarioComponent},
   {path:'marcas',component:MarcasComponent},
   {path:'marcas/page/:page',component:MarcasComponent},
   {path:'marcas/form',component:FormMarcaComponent},
   {path:'marcas/form/:id',component:FormMarcaComponent},
-
-
-
-
-
-
-
-
-
-
-
-
-  {path:'usuarios/form',component:FormUsuarioComponent},
-  {path:'usuarios/form-updated',component:FormUserUpdateComponent},
   {path:'disciplinas',component:DisciplinasComponent},
   {path:'disciplinas/form',component:FormDisciplinaComponent},
   {path:'disciplinas/page/:page',component:DisciplinasComponent},
   {path:'disciplinas/form/:id',component:FormDisciplinaComponent},
-  {path:'usuarios',component:UsuariosComponent},
-
-  {path:'carrito',component:CarritoComponent},
-  {path:'login',component:LoginComponent},
-  {path:'registro', component: RegistroComponent},
-  {path:'comprobantes',component:ComprobantesComponent},
-  {path:'comprobantes/page/:page',component:ComprobantesComponent},
-  {path:'comprobantes-user',component:ComprobantesUserComponent},
-  {path:'dashboardAdmin',component:DashAdminComponent},
-  {path:'dashboardUser',component:DashUsuarioComponent},
-  
+  {path:'rubros',component:RubrosComponent},
+  {path:'rubros/page/:page',component:RubrosComponent},
+  {path:'rubros/form',component:FormRubroComponent},
+  {path:'rubros/form/:id',component:FormRubroComponent},
   {path:'productos',component:ProductosComponent},
   {path:'productos/page/:page',component:ProductosComponent},
   {path:'productos/form',component:FormProductoComponent},
   {path:'productos/form/:id',component:FormProductoComponent},
-  {path:'tienda',component:TiendaComponent},
-  {path:'tienda/page/:page',component:TiendaComponent},
- 
+  {path:'usuarios',component:UsuariosComponent},
   {path:'usuarios/page/:page',component:UsuariosComponent},
-  
+  {path:'usuarios/form',component:FormUsuarioComponent},
   {path:'usuarios/form/:id',component:FormUsuarioComponent},
-  {path:'rubros',component:RubrosComponent},
-  {path:'rubros/page/:page',component:RubrosComponent},
-  {path:'rubros/form',component:FormRubroComponent},
-  {path:'rubros/form/:id',component:FormRubroComponent}
+  {path:'comprobantes',component:ComprobantesComponent},
+  {path:'comprobantes/page/:page',component:ComprobantesComponent},
+
+
+
+
+
+
+
+  
+  {path:'usuarios/form-updated',component:FormUserUpdateComponent},
+
+ 
+
+ 
+  {path:'login',component:LoginComponent},
+  {path:'registro', component: RegistroComponent},
+
+  {path:'comprobantes-user',component:ComprobantesUserComponent},
+  {path:'comprobantes-user/page/:page',component:ComprobantesUserComponent},
+
+  
+
+ 
+
+ 
+
+  
+
+
  
  
 ];
