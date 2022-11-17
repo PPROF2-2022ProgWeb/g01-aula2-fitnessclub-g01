@@ -23,14 +23,16 @@ import { DashUsuarioComponent } from './components/dash-usuario/dash-usuario.com
 import { ComprobantesUserComponent } from './components/comprobantes-user/comprobantes-user.component';
 import { FormUserUpdateComponent } from './components/form-user-update/form-user-update.component';
 import { RegistroComponent } from './components/registro/registro.component';
-
+import { AuthGuard } from './guards/auth.guard';
+import { RolGuard } from './guards/rol.guard';
 
 const routes: Routes = [
   {path:'',redirectTo:'principal', pathMatch:'full'},
   {path:'principal', component: PrincipalComponent},
   {path:'nosotros', component: NosotrosComponent},
   {path:'contacto', component: FormComponent},
-  {path:'carrito',component:CarritoComponent},
+  {path:'carrito',component:CarritoComponent, canActivate:[AuthGuard]},
+  { path: 'carrito/:id', component: CarritoComponent,canActivate:[AuthGuard]},
   {path:'tienda',component:TiendaComponent},
   {path:'tienda/page/:page',component:TiendaComponent},
   {path:'dashboardAdmin',component:DashAdminComponent},

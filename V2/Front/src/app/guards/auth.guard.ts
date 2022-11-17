@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
         if(this.isTokenExpirado()){
           this.authService.logout();
           this.router.navigate(['/login']);
-          return false;    
+          return false;     
         }
         return true;
       }
