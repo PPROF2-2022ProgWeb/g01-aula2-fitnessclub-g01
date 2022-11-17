@@ -30,7 +30,10 @@ export class FormDisciplinaComponent implements OnInit {
       if(id){
         this.disciplinaService.getDisciplina(id).subscribe(
           disciplina=>{this.disciplina=disciplina;
-          this.titulo="Editar Disciplina";}
+          this.titulo="Editar Disciplina";
+          document.getElementById('titulo').classList.remove('span4');
+          document.getElementById('titulo').classList.add('span5');
+        }
         )
       }
     })

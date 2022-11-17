@@ -29,6 +29,8 @@ export class FormRubroComponent implements OnInit {
           rubro=>{
             this.rubro=rubro;
             this.titulo="Editar Rubro";
+            document.getElementById('titulo').classList.remove('span4');
+            document.getElementById('titulo').classList.add('span5');
           }
         )
       }

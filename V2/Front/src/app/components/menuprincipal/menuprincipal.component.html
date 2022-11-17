@@ -47,7 +47,7 @@
                 {{authService.usuario.apellido}}, {{authService.usuario.nombre}}
               </a>
               <div class="dropdown-menu">
-                <button (click)="abrirModal(authService.usuario)" class="dropdown-item" type="submit">Cambiar Foto de Perdil</button>
+                <button (click)="abrirModal(authService.usuario)" class="dropdown-item" type="submit">Cambiar Foto de Perfil</button>
                 <button class="dropdown-item" type="submit"  [routerLink]="['/registro',authService.usuario.idUsuario]">Editar Datos</button>
                 <button (click)="cerrarSesion()" class="dropdown-item" type="submit">Cerrar Sesion</button>
               </div>

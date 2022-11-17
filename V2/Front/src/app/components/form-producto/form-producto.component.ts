@@ -69,6 +69,8 @@ export class FormProductoComponent implements OnInit {
           producto=>{this.producto=producto;
             console.log(producto);
             this.titulo="Editar Producto";
+            document.getElementById('titulo').classList.remove('span4');
+            document.getElementById('titulo').classList.add('span5');
           }
         )
       }
