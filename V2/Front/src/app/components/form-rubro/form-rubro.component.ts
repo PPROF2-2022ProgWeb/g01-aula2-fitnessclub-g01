@@ -26,7 +26,10 @@ export class FormRubroComponent implements OnInit {
       let id=params['id']
       if(id){
         this.rubroService.getRubro(id).subscribe(
-          rubro=>this.rubro=rubro
+          rubro=>{
+            this.rubro=rubro;
+            this.titulo="Editar Rubro";
+          }
         )
       }
     })

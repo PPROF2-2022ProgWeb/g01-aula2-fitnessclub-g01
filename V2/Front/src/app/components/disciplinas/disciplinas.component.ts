@@ -15,6 +15,8 @@ export class DisciplinasComponent implements OnInit {
   
   paginador:any;
 
+  titulo:string='Gestion de Disciplinas'
+
   constructor(private disciplinaService:DisciplinaService, private activateRoute:ActivatedRoute) { }
 
   ngOnInit(): void {

@@ -29,7 +29,8 @@ export class FormDisciplinaComponent implements OnInit {
       console.log(id)
       if(id){
         this.disciplinaService.getDisciplina(id).subscribe(
-          disciplina=>this.disciplina=disciplina
+          disciplina=>{this.disciplina=disciplina;
+          this.titulo="Editar Disciplina";}
         )
       }
     })

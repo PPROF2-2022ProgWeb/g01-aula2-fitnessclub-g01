@@ -26,7 +26,9 @@ export class FormMarcaComponent implements OnInit {
       let id=params['id']
       if(id){
         this.marcaService.getMarca(id).subscribe(
-          marca=>this.marca=marca
+          marca=>{this.marca=marca;
+            this.titulo="Editar Marca";
+          }
         )
       }
     })
