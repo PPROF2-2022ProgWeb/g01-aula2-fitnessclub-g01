@@ -8,7 +8,6 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'Fitness-App';
-  hola:boolean=true;
   constructor(public authService:AuthService){
   
   }
@@ -22,6 +21,7 @@ export class AppComponent {
     }else{
       
       //if(this.authService.usuario.rol.nombre==='ROLE_ADMIN'){
+        
         if(this.authService.hasRole('ROLE_ADMIN')){
        return true;
       }else{
