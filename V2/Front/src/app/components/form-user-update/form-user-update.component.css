@@ -112,30 +112,19 @@ h4 {
     height: 65%!important;
 }
 
-#encuadrado {
-    height: 90%;
-    width: 40%;
-    margin: 5%;
-    bottom: 0;
-}
-
-#boton-comprar {
-    margin-left: 30%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
 p {
     text-align: center;
     font-size: 20px;
 }
 
-.tienda {
-    margin-top: 5%;
-    margin-bottom: 2%;
-    box-shadow: 5px 5px 5px 5px rgb(182, 182, 182);
-    padding: 5vh;
-    width: 60%;
-    height: 10%;
-    margin-left: 20%;
+#boton-crear {
+    flex: 0 0 auto;
+    width: 20%;
+    margin-left: 75%;
+}
+
+#boton-editar {
+    flex: 0 0 auto;
+    width: 20%;
+    margin-left: 75%;
 }
