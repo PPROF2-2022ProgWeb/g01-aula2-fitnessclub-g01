@@ -17,6 +17,7 @@ public interface IUsuarioService {
 	
 	public Usuario guardar(Usuario usuario);
 	
+	
 	public void eliminar(Long id);
 	
 	public Usuario buscarPorEmail(String email);

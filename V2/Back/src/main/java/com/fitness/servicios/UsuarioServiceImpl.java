@@ -31,8 +31,7 @@ public class UsuarioServiceImpl implements UserDetailsService,IUsuarioService{
 	@Autowired
 	private IUsuarioRepository usuarioRepository;
 	
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+
 	
 	@Override
 	@Transactional(readOnly = true)
@@ -56,13 +55,11 @@ public class UsuarioServiceImpl implements UserDetailsService,IUsuarioService{
 	@Override
 	@Transactional
 	public Usuario guardar(Usuario usuario) {
-        Rol r = new Rol();
-        r.setIdRol(1L);
-        usuario.setRol(r);
-        usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
+
 		return usuarioRepository.save(usuario);
 	}
-
+	
+	
 	@Override
 	@Transactional
 	public void eliminar(Long id) {
