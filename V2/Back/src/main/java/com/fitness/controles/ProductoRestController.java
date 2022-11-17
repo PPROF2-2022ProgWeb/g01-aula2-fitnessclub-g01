@@ -68,7 +68,7 @@ public class ProductoRestController {
 
 	@GetMapping("/productosActivos/page/{page}")
 	public Page<Producto> listarProductosConStockYActivos(@PathVariable Integer page) {
-		Pageable pageable = PageRequest.of(page, 4);
+		Pageable pageable = PageRequest.of(page, 2);
 		return productoService.listarProductosConStockYActivos(pageable);
 	}
 

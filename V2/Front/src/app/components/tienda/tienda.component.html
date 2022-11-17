@@ -1,6 +1,6 @@
 <div class="" id="principles">
     <div>
-        <br>    <br>
+        <br>   
         <h2>
             <span class="span4">Tienda.</span>
           </h2>
@@ -10,18 +10,21 @@
         <div class="card animated fadeIn fast " *ngFor="let producto of productos" id="encuadrado">
             <br>
             <br>
-            <img class="card-img-top img-fluid" src="http://localhost:8080/api/productos/uploads/img/{{producto.imagen}}" [alt]="producto.imagen">
+            <img class="card-img-top im-fluid" src="http://localhost:8080/api/productos/uploads/img/{{producto.imagen}}" [alt]="producto.imagen">
             <img *ngIf="producto?.imagen" src="http://localhost:8080/api/productos/uploads/img/{{producto.imagen}}" alt="{{producto.imagen}}" class="card-img-top im-gfluid"  style="width:64px;"><!--(click)="abrirModal(producto)"-->
-            <img *ngIf="!producto?.imagen && producto?.servicio" src="http://localhost:8080/images/no-servicio.jpeg/" alt="Sin foto" class="card-img-top img-fluid"  style="width:64px;"><!--(click)="abrirModal(producto)"-->
-            <img *ngIf="!producto?.imagen && !producto?.servicio" src="http://localhost:8080/images/no-producto.jpeg/" alt="Sin foto" class="card-img-top img-fluid"  style="width:64px; "><!--(click)="abrirModal(producto)"-->
+            <img *ngIf="!producto?.imagen && producto?.servicio" src="http://localhost:8080/images/no-servicio.jpeg/" alt="Sin foto" class="card-img-top im-fluid"  style="width:64px;"><!--(click)="abrirModal(producto)"-->
+            <img *ngIf="!producto?.imagen && !producto?.servicio" src="http://localhost:8080/images/no-producto.jpeg/" alt="Sin foto" class="card-img-top im-fluid"  style="width:64px; "><!--(click)="abrirModal(producto)"-->
 
 
 
             <div class="card-block">
-                <h4 class="card-title" id="titulo">{{producto.descripcion | uppercase}} <small>{{producto.marca.nombre}}</small></h4>
+                <h4 class="card-title" id="titulo">{{producto.descripcion | uppercase}}</h4>
+                <h4 class="card-title">Marca: {{producto.marca.nombre}}</h4>
                 <p class="card-text">{{ producto.precioUnitario  | currency: '$'}}</p>
                 <!--<button type="button" class="btn btn-outline-primary btn block"> Ver mas...</button>-->
                 <a class="btn btn-outline-primary" id="boton-comprar"> Ver Info... </a>
+                <a [routerLink]="['/producto']" class="btn btn-outline-primary" id="boton-comprar"> Agregar al Carrito </a>
+                
             </div>
         </div>
     </div>

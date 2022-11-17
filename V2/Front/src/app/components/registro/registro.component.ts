@@ -53,9 +53,7 @@ export class RegistroComponent implements OnInit {
             this.obtenerProvincias();
             this.provincia=usuario.localidad.provincia;
             this.obtenerLocalidades();
-            document.getElementById('titulo').classList.remove('span4');
-            document.getElementById('titulo').classList.add('span5');
-            this.titulo="Editar Usuario";
+            
             console.log(this.provincia)
           }
         )
