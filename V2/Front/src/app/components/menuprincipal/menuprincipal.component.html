@@ -39,7 +39,7 @@
             <a [routerLink]="['/login']" class="text-light btn btn-info btn-info-outline-primary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ingresar
             </a>
             <div class="dropdown-menu">
-              <button [routerLink]="['/usuarios/form']" class="dropdown-item" type="submit">Registrarse</button>
+              <button [routerLink]="['/registro']" class="dropdown-item" type="submit">Registrarse</button>
           </div>
           </li>
             <li *ngIf="authService.isAuthenticated()"class="dropdown">
@@ -48,7 +48,7 @@
               </a>
               <div class="dropdown-menu">
                 <button (click)="abrirModal(authService.usuario)" class="dropdown-item" type="submit">Cambiar Imagen de Usuario</button>
-                <button class="dropdown-item" type="submit"  [routerLink]="['/usuarios/form',authService.usuario.idUsuario]">Editar Datos</button>
+                <button class="dropdown-item" type="submit"  [routerLink]="['/registro',authService.usuario.idUsuario]">Editar Datos</button>
                 <button (click)="cerrarSesion()" class="dropdown-item" type="submit">Cerrar Sesion</button>
               </div>
             </li>

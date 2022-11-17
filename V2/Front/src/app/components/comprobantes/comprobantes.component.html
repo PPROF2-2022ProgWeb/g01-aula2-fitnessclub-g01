@@ -3,10 +3,11 @@
         <div class="my-2 text-left">
             <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/dashboardAdmin']">Atrás</button>
         </div>
-        <div>
-            <h1>Listado de Comprobantes</h1>
-        </div>
-        <hr>
+        <h2>
+            <span class="span4">Listado de Comprobantes.</span>
+          </h2>
+    </div>
+    <hr>
         <div *ngIf="comprobantes.length==0" class="alert alert-info">
             No hay registros en la base de datos!
         </div>

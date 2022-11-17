@@ -21,6 +21,8 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { FormComponent } from './components/form/form.component';
 import { DashUsuarioComponent } from './components/dash-usuario/dash-usuario.component';
 import { ComprobantesUserComponent } from './components/comprobantes-user/comprobantes-user.component';
+import { FormUserUpdateComponent } from './components/form-user-update/form-user-update.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 
 const routes: Routes = [
@@ -29,6 +31,7 @@ const routes: Routes = [
   {path:'nosotros', component: NosotrosComponent},
   {path:'contacto', component: FormComponent},
   {path:'usuarios/form',component:FormUsuarioComponent},
+  {path:'usuarios/form-updated',component:FormUserUpdateComponent},
   {path:'disciplinas',component:DisciplinasComponent},
   {path:'disciplinas/form',component:FormDisciplinaComponent},
   {path:'disciplinas/page/:page',component:DisciplinasComponent},
@@ -37,6 +40,7 @@ const routes: Routes = [
 
   {path:'carrito',component:CarritoComponent},
   {path:'login',component:LoginComponent},
+  {path:'registro', component: RegistroComponent},
   {path:'comprobantes',component:ComprobantesComponent},
   {path:'comprobantes/page/:page',component:ComprobantesComponent},
   {path:'comprobantes-user',component:ComprobantesUserComponent},

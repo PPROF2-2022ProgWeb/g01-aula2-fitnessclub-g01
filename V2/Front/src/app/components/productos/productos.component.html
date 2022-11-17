@@ -1,10 +1,15 @@
 <detalle-producto *ngIf="productoSeleccionado" [producto]="productoSeleccionado"></detalle-producto>
   
-  <div class="grilla">
-    <div>
-        <h1 >Gestion de Productos</h1>
-    </div>
-    <hr>
+<div class="grilla" id="principles">
+  <div>
+      <div class="my-2 text-left">
+          <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/dashboardAdmin']">Atrás</button>
+      </div>
+      <h2>
+          <span class="span4">Gestión de Productos.</span>
+        </h2>
+  </div>
+  <hr>
     <div class="my-2 text-left">
         <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/productos/form']">Crear Producto</button>
     </div>

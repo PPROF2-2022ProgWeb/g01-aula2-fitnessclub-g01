@@ -35,6 +35,8 @@ import { SliderComponent } from './components/slider/slider.component';
 import { FormComponent } from './components/form/form.component';
 import { HeroTitleComponent } from './components/Hero-Title/Hero-Title.component';
 import { ComprobantesUserComponent } from './components/comprobantes-user/comprobantes-user.component';
+import { FormUserUpdateComponent } from './components/form-user-update/form-user-update.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 
 registerLocaleData(localeES,'es');
@@ -69,7 +71,9 @@ registerLocaleData(localeES,'es');
     SliderComponent,
     FormComponent,
     HeroTitleComponent, 
-    ComprobantesUserComponent
+    ComprobantesUserComponent,
+    FormUserUpdateComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

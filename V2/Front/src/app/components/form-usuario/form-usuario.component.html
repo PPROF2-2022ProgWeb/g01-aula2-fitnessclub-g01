@@ -1,15 +1,13 @@
 <div class="grilla" id="principles">
     <div class="my-2 text-left">
-
-    </div>
-    <div>
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/usuarios']">Atrás</button>
+  </div>
+      <div>
         <h2>
-            <span class="span4" id="titulo">{{titulo}}.</span>
+          <span class="span4">{{titulo}}.</span>
         </h2>
-    </div>
-    <hr>
-
-
+      </div>
+      <hr>
     <form autocomplete="off" #formUsuario="ngForm" [appMatchPassword]="['password', 'password2']">
         <div class="form-group row">
             <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
