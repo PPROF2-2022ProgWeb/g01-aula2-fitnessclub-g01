@@ -21,7 +21,8 @@ export class AppComponent {
       return false;
     }else{
       
-      if(this.authService.usuario.rol.nombre==='ROLE_ADMIN'){
+      //if(this.authService.usuario.rol.nombre==='ROLE_ADMIN'){
+        if(this.authService.hasRole('ROLE_ADMIN')){
        return true;
       }else{
         return false;
