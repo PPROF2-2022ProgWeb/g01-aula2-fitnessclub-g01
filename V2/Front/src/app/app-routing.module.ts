@@ -57,8 +57,8 @@ const routes: Routes = [
   {path:'usuarios/form/:id',component:FormUsuarioComponent},
   {path:'comprobantes',component:ComprobantesComponent},
   {path:'comprobantes/page/:page',component:ComprobantesComponent},
-
-
+  {path:'login',component:LoginComponent},
+  {path:'registro', component: RegistroComponent},
 
 
 
@@ -70,8 +70,8 @@ const routes: Routes = [
  
 
  
-  {path:'login',component:LoginComponent},
-  {path:'registro', component: RegistroComponent},
+  
+  
 
   {path:'comprobantes-user',component:ComprobantesUserComponent},
   {path:'comprobantes-user/page/:page',component:ComprobantesUserComponent},
