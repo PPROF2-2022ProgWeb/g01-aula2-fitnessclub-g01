@@ -150,6 +150,7 @@ public class UsuarioRestController {
 			Usuario usuario = usuarioService.buscarPorId(id);
 			String nombreFotoAnterior = usuario.getImagen();
 			
+			
 			uploadService.eliminar(nombreFotoAnterior);
 			
 			usuarioService.eliminar(id);
@@ -181,6 +182,8 @@ public class UsuarioRestController {
 			String nombreFotoAnterior = usuario.getImagen();
 			uploadService.eliminar(nombreFotoAnterior); 
 
+			
+			
 			usuario.setImagen(nombreArchivo);
 			
 			usuarioService.guardar(usuario);

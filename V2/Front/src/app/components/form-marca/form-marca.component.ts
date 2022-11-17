@@ -28,6 +28,9 @@ export class FormMarcaComponent implements OnInit {
         this.marcaService.getMarca(id).subscribe(
           marca=>{this.marca=marca;
             this.titulo="Editar Marca";
+            document.getElementById('titulo').classList.remove('span4');
+            document.getElementById('titulo').classList.add('span5');
+
           }
         )
       }

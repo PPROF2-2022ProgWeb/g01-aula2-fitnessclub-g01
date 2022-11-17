@@ -54,21 +54,6 @@ export class UsuarioService {
     return this.http.get<UsuarioModel[]>(this.urlEndPoint);
   }
 
-  getUsuarios(page:number):Observable<any>{
-    return this.http.get(this.urlEndPoint+'/page/'+page).pipe(
-      map((response:any)=>{
-        (response.content as UsuarioModel[]).map(
-          usuario=>{
-            return usuario;
-          }
-        );
-        return response;
-      }),catchError(e=>{
-        this.isNoAutorizado(e);
-        return throwError(e);
-      })
-    );
-  }
 */
   getUsuarios(page: number): Observable<any> {
     return this.http
@@ -132,34 +117,29 @@ export class UsuarioService {
         })
       );
   }
+  
 
   subirFoto(archivo: File, id): Observable<HttpEvent<{}>> {
     let formData = new FormData();
     formData.append('archivo', archivo);
     formData.append('id', id);
 
-    /*
-    let httpHeaders=new HttpHeaders();
-    let token=this.authService.token;
-    if(token!=null){
-       httpHeaders=httpHeaders.append('Authorization', 'Bearer' + token);
+     let httpHeaders=new HttpHeaders();
+     let token=this.authService.token;
+     if(token!=null){
+       httpHeaders = httpHeaders.append('Authorization', 'Bearer ' + token);
      }
-*/
-    const req = new HttpRequest(
-      'POST',
-      `${this.urlEndPoint}/upload`,
-      formData,
+
+
+    const req = new HttpRequest('POST',`${this.urlEndPoint}/upload`,formData,
       {
         reportProgress: true,
-         //headers:httpHeaders
+        headers:httpHeaders
       }
     );
-
     return this.http.request(req).pipe(
-      catchError((e) => {
-        this.isNoAutorizado(e);
-        return throwError(e);
-      })
+      catchError(e=>{this.isNoAutorizado(e);
+        return throwError(e);})
     );
   }
 

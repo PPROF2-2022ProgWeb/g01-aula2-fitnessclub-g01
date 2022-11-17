@@ -18,10 +18,6 @@ export class LoginComponent implements OnInit {
   constructor(private authService:AuthService,private router:Router){
     this.usuario=new UsuarioModel();
   }
-  /*constructor( private fb: FormBuilder, , ) { 
-     this.ingresarLogin();
-
-  }*/
 
   titulo:string='Login';
   usuario:UsuarioModel;

@@ -56,6 +56,9 @@
         --content: "Crear Disciplina."; --start-color: #007CF0; --end-color: #007CF0;
       }
     
+      .span5{
+        --content: "Editar Disciplina."; --start-color: #007CF0; --end-color: #007CF0;
+      }
     
     h1 {
         color: rgb(24, 153, 155);

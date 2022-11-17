@@ -8,8 +8,21 @@
   <hr>
      <div>
       <a class="nav-link" routerLink="/usuarios/form-updated">Configuración de Usuario</a>
-     <a class="nav-link" routerLink="/comprobantes-user/">Comprobantes</a>
+      <a class="nav-link" routerLink="/usuarios/form-updated">Foto de Peril</a>
+     <a class="nav-link" routerLink="/comprobantes-user/">Compras</a>
   </div>
   
  
- 
+  <nav class="nav flex-column" id="menu" >
+   <div>
+     <h2>
+       <span class="span6">Menú.</span>
+     </h2>
+     </div>
+     <hr>
+     <div>
+     <a class="nav-link" routerLink="/marcas">Configuración de Usuario</a>
+     <a class="nav-link" (click)="abrirModal(authService.usuario)" routerLink="/marcas">Foto de Perfil</a>
+     <a class="nav-link" routerLink="/comprobantes-user/">Compras</a>
+ </div>
+</nav>

@@ -47,7 +47,7 @@ export class DetalleProductoComponent implements OnInit {
     } else {
       this.productoService
         .subirFoto(this.fotoSeleccionada, this.producto.idProducto)
-        .subscribe((event) => {
+        .subscribe(event=> {
           if(event.type === HttpEventType.UploadProgress){
             this.progreso=Math.round((event.loaded/event.total)*100);
           }else if(event.type === HttpEventType.Response){

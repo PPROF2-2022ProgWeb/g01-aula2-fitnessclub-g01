@@ -30,6 +30,22 @@ const routes: Routes = [
   {path:'principal', component: PrincipalComponent},
   {path:'nosotros', component: NosotrosComponent},
   {path:'contacto', component: FormComponent},
+  {path:'marcas',component:MarcasComponent},
+  {path:'marcas/page/:page',component:MarcasComponent},
+  {path:'marcas/form',component:FormMarcaComponent},
+  {path:'marcas/form/:id',component:FormMarcaComponent},
+
+
+
+
+
+
+
+
+
+
+
+
   {path:'usuarios/form',component:FormUsuarioComponent},
   {path:'usuarios/form-updated',component:FormUserUpdateComponent},
   {path:'disciplinas',component:DisciplinasComponent},
@@ -46,10 +62,7 @@ const routes: Routes = [
   {path:'comprobantes-user',component:ComprobantesUserComponent},
   {path:'dashboardAdmin',component:DashAdminComponent},
   {path:'dashboardUser',component:DashUsuarioComponent},
-  {path:'marcas',component:MarcasComponent},
-  {path:'marcas/page/:page',component:MarcasComponent},
-  {path:'marcas/form',component:FormMarcaComponent},
-  {path:'marcas/form/:id',component:FormMarcaComponent},
+  
   {path:'productos',component:ProductosComponent},
   {path:'productos/page/:page',component:ProductosComponent},
   {path:'productos/form',component:FormProductoComponent},

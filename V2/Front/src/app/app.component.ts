@@ -12,7 +12,7 @@ export class AppComponent {
   
   }
 
-  consultarRol():boolean{
+  consultarRol(rol:string):boolean{
     
 
     if(this.authService.usuario.idUsuario==undefined){
@@ -22,7 +22,7 @@ export class AppComponent {
       
       //if(this.authService.usuario.rol.nombre==='ROLE_ADMIN'){
         
-        if(this.authService.hasRole('ROLE_ADMIN')){
+        if(this.authService.hasRole(rol)){
        return true;
       }else{
         return false;
