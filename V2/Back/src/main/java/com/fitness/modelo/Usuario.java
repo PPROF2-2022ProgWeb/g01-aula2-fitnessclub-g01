@@ -44,7 +44,7 @@ public class Usuario implements Serializable{
     @JoinColumn(name = "IdLocalidad", nullable = false)
 	private Localidad Localidad;
 		
-	@Column(name = "Password",nullable = false, length = 60)
+	@Column(name = "Password",nullable = false, length = 80)
 	private String Password;
 	
 	@ManyToOne(optional=false,fetch = FetchType.EAGER)

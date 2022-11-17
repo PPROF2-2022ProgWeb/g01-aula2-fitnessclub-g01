@@ -70,7 +70,7 @@ export class DisciplinaService {
   }
 
   guardar(disciplina:DisciplinaModel):Observable<any>{
-    return this.http.post<any>(this.urlEndPoint,disciplina,{headers:this.httpHeaders}).pipe(
+    return this.http.post<any>(this.urlEndPoint,disciplina,{headers:this.agregarAuthorizationHeader()}).pipe(
       map((response:any)=>response.disciplina as DisciplinaModel),
       catchError(e=>{
   
@@ -90,7 +90,7 @@ export class DisciplinaService {
   }
 
   getDisciplina(idDisciplina:number):Observable<DisciplinaModel>{
-    return this.http.get<DisciplinaModel>(`${this.urlEndPoint}/${idDisciplina}`).pipe(
+    return this.http.get<DisciplinaModel>(`${this.urlEndPoint}/${idDisciplina}`,{headers:this.agregarAuthorizationHeader()}).pipe(
       catchError(e=>{
 
         if(this.isNoAutorizado(e)){
@@ -105,7 +105,7 @@ export class DisciplinaService {
   }
 
   update(disciplina:DisciplinaModel):Observable<any>{
-    return this.http.put<any>(`${this.urlEndPoint}/${disciplina.idDisciplina}`,disciplina,{headers:this.httpHeaders}).pipe(
+    return this.http.put<any>(`${this.urlEndPoint}/${disciplina.idDisciplina}`,disciplina,{headers:this.agregarAuthorizationHeader()}).pipe(
       catchError(e=>{
 
         if(this.isNoAutorizado(e)){
@@ -124,7 +124,7 @@ export class DisciplinaService {
   }
 
   delete(idDisciplina:number):Observable<DisciplinaModel>{
-    return this.http.delete<DisciplinaModel>(`${this.urlEndPoint}/${idDisciplina}`,{headers:this.httpHeaders}).pipe(
+    return this.http.delete<DisciplinaModel>(`${this.urlEndPoint}/${idDisciplina}`,{headers:this.agregarAuthorizationHeader()}).pipe(
       catchError(e=>{
 
         if(this.isNoAutorizado(e)){

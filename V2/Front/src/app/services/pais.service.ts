@@ -44,7 +44,7 @@ export class PaisService {
   }
 
   getPaises():Observable<PaisModel[]>{
-    return this.http.get<PaisModel[]>(this.urlEndPoint,{headers:this.agregarAuthorizationHeader()}).pipe(
+    return this.http.get<PaisModel[]>(this.urlEndPoint).pipe(
       catchError(e=>{
         this.isNoAutorizado(e);
         return throwError(e);

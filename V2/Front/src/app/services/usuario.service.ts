@@ -133,16 +133,16 @@ export class UsuarioService {
       );
   }
 
-  subirFoto(archivo: File, idUsuario): Observable<HttpEvent<{}>> {
+  subirFoto(archivo: File, id): Observable<HttpEvent<{}>> {
     let formData = new FormData();
     formData.append('archivo', archivo);
-    formData.append('id', idUsuario);
+    formData.append('id', id);
 
-    //let httpHeaders=new HttpHeaders();
-    // let token=this.authService.token;
-    //if(token!=null){
-    //   httpHeaders=httpHeaders.append('Authorization', 'Bearer' + token);
-    // }
+    let httpHeaders=new HttpHeaders();
+    let token=this.authService.token;
+    if(token!=null){
+       httpHeaders=httpHeaders.append('Authorization', 'Bearer' + token);
+     }
 
     const req = new HttpRequest(
       'POST',
@@ -150,7 +150,7 @@ export class UsuarioService {
       formData,
       {
         reportProgress: true,
-        // headers:httpHeaders
+         headers:httpHeaders
       }
     );
 

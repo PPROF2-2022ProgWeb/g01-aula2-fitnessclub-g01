@@ -25,7 +25,7 @@ export class MenuprincipalComponent implements OnInit {
     Swal.fire('Cerrar Sesion',`${nombreUsuario} ha cerrado sesion con exito!.`, 'success');
     this.router.navigate(['/login']);
   }
-
+ 
   mostrarDashboard() {
     document.getElementById("sidebar")!.style.width = "300px";
     document.getElementById("contenido")!.style.marginLeft = "300px";

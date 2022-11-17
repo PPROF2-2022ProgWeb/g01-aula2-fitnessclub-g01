@@ -19,6 +19,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,18 +48,20 @@ public class UsuarioRestController {
 	
 	private final Logger log = LoggerFactory.getLogger(ProductoRestController.class);
 	
+	@Secured("ROLE_ADMIN")
 	@GetMapping("/usuarios")
 	public List<Usuario> listarTodas(){
 		return usuarioService.listarTodos();
 	}
 	
+	@Secured("ROLE_ADMIN")
 	@GetMapping("/usuarios/page/{page}")
 	public Page<Usuario> listarTodos(@PathVariable Integer page){
 		Pageable pageable=PageRequest.of(page, 10);
 		return usuarioService.listarTodos(pageable);
 	}
 
-	
+	@Secured({"ROLE_ADMIN","ROLE_USER"})
 	@GetMapping("/usuarios/{id}")
 	public ResponseEntity<?> buscarPorId(@PathVariable Long id) {
 		Usuario us=null;
@@ -102,6 +105,7 @@ public class UsuarioRestController {
 
 	}
 	
+	@Secured({"ROLE_ADMIN","ROLE_USER"})
 	@PutMapping("/usuarios/{id}")
 	public ResponseEntity<?> actualizar(@RequestBody Usuario usuario, @PathVariable Long id) {
 		Usuario usuarioActual=usuarioService.buscarPorId(id);
@@ -138,6 +142,7 @@ public class UsuarioRestController {
 		
 	}
 	
+	@Secured("ROLE_ADMIN")
 	@DeleteMapping("/usuarios/{id}")
 	public ResponseEntity<?> eliminar(@PathVariable Long id) {
 		Map<String, Object> response = new HashMap<>();
@@ -157,7 +162,7 @@ public class UsuarioRestController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 	
-	
+	@Secured({"ROLE_ADMIN","ROLE_USER"})
 	@PostMapping("/usuarios/upload")
 	public ResponseEntity<?> upload(@RequestParam("archivo") MultipartFile archivo, @RequestParam("id") Long id) {
 		Map<String, Object> response = new HashMap<>();

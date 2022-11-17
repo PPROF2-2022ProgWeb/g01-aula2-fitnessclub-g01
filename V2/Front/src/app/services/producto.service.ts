@@ -69,7 +69,7 @@ export class ProductoService {
   }
 */
   getProductosConStockYActivos(page:number):Observable<any>{
-    return this.http.get(this.urlEndPoint +'Activos/page/'+page,{headers:this.agregarAuthorizationHeader()}).pipe(
+    return this.http.get(this.urlEndPoint +'Activos/page/'+page).pipe(
       map((response:any)=>{
         (response.content as ProductoModel[]).map(
           producto=>{
@@ -136,7 +136,10 @@ export class ProductoService {
       headers:httpHeaders 
     });
 
-    return this.http.request(req);
+    return this.http.request(req).pipe(
+      catchError(e=>{this.isNoAutorizado(e);
+        return throwError(e);})
+    );
   }
 
 
@@ -144,7 +147,7 @@ export class ProductoService {
 
 
   getProducto(idProducto:number):Observable<ProductoModel>{
-    return this.http.get<ProductoModel>(`${this.urlEndPoint}/${idProducto}`,{headers:this.agregarAuthorizationHeader()}).pipe(
+    return this.http.get<ProductoModel>(`${this.urlEndPoint}/${idProducto}`).pipe(
       catchError(e=>{
         if(this.isNoAutorizado(e)){
           return throwError(e);
@@ -152,7 +155,7 @@ export class ProductoService {
         if(e.status==400){
           return throwError(e);
         }
-        this.router.navigate(['/productos'])
+        this.router.navigate(['/principal'])
         console.error(e.error.mensaje);
         Swal.fire('Error al editar', e.error.mensaje,'error');
         return throwError(e);

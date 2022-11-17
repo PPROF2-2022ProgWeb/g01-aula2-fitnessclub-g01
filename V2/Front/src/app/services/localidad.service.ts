@@ -45,7 +45,7 @@ export class LocalidadService {
   }
 
    getLocalidadesPorProvincia(idProvincia:number):Observable<LocalidadModel[]>{
-    return this.http.get<LocalidadModel[]>(`${this.urlEndPoint}/${idProvincia}`,{headers:this.agregarAuthorizationHeader()});
+    return this.http.get<LocalidadModel[]>(`${this.urlEndPoint}/${idProvincia}`);
    }
   
 }
