@@ -24,8 +24,9 @@ export class CarritoComponent implements OnInit {
     this.comprobanteDetalles =this.compDetralleService.Items as ItemComprobanteModel[];
 
     console.log(this.comprobanteDetalles);
-    this.agregarProducto();
+    //this.agregarProducto();
   }
+  /*
   agregarProducto():void{
     this.activateRoute.params.subscribe(params=>{
       let id=params['id'];
@@ -44,7 +45,7 @@ export class CarritoComponent implements OnInit {
               
               this.comprobanteDetalles.push(comprobanteDetalle);
 
-              console.log(this.comprobanteDetalles)
+                console.log(this.comprobanteDetalles)
           }else{
             //console.log(producto);
             //console.log(cd.precio_unitario)
@@ -57,31 +58,18 @@ export class CarritoComponent implements OnInit {
         
 
 
-          /*
-          this.comprobanteDetalles.forEach(item=>{
-            console.log(item);
-            if(item.producto===producto){
-              item.cantidad=item.cantidad+1;
-            }else{
-              this.comprobanteDetalle=new ComprobanteDetallesModel();
-              this.comprobanteDetalle.cantidad=1;
-              this.comprobanteDetalle.producto=producto;
-              console.log(producto);
-              this.comprobanteDetalle.precio_unitario=producto.precio_unitario;
-              this.comprobanteDetalles.push(this.comprobanteDetalle);
-            }
-          })*/
+
         }
        )
       }
     })
   }
-
+*/
   calcularTotal():number{
     let total:number=0;
     this.comprobanteDetalles.forEach(
       cd=>{
-        total=total+(cd.precioUnitario*cd.cantidad);
+        total=  total+(cd.precioUnitario*cd.cantidad);
       }
     )
     return total;

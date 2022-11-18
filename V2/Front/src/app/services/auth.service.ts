@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ItemComprobanteModel } from '../models/itemComprobante.model';
 import { RolModel } from '../models/rol.model';
 import { UsuarioModel } from '../models/usuario.model';
 
@@ -95,12 +96,19 @@ console.log(payload.authorities[0]);
     return false;
   }
 
+  comprobanteDetalles:ItemComprobanteModel[];
 
   logout():void{
     this._token=null;
     this._usuario=null;
+    
+    sessionStorage.setItem('items', JSON.stringify(this.comprobanteDetalles))
     sessionStorage.clear();
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('usuario');
+    
+  
+      
+    sessionStorage.removeItem('items');
   }
 }

@@ -17,6 +17,7 @@ export class ItemComprobanteService {
       return this.items;
     }else if(this.items==null && sessionStorage.getItem('items')!=null){
       this.items=JSON.parse(sessionStorage.getItem('items')) as ItemComprobanteModel[];
+      console.log(this.items);
       return this.items;
     }
     return new Array;

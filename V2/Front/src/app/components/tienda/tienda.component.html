@@ -26,7 +26,7 @@
                 <!--<button type="button" class="btn btn-outline-primary btn block"> Ver mas...</button>-->
                 <a class="btn btn-outline-primary" id="boton-comprar"> Ver Info... </a>
                 
-                <a [routerLink]="['/carrito/'+ producto.idProducto]" class="btn btn-outline-primary btn-block" id="boton-comprar"> Comprar </a>
+                <a  (click)="agregarProducto(producto.idProducto)" class="btn btn-outline-primary btn-block" id="boton-comprar"> Comprar </a><!--[routerLink]="['/carrito/'+ producto.idProducto]"-->
                 
             </div>
         </div>

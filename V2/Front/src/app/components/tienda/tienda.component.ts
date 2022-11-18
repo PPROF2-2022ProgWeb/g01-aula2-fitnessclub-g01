@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ItemComprobanteModel } from 'src/app/models/itemComprobante.model';
 import { ProductoModel } from 'src/app/models/producto.model';
+import { ItemComprobanteService } from 'src/app/services/item-comprobante.service';
 import { ProductoService } from 'src/app/services/producto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tienda',
@@ -13,8 +16,10 @@ export class TiendaComponent implements OnInit {
   productos:ProductoModel[]=[];
   paginador:any;
 
-  constructor(private productoService:ProductoService, private activateRoute:ActivatedRoute) { }
+  comprobanteDetalles:ItemComprobanteModel[]=[];
 
+  constructor(private productoService:ProductoService, private activateRoute:ActivatedRoute, private compDetralleService: ItemComprobanteService) { }
+  
   ngOnInit(): void {
     this.obtenerProductosConStockYActivos();
   }
@@ -33,4 +38,50 @@ export class TiendaComponent implements OnInit {
   );  
   }
 
+
+
+
+  agregarProducto(idProducto:number):void{
+    this.comprobanteDetalles =this.compDetralleService.Items as ItemComprobanteModel[];
+
+    this.productoService.getProducto(idProducto).subscribe(
+      producto=>{
+        //this.comprobanteDetalles = this.compDetralleService.Items;
+        
+     console.log(producto);
+        const cd:ItemComprobanteModel=this.RecorrerArrayBuscandoProducto(this.comprobanteDetalles,producto);
+        if(cd===undefined || cd===null){
+           let comprobanteDetalle=new ItemComprobanteModel();
+           comprobanteDetalle.cantidad=1;
+           comprobanteDetalle.producto=producto;
+            comprobanteDetalle.precioUnitario=producto.precioUnitario;
+            
+            this.comprobanteDetalles.push(comprobanteDetalle);
+  
+             
+        }else{
+          if(producto.stock<cd.cantidad+1){
+
+            Swal.fire('Stock','No dispone de Stock suficiente para la compra','warning');
+            return;
+          }
+          cd.cantidad=cd.cantidad+1;
+          console.log(this.comprobanteDetalles);
+        }
+        sessionStorage.setItem('items', JSON.stringify(this.comprobanteDetalles))
+  
+      }
+    )
+
+  }
+  RecorrerArrayBuscandoProducto(array:ItemComprobanteModel[], producto:ProductoModel):ItemComprobanteModel{
+    for (let index = 0; index < array.length; index++) {
+      if(array[index].producto.idProducto===producto.idProducto){
+        return array[index];
+      }
+    }
+    return null;
 }
+}
+
+
