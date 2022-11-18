@@ -5,30 +5,38 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @Entity
 @Table(name="itemsComprobantes")
 public class ItemComprobante implements Serializable{
 	
 	@Id
-	@ManyToOne(optional=false,cascade=CascadeType.ALL)
-    @JoinColumn(name="IdComprobante", nullable=false)
-	@JsonBackReference
+	@ManyToOne(fetch = FetchType.LAZY, optional=false)
+	@JsonProperty(access=Access.WRITE_ONLY)
+	@JoinColumn(name = "IdComprobante", nullable = false)
 	private Comprobante Comprobante;
+	
 	
 	@Id
 	@Column(name = "Renglon",nullable = false)
 	private int Renglon;
 	
+	
+	
 	@ManyToOne(optional=false,cascade=CascadeType.ALL)
 	@JoinColumn(name = "IdProducto",nullable = false)
-	@JsonBackReference
+	//@JsonBackReference
 	private Producto Producto;
 	
 	@Column(name = "Cantidad",nullable = false)

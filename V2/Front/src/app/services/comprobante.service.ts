@@ -65,9 +65,7 @@ export class ComprobanteService {
       map((response:any)=>response.comprobante as ComprobanteModel),
       catchError(e=>{
 
-        if(this.isNoAutorizado(e)){
-          return throwError(e);
-        }
+    
 
         if(e.status==400){
           return throwError(e);

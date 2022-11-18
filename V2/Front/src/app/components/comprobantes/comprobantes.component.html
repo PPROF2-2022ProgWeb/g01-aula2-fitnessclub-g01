@@ -21,8 +21,8 @@
             </thead>
             <tbody>
                 <tr *ngFor="let comprobante of comprobantes">
-                    <td>{{comprobante.idComprobante}</td>
-                    <td>{{comprobante.fecha}} |date:"dd/MM/yyyy"</td>
+                    <td>{{comprobante.idComprobante}}</td>
+                    <td>{{comprobante.fecha |date:"dd/MM/yyyy"}} </td>
                     <td>{{comprobante.usuario.apellido}}, {{comprobante.usuario.nombre}}</td>
                     <td>{{comprobante.items.length}}</td>
                     <td>{{comprobante.total | currency: '$'}}</td>

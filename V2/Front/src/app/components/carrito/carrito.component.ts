@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ComprobanteModel } from 'src/app/models/comprobante.model';
 import { ItemComprobanteModel } from 'src/app/models/itemComprobante.model';
 import { ProductoModel } from 'src/app/models/producto.model';
+import { UsuarioModel } from 'src/app/models/usuario.model';
+import { AuthService } from 'src/app/services/auth.service';
+import { ComprobanteService } from 'src/app/services/comprobante.service';
 import { ItemComprobanteService } from 'src/app/services/item-comprobante.service';
 import { ProductoService } from 'src/app/services/producto.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-carrito',
@@ -16,7 +22,7 @@ export class CarritoComponent implements OnInit {
 
   comprobanteDetalles:ItemComprobanteModel[]=[];
 
-  constructor(private activateRoute:ActivatedRoute, private productoService:ProductoService, private compDetralleService:ItemComprobanteService) { }
+  constructor(private activateRoute:ActivatedRoute, private productoService:ProductoService, private compDetralleService:ItemComprobanteService, private authService:AuthService, private compService:ComprobanteService, private usuarioService:UsuarioService) { }
 
   ngOnInit(): void {
         //this.comprobanteDetalles=this.compDetralleService.Items;
@@ -75,13 +81,32 @@ export class CarritoComponent implements OnInit {
     return total;
   }
 
-  RecorrerArrayBuscandoProducto(array:ItemComprobanteModel[], producto:ProductoModel):ItemComprobanteModel{
-      for (let index = 0; index < array.length; index++) {
-        if(array[index].producto.idProducto===producto.idProducto){
-          return array[index];
-        }
-      }
-      return null;
-  }
+  usuario:UsuarioModel;
+  
+   finalizarCompra(){
+     let comprobante:ComprobanteModel=new ComprobanteModel();
+    
+    if(this.calcularTotal()>0){
+      comprobante==new ComprobanteModel();
+
+    
+      
+      this.usuarioService.getUsuario(this.authService.usuario.idUsuario).subscribe(
+        usuario=>this.usuario=usuario
+      )
+      comprobante.usuario=this.usuario;
+    console.log(comprobante.usuario);
+      comprobante.total=this.calcularTotal();
+      comprobante.items=this.comprobanteDetalles;
+
+           
+      this.compService.guardar(comprobante).subscribe();
+      //
+
+    }else{
+      Swal.fire('Total compra cero','El total de la compra no puede ser cero', 'warning');
+    }
+   }
+
 
 }

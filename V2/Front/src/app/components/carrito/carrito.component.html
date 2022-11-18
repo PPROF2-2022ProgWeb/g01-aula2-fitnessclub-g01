@@ -28,6 +28,6 @@
 
       <div class="total" >
         <p><strong>Total: {{calcularTotal() | currency: '$'}}</strong> </p>
-        <button type="button" class="btn btn-outline-primary">Comprar</button>
+        <button type="button" class="btn btn-outline-primary" (click)="finalizarCompra()">Comprar</button>
       </div>
 </div>

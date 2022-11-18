@@ -20,7 +20,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="comprobantes")
@@ -31,7 +31,7 @@ public class Comprobante implements Serializable{
 	@Column(name = "IdComprobante")
 	private Long IdComprobante;
 	
-	@NotEmpty
+	//@NotEmpty
 	@Column(name = "Fecha",nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date Fecha;
@@ -41,18 +41,18 @@ public class Comprobante implements Serializable{
 		Fecha=new Date();
 	}
 	
-	@NotEmpty
-	@ManyToOne(optional=false,cascade=CascadeType.ALL)
+	
+	@ManyToOne(optional=false,fetch = FetchType.EAGER)
 	@JoinColumn(name = "IdUsuario", nullable=false)
 	private Usuario Usuario;
 	
-	@NotEmpty
 	@Column(name = "Total",nullable = false)
 	private float Total;
-		
-	@OneToMany(mappedBy = "Comprobante", fetch = FetchType.LAZY, orphanRemoval = false)
-	private List<ItemComprobante> items;
 	
+	
+	@OneToMany(mappedBy = "Comprobante", cascade = CascadeType.ALL)
+	private List<ItemComprobante> items;
+
 
 	
 	public Long getIdComprobante() {
@@ -79,6 +79,7 @@ public class Comprobante implements Serializable{
 	public void setTotal(float total) {
 		Total = total;
 	}
+	
 	public List<ItemComprobante> getItems() {
 		return items;
 	}
