@@ -4,39 +4,45 @@ import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table(name="itemsComprobantes")
 public class ItemComprobante implements Serializable{
 	
-	@Id
-	@ManyToOne(fetch = FetchType.LAZY, optional=false)
-	@JsonProperty(access=Access.WRITE_ONLY)
-	@JoinColumn(name = "IdComprobante", nullable = false)
-	private Comprobante Comprobante;
-	
 	
 	@Id
-	@Column(name = "Renglon",nullable = false)
-	private int Renglon;
-	
-	
-	
 	@ManyToOne(optional=false,cascade=CascadeType.ALL)
-	@JoinColumn(name = "IdProducto",nullable = false)
+    @JoinColumn(name="IdComprobante", nullable=false)
+	@JsonBackReference
+	private Comprobante Comprobante;
+
+	
+	@Id
+	@Column(name = "Id",nullable = false)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int Id;
+	
+	
+//	@ManyToOne(optional=false,cascade=CascadeType.ALL)
+//	@JoinColumn(name = "IdProducto",nullable = false)
 	//@JsonBackReference
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "IdProducto",nullable = false)
 	private Producto Producto;
 	
 	@Column(name = "Cantidad",nullable = false)
@@ -45,17 +51,19 @@ public class ItemComprobante implements Serializable{
 	@Column(name = "PrecioUnitario",nullable = false)
 	private float PrecioUnitario;
 	
+	
 	public Comprobante getComprobante() {
 		return Comprobante;
 	}
 	public void setComprobante(Comprobante comprobante) {
 		Comprobante = comprobante;
 	}
-	public int getRenglon() {
-		return Renglon;
+	
+	public int getId() {
+		return Id;
 	}
-	public void setRenglon(int renglon) {
-		Renglon = renglon;
+	public void setId(int id) {
+		Id = id;
 	}
 	public Producto getProducto() {
 		return Producto;

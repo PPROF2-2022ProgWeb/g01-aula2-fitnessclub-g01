@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.fitness.modelo.Comprobante;
+import com.fitness.modelo.ItemComprobante;
 
 
 public interface IComprobanteService {
@@ -21,4 +22,6 @@ public interface IComprobanteService {
 	public List<Comprobante> listarPorUsuario(Long idUsuario);
 	
 	public Page<Comprobante> listarPorUsuario(Long idUsuario,Pageable pageable);
+	
+	
 }

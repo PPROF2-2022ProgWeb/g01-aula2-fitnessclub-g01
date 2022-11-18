@@ -1,7 +1,8 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ItemComprobanteModel } from 'src/app/models/itemComprobante.model';
 import { ProductoModel } from 'src/app/models/producto.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { ItemComprobanteService } from 'src/app/services/item-comprobante.service';
 import { ProductoService } from 'src/app/services/producto.service';
 import Swal from 'sweetalert2';
@@ -18,7 +19,8 @@ export class TiendaComponent implements OnInit {
 
   comprobanteDetalles:ItemComprobanteModel[]=[];
 
-  constructor(private productoService:ProductoService, private activateRoute:ActivatedRoute, private compDetralleService: ItemComprobanteService) { }
+  constructor(private productoService:ProductoService, 
+    private activateRoute:ActivatedRoute, private compDetralleService: ItemComprobanteService, private authService:AuthService, private router:Router) { }
   
   ngOnInit(): void {
     this.obtenerProductosConStockYActivos();
@@ -44,34 +46,42 @@ export class TiendaComponent implements OnInit {
   agregarProducto(idProducto:number):void{
     this.comprobanteDetalles =this.compDetralleService.Items as ItemComprobanteModel[];
 
-    this.productoService.getProducto(idProducto).subscribe(
-      producto=>{
-        //this.comprobanteDetalles = this.compDetralleService.Items;
-        
-     console.log(producto);
-        const cd:ItemComprobanteModel=this.RecorrerArrayBuscandoProducto(this.comprobanteDetalles,producto);
-        if(cd===undefined || cd===null){
-           let comprobanteDetalle=new ItemComprobanteModel();
-           comprobanteDetalle.cantidad=1;
-           comprobanteDetalle.producto=producto;
-            comprobanteDetalle.precioUnitario=producto.precioUnitario;
-            
-            this.comprobanteDetalles.push(comprobanteDetalle);
+    if(this.authService.isAuthenticated()){
+      this.productoService.getProducto(idProducto).subscribe(
+        producto=>{
+          //this.comprobanteDetalles = this.compDetralleService.Items;
+          
+       console.log(producto);
+          const cd:ItemComprobanteModel=this.RecorrerArrayBuscandoProducto(this.comprobanteDetalles,producto);
+          if(cd===undefined || cd===null){
+             let comprobanteDetalle=new ItemComprobanteModel();
+             comprobanteDetalle.cantidad=1;
+             comprobanteDetalle.producto=producto;
+              comprobanteDetalle.precioUnitario=producto.precioUnitario;
+              
+              this.comprobanteDetalles.push(comprobanteDetalle);
+    
+               
+          }else{
+            if(producto.stock<cd.cantidad+1){
   
-             
-        }else{
-          if(producto.stock<cd.cantidad+1){
-
-            Swal.fire('Stock','No dispone de Stock suficiente para la compra','warning');
-            return;
+              Swal.fire('Stock','No dispone de Stock suficiente para la compra','warning');
+              return;
+            }
+            cd.cantidad=cd.cantidad+1;
+            console.log(this.comprobanteDetalles);
           }
-          cd.cantidad=cd.cantidad+1;
-          console.log(this.comprobanteDetalles);
+          sessionStorage.setItem('items', JSON.stringify(this.comprobanteDetalles))
+          Swal.fire('','Producto ' + producto.descripcion + ' agregado al carrito exitosamente!','success');
         }
-        sessionStorage.setItem('items', JSON.stringify(this.comprobanteDetalles))
-  
-      }
-    )
+        
+      )
+    }else{
+      Swal.fire('Iniciar Sesion','Debe haber iniciado sesion para poder agregar un producto al Carrito', 'warning')
+      this.router.navigate(['/login']);
+    }
+
+    
 
   }
   RecorrerArrayBuscandoProducto(array:ItemComprobanteModel[], producto:ProductoModel):ItemComprobanteModel{

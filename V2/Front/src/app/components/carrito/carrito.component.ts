@@ -88,19 +88,31 @@ export class CarritoComponent implements OnInit {
     
     if(this.calcularTotal()>0){
       comprobante==new ComprobanteModel();
-
-    
       
-      this.usuarioService.getUsuario(this.authService.usuario.idUsuario).subscribe(
+      comprobante.usuario=this.authService.usuario;
+      //console.log(this.authService.usuario)
+    
+     /* this.usuarioService.getUsuario(this.authService.usuario.idUsuario).subscribe(
         usuario=>this.usuario=usuario
       )
       comprobante.usuario=this.usuario;
-    console.log(comprobante.usuario);
-      comprobante.total=this.calcularTotal();
-      comprobante.items=this.comprobanteDetalles;
+    */
 
-           
-      this.compService.guardar(comprobante).subscribe();
+
+      comprobante.total=this.calcularTotal();
+      let contador=1;
+       this.comprobanteDetalles.forEach(i=>{i.renglon=contador++;});
+      
+      
+
+      console.log(this.comprobanteDetalles);
+      comprobante.items=this.comprobanteDetalles;
+      
+      
+      
+      this.compService.guardar(comprobante).subscribe(
+
+      );
       //
 
     }else{

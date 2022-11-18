@@ -1,6 +1,7 @@
 package com.fitness.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class Comprobante implements Serializable{
 	@Column(name = "IdComprobante")
 	private Long IdComprobante;
 	
-	//@NotEmpty
+	
 	@Column(name = "Fecha",nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date Fecha;
@@ -41,19 +42,22 @@ public class Comprobante implements Serializable{
 		Fecha=new Date();
 	}
 	
+	public 	Comprobante(){
+		items=new ArrayList<>();
+	}
 	
 	@ManyToOne(optional=false,fetch = FetchType.EAGER)
-	@JoinColumn(name = "IdUsuario", nullable=false)
+	@JoinColumn(name = "IdUsuario", nullable = false)
 	private Usuario Usuario;
+	
 	
 	@Column(name = "Total",nullable = false)
 	private float Total;
-	
-	
-	@OneToMany(mappedBy = "Comprobante", cascade = CascadeType.ALL)
+		
+
+	@OneToMany(mappedBy = "Comprobante", fetch = FetchType.LAZY)
 	private List<ItemComprobante> items;
-
-
+	
 	
 	public Long getIdComprobante() {
 		return IdComprobante;
@@ -79,13 +83,18 @@ public class Comprobante implements Serializable{
 	public void setTotal(float total) {
 		Total = total;
 	}
-	
+
 	public List<ItemComprobante> getItems() {
 		return items;
 	}
 	public void setItems(List<ItemComprobante> items) {
 		this.items = items;
 	}
+
+
+
 	
-	private static final long serialVersionUID = 1L;	
+	private static final long serialVersionUID = 1L;
+
+
 }

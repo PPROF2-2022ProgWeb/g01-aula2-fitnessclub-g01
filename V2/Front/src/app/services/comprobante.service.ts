@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { catchError, map, Observable, tap, throwError } from 'rxjs';
 import Swal from 'sweetalert2';
 import { ComprobanteModel } from '../models/comprobante.model';
+import { ItemComprobanteModel } from '../models/itemComprobante.model';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -62,10 +63,14 @@ export class ComprobanteService {
 
   guardar(comrprobante:ComprobanteModel):Observable<any>{
     return this.http.post<any>(this.urlEndPoint,comrprobante,{headers:this.agregarAuthorizationHeader()}).pipe(
-      map((response:any)=>response.comprobante as ComprobanteModel),
+      map((response:any)=>{response.comprobante as ComprobanteModel;
+
+      }),
       catchError(e=>{
 
-    
+        if(this.isNoAutorizado(e)){
+          return throwError(e);
+        }
 
         if(e.status==400){
           return throwError(e);

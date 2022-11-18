@@ -1,3 +1,4 @@
+import { ComprobanteModel } from "./comprobante.model";
 import { ProductoModel } from "./producto.model";
 
 export class ItemComprobanteModel {
@@ -6,7 +7,4 @@ export class ItemComprobanteModel {
     cantidad:number;
     precioUnitario:number;
 
-    subTotal(){
-        return Math.round(this.cantidad*this.precioUnitario);
-    }
 }

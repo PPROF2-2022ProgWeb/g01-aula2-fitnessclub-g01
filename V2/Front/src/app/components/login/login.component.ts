@@ -44,6 +44,9 @@ export class LoginComponent implements OnInit {
 
       let usuario = this.authService.usuario;
 
+
+      //sessionStorage.setItem('items',null);
+
       this.router.navigate(['/principal']);
       Swal.fire('Login',`Bienvenido  ${usuario.apellido}, ${usuario.nombre} has iniciado sesion con exito`,
         'success'

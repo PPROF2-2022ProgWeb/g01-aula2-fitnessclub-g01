@@ -1,6 +1,7 @@
 package com.fitness.controles;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fitness.modelo.Comprobante;
+import com.fitness.modelo.ItemComprobante;
 import com.fitness.servicios.IComprobanteService;
 
 @RestController
@@ -69,11 +71,14 @@ public class ComprobanteRestController {
 	@PostMapping("/comprobantes")
 	public ResponseEntity<?> guardar(@RequestBody Comprobante comprobante) {
 		Comprobante compNuevo=null;
-		
+		Comprobante compN=null;
 		Map<String,Object> response=new HashMap<>();
 		
 		try {
 			compNuevo=comprobanteService.guardar(comprobante);
+			
+			//comprobanteService.guardarItem(compNuevo.getIdComprobante(),compNuevo.getItems());
+			
 		} catch (DataAccessException e) {
 			response.put("mensaje","Error al realizar el insert en la base de datos");
 			response.put("error",e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
