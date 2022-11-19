@@ -44,8 +44,9 @@ export class TiendaComponent implements OnInit {
 
 
   agregarProducto(idProducto:number):void{
-    
+      
     this.comprobanteDetalles =this.authService.Items as ItemComprobanteModel[];
+    
 
     if(this.authService.isAuthenticated()){
       this.productoService.getProducto(idProducto).subscribe(

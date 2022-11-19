@@ -130,6 +130,8 @@ export class AuthService {
     
       
     sessionStorage.removeItem('items');
+
+    
   }
 
   borrarSessionItems():void{
