@@ -11,3 +11,5 @@ Versión con Angular, Bootstrap, SprintBoot, MySQL
 - ✏️ Documentado por: Gastón Martino
 - 💻 Desarollado por: María Gimena Binaghi, Jorge Bordarampé, Diego Moyano
 
+### Link video Youtube Fitness Club 2022
+
