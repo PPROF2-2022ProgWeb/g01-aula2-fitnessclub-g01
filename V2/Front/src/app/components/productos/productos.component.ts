@@ -101,4 +101,39 @@ export class ProductosComponent implements OnInit {
     this.productoSeleccionado=producto;
     this.modalService.abrirModal();
   }
+
+
+  cambiarEstado(producto:ProductoModel){
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: '¿Esta seguro?',
+      text: `¿Seguro que desea cambiar el estado del Producto ${producto.descripcion}?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, eliminar!',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.productoService.cambiarEstado(producto).subscribe(
+          response=>{
+            this.obtenerProductos();
+            swalWithBootstrapButtons.fire(
+              'Estado del Usuario fue Actualizado!',
+              `El Estado del Producto  ${producto.descripcion} fue actualizado con exito.`,
+              'success'
+            )    
+          }
+        )
+
+      } 
+    })
+  }
 }
