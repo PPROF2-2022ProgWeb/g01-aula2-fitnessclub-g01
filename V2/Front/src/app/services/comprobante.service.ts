@@ -15,7 +15,7 @@ export class ComprobanteService {
 
   private urlEndPoint:string='http://localhost:8080/api/comprobantes'
 
-  private urlEndPointUs:string='http://localhost:8080/api/comprobantes/comprobantes/usuario'
+  private urlEndPointUs:string='http://localhost:8080/api/comprobantes/usuario'
 
   private httpHeaders = new HttpHeaders({'Content-Type':'application/json'});
   
@@ -116,14 +116,14 @@ export class ComprobanteService {
 
   getComprobantesPorUsuarioSinPaginar(idUsuario:number):Observable<any>{
     return this.http.get(this.urlEndPointUs+'/'+idUsuario,{headers:this.agregarAuthorizationHeader()}).pipe(
-      map((response:any)=>{
+     /* map((response:any)=>{
         (response.content as ComprobanteModel[]).map(
           comprobante=>{
             return comprobante;
           }
         );
         return response;
-      }),catchError(e=>{
+      }),*/catchError(e=>{
         this.isNoAutorizado(e);
         return throwError(e);
       })

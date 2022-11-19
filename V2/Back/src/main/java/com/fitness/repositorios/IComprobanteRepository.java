@@ -12,10 +12,10 @@ import com.fitness.modelo.Comprobante;
 
 public interface IComprobanteRepository extends JpaRepository<Comprobante,Long>{
 	
-	@Query("from Comprobante c where c.Usuario.IdUsuario=?1")
+	@Query("select c from Comprobante c where c.Usuario.IdUsuario=?1")
 	public List<Comprobante> listarPorUsuario(Long idUsuario);
 	
-	@Query("from Comprobante c where c.Usuario.IdUsuario=?1")
+	@Query("select c from Comprobante c where c.Usuario.IdUsuario=?1")
 	public Page<Comprobante> listarPorUsuario(Long idUsuario, Pageable pageable);
 	
 

@@ -133,7 +133,7 @@ export class AuthService {
   }
 
   borrarSessionItems():void{
-    sessionStorage.setItem('usuario', JSON.stringify(null))
+    
     sessionStorage.removeItem('items');
     
   }
