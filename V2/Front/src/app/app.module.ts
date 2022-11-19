@@ -37,6 +37,7 @@ import { HeroTitleComponent } from './components/Hero-Title/Hero-Title.component
 import { ComprobantesUserComponent } from './components/comprobantes-user/comprobantes-user.component';
 import { FormUserUpdateComponent } from './components/form-user-update/form-user-update.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { FormDetalleComprobanteComponent } from './components/form-detalle-comprobante/form-detalle-comprobante.component';
 
 
 registerLocaleData(localeES,'es');
@@ -73,7 +74,8 @@ registerLocaleData(localeES,'es');
     HeroTitleComponent, 
     ComprobantesUserComponent,
     FormUserUpdateComponent,
-    RegistroComponent
+    RegistroComponent,
+    FormDetalleComprobanteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+<detalle-comprobante *ngIf="comprobanteSeleccionado" [comprobante]="comprobanteSeleccionado"></detalle-comprobante>
 <div class="grilla" id="principles">
     <div>
         <br><br>
@@ -17,6 +18,7 @@
                     <th>Cliente</th>
                     <th>Cant. Items</th>
                     <th>Total</th>
+                    <th></th> 
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +29,9 @@
                     
                     <td>{{cantidadiProductos(comprobante.items)}}</td>
                     <td>{{comprobante.total | currency: '$'}}</td>
+                    <td>
+                        <button type="button" name="eliminar" (click)="abrirModal(comprobante)" class="btn btn-primary btn-sm">Detalle</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

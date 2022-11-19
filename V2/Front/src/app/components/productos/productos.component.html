@@ -54,3 +54,5 @@
       </table>
       <paginator-nav *ngIf="paginador" [paginador]="paginador" paginaAPaginar="productos"></paginator-nav>
 </div>
+
+<detalle-producto *ngIf="productoSeleccionado" [producto]="productoSeleccionado"></detalle-producto>

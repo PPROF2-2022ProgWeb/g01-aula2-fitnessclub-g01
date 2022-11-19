@@ -30,7 +30,10 @@ export class CarritoComponent implements OnInit {
 
     //cambio
     this.comprobanteDetalles =this.authService.Items as ItemComprobanteModel[];
-    console.log('Jorge');
+    
+    
+
+
     console.log(this.comprobanteDetalles);
     //this.agregarProducto();
   }

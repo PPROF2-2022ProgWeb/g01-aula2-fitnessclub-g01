@@ -4,6 +4,7 @@ import { ComprobanteModel } from 'src/app/models/comprobante.model';
 import { ItemComprobanteModel } from 'src/app/models/itemComprobante.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { ComprobanteService } from 'src/app/services/comprobante.service';
+import { Modal2Service } from 'src/app/services/modal2.service';
 
 @Component({
   selector: 'app-comprobantes-user',
@@ -15,10 +16,13 @@ export class ComprobantesUserComponent implements OnInit {
   comprobantes: ComprobanteModel[]=[];
   paginador: any;
 
+  comprobanteSeleccionado:ComprobanteModel;
+
   constructor(
     private comprobanteService: ComprobanteService,
     private activateRoute: ActivatedRoute,
-    private authService:AuthService
+    private authService:AuthService,
+    private modalService:Modal2Service
   ) {}
 
   ngOnInit(): void {
@@ -46,5 +50,10 @@ export class ComprobantesUserComponent implements OnInit {
       total=total+element.cantidad;
   });
   return total;
+  }
+
+  abrirModal(comprobante:ComprobanteModel){
+    this.comprobanteSeleccionado=comprobante;
+    this.modalService.abrirModal();
   }
 }

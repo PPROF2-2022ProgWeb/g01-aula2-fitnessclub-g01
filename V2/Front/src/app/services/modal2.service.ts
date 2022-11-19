@@ -3,7 +3,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ModalService {
+export class Modal2Service {
 
   modal:boolean=false;
 
@@ -23,5 +23,4 @@ export class ModalService {
   cerrarModal(){
     this.modal=false;
   }
-
 }
