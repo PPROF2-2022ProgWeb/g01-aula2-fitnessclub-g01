@@ -11,7 +11,7 @@ export class ItemComprobanteService {
 
 
   constructor() { }
-
+/*
   public get Items():ItemComprobanteModel[]{
     if(this.items!=null){      
       return this.items;
@@ -22,7 +22,7 @@ export class ItemComprobanteService {
     }
     return new Array;
   }
-  
+  */
 }
 
 

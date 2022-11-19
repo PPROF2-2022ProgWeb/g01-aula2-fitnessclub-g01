@@ -28,18 +28,21 @@ public class Producto implements Serializable{
 	@Column(name = "Descripcion",nullable = false, length = 45)
 	private String Descripcion;
 	
-	@ManyToOne(optional=false,fetch = FetchType.EAGER)
+
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "IdRubro",nullable = false)
 	private Rubro Rubro;
 	
-	@ManyToOne(optional=false,fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "IdDisciplina", nullable = false)
     @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	private Disciplina Disciplina;
 	
 
-	@ManyToOne(optional=false,fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "IdMarca", nullable = false)
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	private Marca Marca;
 	
 	@Column(name = "PrecioUnitario",nullable = false)

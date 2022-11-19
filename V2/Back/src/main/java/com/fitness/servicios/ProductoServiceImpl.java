@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.fitness.modelo.ItemComprobante;
 import com.fitness.modelo.Producto;
 import com.fitness.repositorios.IProductoRepository;
 
@@ -58,6 +59,19 @@ public class ProductoServiceImpl implements IProductoService{
 	@Transactional
 	public void eliminar(Long id) {
 		productoRepository.deleteById(id);
+	}
+
+	@Override
+	@Transactional
+	public void bajarStock(List<ItemComprobante> items) {
+		Producto pro=null;
+		for (ItemComprobante item : items) {
+			pro=productoRepository.findById(item.getProducto().getIdProducto()).orElse(null);
+			if(pro!=null) {
+				pro.setStock(pro.getStock()-item.getCantidad());
+				productoRepository.save(pro);
+			}
+		}
 	}
 	
 }

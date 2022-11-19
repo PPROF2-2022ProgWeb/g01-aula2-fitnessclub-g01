@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fitness.modelo.Comprobante;
 import com.fitness.modelo.ItemComprobante;
 import com.fitness.servicios.IComprobanteService;
+import com.fitness.servicios.IProductoService;
 
 @RestController
 @RequestMapping("/api")
@@ -32,6 +33,9 @@ public class ComprobanteRestController {
 
 	@Autowired
 	private IComprobanteService comprobanteService;
+	
+	@Autowired
+	private IProductoService productoService;
 	
 	@Secured("ROLE_ADMIN")
 	@GetMapping("/comprobantes")
@@ -76,7 +80,7 @@ public class ComprobanteRestController {
 		
 		try {
 			compNuevo=comprobanteService.guardar(comprobante);
-			
+			productoService.bajarStock(compNuevo.getItems());
 			//comprobanteService.guardarItem(compNuevo.getIdComprobante(),compNuevo.getItems());
 			
 		} catch (DataAccessException e) {

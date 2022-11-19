@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import com.fitness.modelo.ItemComprobante;
 import com.fitness.modelo.Producto;
 
 public interface IProductoService {
@@ -21,4 +22,6 @@ public interface IProductoService {
 	public Producto guardar(Producto producto);
 	
 	public void eliminar(Long id);
+	
+	public void bajarStock(List<ItemComprobante> items);
 }

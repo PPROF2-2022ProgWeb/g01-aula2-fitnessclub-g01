@@ -15,6 +15,8 @@ export class ComprobanteService {
 
   private urlEndPoint:string='http://localhost:8080/api/comprobantes'
 
+  private urlEndPointUs:string='http://localhost:8080/api/comprobantes/comprobantes/usuario'
+
   private httpHeaders = new HttpHeaders({'Content-Type':'application/json'});
   
 
@@ -91,6 +93,38 @@ export class ComprobanteService {
         }
         console.error(e.error.mensaje);
         Swal.fire(e.error.mensaje, e.error.error,'error');
+        return throwError(e);
+      })
+    );
+  }
+
+  getComprobantesPorUsuario(page:number, idUsuario:number):Observable<any>{
+    return this.http.get(this.urlEndPointUs+'/page/'+page.toString()+ '/'+idUsuario.toString(),{headers:this.agregarAuthorizationHeader()}).pipe(
+      map((response:any)=>{
+        (response.content as ComprobanteModel[]).map(
+          comprobante=>{
+            return comprobante;
+          }
+        );
+        return response;
+      }),catchError(e=>{
+        this.isNoAutorizado(e);
+        return throwError(e);
+      })
+    );
+  }
+
+  getComprobantesPorUsuarioSinPaginar(idUsuario:number):Observable<any>{
+    return this.http.get(this.urlEndPointUs+'/'+idUsuario,{headers:this.agregarAuthorizationHeader()}).pipe(
+      map((response:any)=>{
+        (response.content as ComprobanteModel[]).map(
+          comprobante=>{
+            return comprobante;
+          }
+        );
+        return response;
+      }),catchError(e=>{
+        this.isNoAutorizado(e);
         return throwError(e);
       })
     );

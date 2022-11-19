@@ -32,7 +32,7 @@ const routes: Routes = [
   {path:'nosotros', component: NosotrosComponent},
   {path:'contacto', component: FormComponent},
   {path:'carrito',component:CarritoComponent, canActivate:[AuthGuard]},
-  { path: 'carrito/:id', component: CarritoComponent,canActivate:[AuthGuard]},
+  {path: 'carrito/:id', component: CarritoComponent,canActivate:[AuthGuard]},
   {path:'tienda',component:TiendaComponent},
   {path:'tienda/page/:page',component:TiendaComponent},
   {path:'dashboardAdmin',component:DashAdminComponent},
@@ -63,7 +63,8 @@ const routes: Routes = [
   {path:'registro', component: RegistroComponent},
 
 
-
+  {path:'comprobantes-user',component:ComprobantesUserComponent},
+  {path:'comprobantes-user/page/:page',component:ComprobantesUserComponent},
 
 
   

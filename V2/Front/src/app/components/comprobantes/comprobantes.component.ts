@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ComprobanteModel } from 'src/app/models/comprobante.model';
+import { ItemComprobanteModel } from 'src/app/models/itemComprobante.model';
 import { ComprobanteService } from 'src/app/services/comprobante.service';
 
 @Component({
@@ -32,5 +33,13 @@ export class ComprobantesComponent implements OnInit {
         this.paginador = response;
       });
     });
+  }
+
+  cantidadiProductos(items:ItemComprobanteModel[]){
+    let total=0;
+    items.forEach(element => {
+      total=total+element.cantidad;
+  });
+  return total;
   }
 }

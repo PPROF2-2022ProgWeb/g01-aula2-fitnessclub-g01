@@ -24,10 +24,17 @@
                     <td>{{comprobante.idComprobante}</td>
                     <td>{{comprobante.fecha}} |date:"dd/MM/yyyy"</td>
                     <td>{{comprobante.usuario.apellido}}, {{comprobante.usuario.nombre}}</td>
-                    <td>{{comprobante.items.length}}</td>
+                    <td>{{cantidadiProductos(comprobante.items)}}</td>
                     <td>{{comprobante.total | currency: '$'}}</td>
                 </tr>
             </tbody>
         </table>
         <paginator-nav *ngIf="paginador" [paginador]="paginador" paginaAPaginar="comprobantes"></paginator-nav>
     </div>
+
+
+    
+
+
+
+    
