@@ -1,50 +1,57 @@
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\modelo\Rol.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\UsuarioServiceImpl.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\repositorios\IProductoRepository.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\repositorios\IPaisRepository.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\ProductoServiceImpl.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\controles\MarcaRestController.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\modelo\Comprobante.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\repositorios\IComprobanteRepository.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\modelo\ItemComprobante.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\IProvinciaService.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\modelo\Rubro.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\IUsuarioService.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\IRubroService.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\modelo\Marca.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\IRolService.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\IMarcaService.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\LocalidadServiceImpl.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\ILocalidadService.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\modelo\Provincia.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\modelo\Pais.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\PaisServiceImpl.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\RubroServiceImpl.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\controles\ComprobanteRestController.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\modelo\Localidad.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\modelo\Producto.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\modelo\Disciplina.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\controles\PaisRestController.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\MarcaServiceImpl.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\IProductoService.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\modelo\Usuario.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\IDisciplinaService.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\controles\ProvinciaRestController.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\repositorios\ILocalidadRepository.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\ProvinciaServiceImpl.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\IComprobanteService.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\repositorios\IRubroRepository.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\IPaisService.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\DisciplinaServiceImpl.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\repositorios\IDisciplinaRepository.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\servicios\ComprobanteServiceImpl.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\controles\ProductoRestController.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\controles\RubroRestController.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\controles\DisciplinaRestController.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\controles\LocalidadRestController.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\repositorios\IUsuarioRepository.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\FitnessClubCokeApplication.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\controles\UsuarioRestController.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\repositorios\IProvinciaRepository.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\repositorios\IMarcaRepository.java
-C:\Users\jbord\Desktop\Proyecto FitnessClub Coke\FitnessClubCoke\src\main\java\com\fitness\repositorios\IRolRepository.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\controles\RubroRestController.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\modelo\Localidad.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\modelo\ItemComprobante.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\controles\ProvinciaRestController.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\repositorios\IPaisRepository.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\modelo\Provincia.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\ILocalidadService.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\repositorios\IDisciplinaRepository.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\controles\ComprobanteRestController.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\controles\UsuarioRestController.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\modelo\Rubro.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\controles\ProductoRestController.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\ProvinciaServiceImpl.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\IProvinciaService.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\RubroServiceImpl.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\controles\DisciplinaRestController.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\modelo\Usuario.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\LocalidadServiceImpl.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\FitnessClubCokeApplication.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\UsuarioServiceImpl.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\modelo\Marca.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\UploadFileService.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\modelo\Rol.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\ComprobanteServiceImpl.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\auth\ResourceServerConfigurerAdapter.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\modelo\Disciplina.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\IDisciplinaService.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\MarcaServiceImpl.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\repositorios\IComprobanteRepository.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\repositorios\IMarcaRepository.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\repositorios\ILocalidadRepository.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\IRolService.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\IUploadFileService.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\repositorios\IRubroRepository.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\controles\PaisRestController.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\repositorios\IRolRepository.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\auth\SpringSecurityConfig.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\repositorios\IUsuarioRepository.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\auth\JwtConfig.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\IMarcaService.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\IProductoService.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\PaisServiceImpl.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\auth\InfoAdicionalToken.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\controles\LocalidadRestController.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\controles\MarcaRestController.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\modelo\Pais.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\modelo\Producto.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\repositorios\IProductoRepository.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\repositorios\IProvinciaRepository.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\modelo\Comprobante.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\auth\AuthorizationServerConfig.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\ProductoServiceImpl.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\IComprobanteService.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\DisciplinaServiceImpl.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\IPaisService.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\IRubroService.java
+E:\Programación\Tecnicatura 2022\Desarrollo web\Practicas profesionalizantes II\g01-aula2-fitnessclub-g01\V2\Back\src\main\java\com\fitness\servicios\IUsuarioService.java
