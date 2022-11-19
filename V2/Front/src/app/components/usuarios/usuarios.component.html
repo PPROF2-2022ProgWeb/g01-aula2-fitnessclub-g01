@@ -26,6 +26,7 @@
               <th>Rol</th>
               <th>Estado</th>
               <th>Editar</th>
+              <th>Estado</th>
               <th>Eliminar</th>
           </tr>
       </thead>
@@ -43,6 +44,9 @@
               <td>
                 <button type="button" name="editar" [routerLink]="['/usuarios/form',usuario.idUsuario]" class="btn btn-primary btn-sm">editar</button>
             </td>
+            <td>
+              <button type="button" name="editar" (click)="cambiarEstado(usuario)" class="btn btn-primary btn-sm">Cambiar</button>
+          </td>
             <td>
               <button type="button" name="eliminar" (click)="delete(usuario)" class="btn btn-danger btn-sm">eliminar</button>
           </td>

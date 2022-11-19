@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RolModel } from 'src/app/models/rol.model';
 import { UsuarioModel } from 'src/app/models/usuario.model';
 import { AuthService } from 'src/app/services/auth.service';
@@ -19,7 +19,7 @@ export class UsuariosComponent implements OnInit {
   usuarioSeleccionado:UsuarioModel;
   titulo:string='Gestion de Usuarios'
 
-  constructor(private usuarioService:UsuarioService, private activateRoute:ActivatedRoute, private modalService:ModalService, public autService:AuthService) { }
+  constructor(private usuarioService:UsuarioService, private activateRoute:ActivatedRoute, private modalService:ModalService, public autService:AuthService, private router:Router) { }
 
   ngOnInit(): void {
       this.obtenerUsuarios();
@@ -98,6 +98,40 @@ export class UsuariosComponent implements OnInit {
       return 'Usuario';
     }
     return 'Administrador';
+  }
+
+  cambiarEstado(usuario:UsuarioModel){
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: '¿Esta seguro?',
+      text: `¿Seguro que desea cambiar el estado del Usuario de ${usuario.apellido}, ${usuario.nombre}?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, eliminar!',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.usuarioService.cambiarEstado(usuario).subscribe(
+          response=>{
+            this.obtenerUsuarios();
+            swalWithBootstrapButtons.fire(
+              'Estado del Usuario fue Actualizado!',
+              `El Estado del Usuario de ${usuario.apellido}, ${usuario.nombre} fue actualizado con exito.`,
+              'success'
+            )    
+          }
+        )
+
+      } 
+    })
   }
 
 

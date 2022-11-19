@@ -33,6 +33,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fitness.modelo.Producto;
+import com.fitness.modelo.Usuario;
 import com.fitness.servicios.IProductoService;
 import com.fitness.servicios.IUploadFileService;
 
@@ -221,4 +222,33 @@ public class ProductoRestController {
 		return new ResponseEntity<Resource>(recurso, cabecera, HttpStatus.OK);
 	}
 
+	
+	@Secured({"ROLE_ADMIN"})
+	@PutMapping("/productos/estado/{id}")
+	public ResponseEntity<?> cambiarEstado(@RequestBody Producto producto, @PathVariable Long id) {
+		Producto prodActual=productoService.buscarPorId(id);
+		Producto productoUpdated=null;
+		
+		Map<String,Object> response=new HashMap<>();
+		
+		if(prodActual==null){
+			response.put("mensaje","Error: no se pudo cambiar el estado del Producto Id: " .concat(id.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String,Object>>(response,HttpStatus.NOT_FOUND);
+		}
+		
+		try {
+
+			prodActual.setEstado(!producto.getEstado());
+			productoUpdated=productoService.guardar(prodActual);		
+		}catch (DataAccessException e) {
+			response.put("mensaje","Error al actualizar el Producto en la base de datos");
+			response.put("error",e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String,Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		response.put("mensaje","El Estado del Producto ha sido actualizado con exito!");
+		response.put("usuario", productoUpdated);
+		
+		return new ResponseEntity<Map<String,Object>>(response,HttpStatus.CREATED);
+		
+	}
 }
