@@ -23,27 +23,30 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name="itemsComprobantes")
 public class ItemComprobante implements Serializable{
 	
-	
+	/*
 	@Id
 	@ManyToOne(optional=false,cascade=CascadeType.ALL)
     @JoinColumn(name="IdComprobante", nullable=false)
 	@JsonBackReference
 	private Comprobante Comprobante;
-
+*/
 	
 	@Id
-	@Column(name = "Id",nullable = false)
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Id;
+	@Column(name = "Renglon",nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int Renglon;
 	
 	
-//	@ManyToOne(optional=false,cascade=CascadeType.ALL)
-//	@JoinColumn(name = "IdProducto",nullable = false)
-	//@JsonBackReference
+
+	//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	//@ManyToOne(fetch = FetchType.LAZY)
+	//@JoinColumn(name = "IdProducto",nullable = false)
+	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "IdProducto",nullable = false)
 	private Producto Producto;
+
 	
 	@Column(name = "Cantidad",nullable = false)
 	private int Cantidad;
@@ -51,19 +54,19 @@ public class ItemComprobante implements Serializable{
 	@Column(name = "PrecioUnitario",nullable = false)
 	private float PrecioUnitario;
 	
-	
+	/*
 	public Comprobante getComprobante() {
 		return Comprobante;
 	}
 	public void setComprobante(Comprobante comprobante) {
 		Comprobante = comprobante;
-	}
+	}*/
 	
-	public int getId() {
-		return Id;
+	public int getRenglon() {
+		return Renglon;
 	}
-	public void setId(int id) {
-		Id = id;
+	public void setRenglon(int renglon) {
+		Renglon = renglon;
 	}
 	public Producto getProducto() {
 		return Producto;

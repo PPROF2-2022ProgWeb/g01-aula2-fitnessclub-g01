@@ -47,6 +47,9 @@
                     <button type="button" name="editar" [routerLink]="['/productos/form',producto.idProducto]" class="btn btn-primary btn-sm">editar</button>
                 </td>
                 <td>
+                    <button type="button" name="editar" (click)="cambiarEstado(producto)" class="btn btn-primary btn-sm">Cambiar</button>
+                </td>
+                <td>
                     <button type="button" name="eliminar" (click)="delete(producto)" class="btn btn-danger btn-sm">eliminar</button>
                 </td>
             </tr>
@@ -54,3 +57,4 @@
       </table>
       <paginator-nav *ngIf="paginador" [paginador]="paginador" paginaAPaginar="productos"></paginator-nav>
 </div>
+

@@ -151,6 +151,36 @@ public class UsuarioRestController {
 		
 	}
 	
+	@Secured({"ROLE_ADMIN"})
+	@PutMapping("/usuarios/estado/{id}")
+	public ResponseEntity<?> cambiarEstado(@RequestBody Usuario usuario, @PathVariable Long id) {
+		Usuario usuarioActual=usuarioService.buscarPorId(id);
+		Usuario usuarioUpdated=null;
+		
+		Map<String,Object> response=new HashMap<>();
+		
+		if(usuarioActual==null){
+			response.put("mensaje","Error: no se pudo cambiar el estado del Usuario Id: " .concat(id.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String,Object>>(response,HttpStatus.NOT_FOUND);
+		}
+		
+		try {
+
+			usuarioActual.setEstado(!usuario.getEstado());
+			usuarioUpdated=usuarioService.guardar(usuarioActual);		
+		}catch (DataAccessException e) {
+			response.put("mensaje","Error al actualizar el Usuario en la base de datos");
+			response.put("error",e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String,Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		response.put("mensaje","El Estado del Usuario ha sido actualizado con exito!");
+		response.put("usuario", usuarioUpdated);
+		
+		return new ResponseEntity<Map<String,Object>>(response,HttpStatus.CREATED);
+		
+	}
+	
+	
 	@Secured("ROLE_ADMIN")
 	@DeleteMapping("/usuarios/{id}")
 	public ResponseEntity<?> eliminar(@PathVariable Long id) {

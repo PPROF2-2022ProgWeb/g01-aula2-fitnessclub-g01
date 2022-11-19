@@ -148,8 +148,8 @@ INSERT INTO rubros (nombre) VALUES ('Rubro P');
 INSERT INTO productos (descripcion,estado,imagen,precio_unitario,servicio,stock,id_disciplina,id_marca,id_rubro) VALUES ('Producto 1',true,'',56.3,true,3,1,1,1);
 INSERT INTO productos (descripcion,estado,imagen,precio_unitario,servicio,stock,id_disciplina,id_marca,id_rubro) VALUES ('Producto 2',true,'',24.56,true,0,1,1,1);
 
-INSERT INTO usuarios (apellido,dni,direccion,email,imagen,nombre,password, estado,id_localidad,id_rol) 
-VALUES ('Bordarampe',28775160,'','jbordarampe@gmail.com','','Jorge','$2a$10$wuOQV0qZX3FjdDG6QOiI5.9IiycUJvB76KBV3JJijUWkaUGTB.1km',1,1,2);
+--INSERT INTO usuarios (apellido,dni,direccion,email,imagen,nombre,password, estado,id_localidad,id_rol) 
+--VALUES ('Bordarampe',28775160,'','jbordarampe@gmail.com','','Jorge','$2a$10$wuOQV0qZX3FjdDG6QOiI5.9IiycUJvB76KBV3JJijUWkaUGTB.1km',1,1,2);
 
-INSERT INTO usuarios (apellido,dni,direccion,email,imagen,nombre,password, estado,id_localidad,id_rol)  
-VALUES ('Bordarampe',7955237,'','jlbordarampe@gmail.com','','Jorge Luis','$2a$10$wuOQV0qZX3FjdDG6QOiI5.9IiycUJvB76KBV3JJijUWkaUGTB.1km',1,1,1);
+--INSERT INTO usuarios (apellido,dni,direccion,email,imagen,nombre,password, estado,id_localidad,id_rol)  
+--VALUES ('Bordarampe',7955237,'','jlbordarampe@gmail.com','','Jorge Luis','$2a$10$wuOQV0qZX3FjdDG6QOiI5.9IiycUJvB76KBV3JJijUWkaUGTB.1km',1,1,1);

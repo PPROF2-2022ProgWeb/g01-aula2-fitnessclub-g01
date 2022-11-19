@@ -19,6 +19,8 @@ import javax.persistence.UniqueConstraint;
 
 import org.springframework.lang.Nullable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table(name="usuarios")
@@ -43,15 +45,17 @@ public class Usuario implements Serializable{
 	@Column(name = "Direccion", length = 60)
 	private String Direccion;
 	
-	@ManyToOne(optional=false,fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "IdLocalidad", nullable = false)
+	@JsonIgnoreProperties(value={"hibernateLazyInitializer", "handler"})
 	private Localidad Localidad;
 		
 	@Column(name = "Password",nullable = false, length = 80)
 	private String Password;
 	
-	@ManyToOne(optional=false,fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "IdRol", nullable = false)
+	@JsonIgnoreProperties(value={"hibernateLazyInitializer", "handler"})
 	private Rol Rol;
 	
 	
@@ -61,6 +65,11 @@ public class Usuario implements Serializable{
 	@Column(name = "estado",nullable = false)
 	private boolean estado;
 	
+	/*
+	@JsonIgnoreProperties(value={"Usuario", "hibernateLazyInitializer", "handler"}, allowSetters=true)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Usuario", cascade = CascadeType.ALL)
+	private List<Comprobante> Comprobantes;
+	*/
 	
 	public Long getIdUsuario() {
 		return IdUsuario;
@@ -129,7 +138,26 @@ public class Usuario implements Serializable{
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
+/*
+	@JsonIgnoreProperties(value={"Usuario", "hibernateLazyInitializer", "handler"}, allowSetters=true)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "Usuario", cascade = CascadeType.ALL)
+	private List<Comprobante> Comprobantes;
 
+	
+
+	public Usuario() {
+		this.Comprobantes = new ArrayList<>();
+	}
+	
+	
+	public List<Comprobante> getComprobantes() {
+		return Comprobantes;
+	}
+
+	public void setComprobantes(List<Comprobante> comprobantes) {
+		Comprobantes = comprobantes;
+	}
+*/
 
 	private static final long serialVersionUID = 1L;
 }

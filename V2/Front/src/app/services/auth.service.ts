@@ -12,11 +12,10 @@ export class AuthService {
 
   private _usuario:UsuarioModel;
   private _token:string;
+  private _items:ItemComprobanteModel[];
 
   constructor(private http:HttpClient) { }
 
-
-  
   public get usuario():UsuarioModel{
     if(this._usuario!=null){
       return this._usuario;
@@ -26,6 +25,23 @@ export class AuthService {
     }
     return new UsuarioModel();
   }
+
+
+  
+  public get Items():ItemComprobanteModel[]{
+    console.log('Valor');
+    if(this._items!=null){      
+      console.log('Item Nulo');
+      return this._items;
+    }else if(this._items==null && sessionStorage.getItem('items')!=null){
+      this._items=JSON.parse(sessionStorage.getItem('items')) as ItemComprobanteModel[];
+      console.log('Item Con Valor');
+      
+      return this._items;
+    }
+    return new Array;
+  }
+  
 
   public get token():string{
     if(this._token!=null){
@@ -63,11 +79,16 @@ export class AuthService {
     //this._usuario.roles=payload.authorities;
     this.usuario.rol=new RolModel();
     this._usuario.rol.nombre=payload.authorities[0];
-console.log(payload.authorities[0]);
+
     sessionStorage.setItem('usuario', JSON.stringify(this._usuario));
   }
 
   guardarToken(accessToken: string):void{
+    this._token=accessToken;
+    sessionStorage.setItem('token',accessToken);
+  }
+
+  guardarItems(accessToken: string):void{
     this._token=accessToken;
     sessionStorage.setItem('token',accessToken);
   }
@@ -96,19 +117,26 @@ console.log(payload.authorities[0]);
     return false;
   }
 
-  comprobanteDetalles:ItemComprobanteModel[];
+  //comprobanteDetalles:ItemComprobanteModel[];
 
   logout():void{
     this._token=null;
     this._usuario=null;
-    
-    sessionStorage.setItem('items', JSON.stringify(this.comprobanteDetalles))
+    //this.comprobanteDetalles=[];
+    //sessionStorage.setItem('items', JSON.stringify(this.comprobanteDetalles))
     sessionStorage.clear();
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('usuario');
     
-  
       
     sessionStorage.removeItem('items');
+
+    
+  }
+
+  borrarSessionItems():void{
+    
+    sessionStorage.removeItem('items');
+    
   }
 }

@@ -125,6 +125,13 @@ h4 {
     margin-bottom: 2%;
 }
 
+#boton-crear {
+    flex: 0 0 auto;
+    width: 20%;
+    margin-left: 75%;
+}
+
+
 p {
     text-align: center;
     font-size: 20px;

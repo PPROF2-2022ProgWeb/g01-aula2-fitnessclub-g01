@@ -42,12 +42,11 @@ public class Comprobante implements Serializable{
 		Fecha=new Date();
 	}
 	
-	public 	Comprobante(){
-		items=new ArrayList<>();
-	}
+
 	
-	@ManyToOne(optional=false,fetch = FetchType.EAGER)
-	@JoinColumn(name = "IdUsuario", nullable = false)
+	@JsonIgnoreProperties(value={"hibernateLazyInitializer", "handler"}, allowSetters=true)
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="IdUsuario")
 	private Usuario Usuario;
 	
 	
@@ -55,8 +54,12 @@ public class Comprobante implements Serializable{
 	private float Total;
 		
 
-	@OneToMany(mappedBy = "Comprobante", fetch = FetchType.LAZY)
+//	@OneToMany(mappedBy = "Comprobante", fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "IdComprobante")
 	private List<ItemComprobante> items;
+	
 	
 	
 	public Long getIdComprobante() {
@@ -93,8 +96,5 @@ public class Comprobante implements Serializable{
 
 
 
-	
 	private static final long serialVersionUID = 1L;
-
-
 }

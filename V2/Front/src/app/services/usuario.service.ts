@@ -163,6 +163,26 @@ export class UsuarioService {
       );
   }
 
+  cambiarEstado(usuario: UsuarioModel): Observable<any> {
+    return this.http
+      .put<any>(`${this.urlEndPoint}/estado/${usuario.idUsuario}`, usuario, {
+        headers: this.agregarAuthorizationHeader(),
+      })
+      .pipe(
+        catchError((e) => {
+          if (this.isNoAutorizado(e)) {
+            return throwError(e);
+          }
+          if (e.status == 400) {
+            return throwError(e);
+          }
+          console.error(e.error.mensaje);
+          Swal.fire(e.error.mensaje, e.error.error, 'error');
+          return throwError(e);
+        })
+      );
+  }
+
   delete(idUsuario: number): Observable<UsuarioModel> {
     return this.http
       .delete<UsuarioModel>(`${this.urlEndPoint}/${idUsuario}`, {

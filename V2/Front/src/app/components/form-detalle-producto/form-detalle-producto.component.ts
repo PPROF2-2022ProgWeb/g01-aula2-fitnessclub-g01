@@ -67,8 +67,10 @@ export class DetalleProductoComponent implements OnInit {
   }
 
   cerrarModal(){
+    //this.producto=null;
     this.modalService.cerrarModal();
-    this.fotoSeleccionada=null;
-    this.progreso=0;
+  //  this.fotoSeleccionada=null;
+   // 
+   // this.progreso=0;
   }
 }

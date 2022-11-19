@@ -66,6 +66,10 @@ export class FormDetalleUsuarioComponent implements OnInit {
     }
   }
   cerrarModal(){
+   // this.usuario=null;
+   // this.fotoSeleccionada=null;
+    this.progreso=0;
     this.modalService.cerrarModal();
+
   }
 }

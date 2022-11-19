@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ComprobanteModel } from 'src/app/models/comprobante.model';
 import { ItemComprobanteModel } from 'src/app/models/itemComprobante.model';
 import { ProductoModel } from 'src/app/models/producto.model';
@@ -22,12 +22,17 @@ export class CarritoComponent implements OnInit {
 
   comprobanteDetalles:ItemComprobanteModel[]=[];
 
-  constructor(private activateRoute:ActivatedRoute, private productoService:ProductoService, private compDetralleService:ItemComprobanteService, private authService:AuthService, private compService:ComprobanteService, private usuarioService:UsuarioService) { }
+  constructor(private activateRoute:ActivatedRoute, private productoService:ProductoService, private compDetralleService:ItemComprobanteService, private authService:AuthService, private compService:ComprobanteService, private usuarioService:UsuarioService, private router:Router) { }
 
   ngOnInit(): void {
         //this.comprobanteDetalles=this.compDetralleService.Items;
     //console.log(this.comprobanteDetalle);
-    this.comprobanteDetalles =this.compDetralleService.Items as ItemComprobanteModel[];
+
+    //cambio
+    this.comprobanteDetalles =this.authService.Items as ItemComprobanteModel[];
+    
+    
+
 
     console.log(this.comprobanteDetalles);
     //this.agregarProducto();
@@ -84,6 +89,8 @@ export class CarritoComponent implements OnInit {
   usuario:UsuarioModel;
   
    finalizarCompra(){
+
+    
      let comprobante:ComprobanteModel=new ComprobanteModel();
     
     if(this.calcularTotal()>0){
@@ -100,18 +107,18 @@ export class CarritoComponent implements OnInit {
 
 
       comprobante.total=this.calcularTotal();
-      let contador=1;
-       this.comprobanteDetalles.forEach(i=>{i.renglon=contador++;});
-      
-      
-
-      console.log(this.comprobanteDetalles);
+   
       comprobante.items=this.comprobanteDetalles;
       
       
       
       this.compService.guardar(comprobante).subscribe(
-
+          c=>{
+            this.router.navigate(['/tienda']);
+            Swal.fire('Finalizacion de Compra','Compra realizada exitosamente', 'success');
+          this.authService.borrarSessionItems();
+          
+        }
       );
       //
 

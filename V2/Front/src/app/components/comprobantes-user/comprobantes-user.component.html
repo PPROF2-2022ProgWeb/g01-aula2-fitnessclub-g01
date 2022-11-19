@@ -1,3 +1,4 @@
+<detalle-comprobante *ngIf="comprobanteSeleccionado" [comprobante]="comprobanteSeleccionado"></detalle-comprobante>
 <div class="grilla" id="principles">
     <div>
 <br><br>
@@ -17,17 +18,28 @@
                     <th>Cliente</th>
                     <th>Cant. Items</th>
                     <th>Total</th>
+                    <th></th>  
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let comprobante of comprobantes">
-                    <td>{{comprobante.idComprobante}</td>
-                    <td>{{comprobante.fecha}} |date:"dd/MM/yyyy"</td>
+                    <td>{{comprobante.idComprobante}}</td>
+                    <td>{{comprobante.fecha |date:"dd/MM/yyyy"}} </td>
                     <td>{{comprobante.usuario.apellido}}, {{comprobante.usuario.nombre}}</td>
-                    <td>{{comprobante.items.length}}</td>
+                    <td>{{cantidadiProductos(comprobante.items)}}</td>
                     <td>{{comprobante.total | currency: '$'}}</td>
+                    <td>
+                        <button type="button" name="eliminar" (click)="abrirModal(comprobante)" class="btn btn-primary btn-sm">Detalle</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
         <paginator-nav *ngIf="paginador" [paginador]="paginador" paginaAPaginar="comprobantes"></paginator-nav>
     </div>
+
+
+    
+
+
+
+    
